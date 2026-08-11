@@ -1,0 +1,29 @@
+{
+  "archiveStatus": {
+    "isAccessible": true,
+    "isArchived": false
+  },
+  "code": "GkLjHA4r7hVPQMyp",
+  "endTime": 1785737685222,
+  "exportedSegments": 23,
+  "fight_absolute_end_time": 1785710879841.0,
+  "fight_absolute_start_time": 1785708999154.0,
+  "revision": 22,
+  "sample_window": {
+    "duration_ms": 58583.0,
+    "encounter_id": 0,
+    "end_time": 2627837.0,
+    "full_fight_covered": false,
+    "id": 1,
+    "index": 0,
+    "kind": "dungeon_pull",
+    "name": "Bribed Captain",
+    "start_time": 2569254.0
+  },
+  "segments": 23,
+  "source_id": 1,
+  "startTime": 1785706443201,
+  "talent_import_code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmlZwAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMzYmxMDmxMjxAYgFYGjGzGgtBsZAwMzgB",
+  "title": "Mythic+ Season 2 (PTR)",
+  "visibility": "public"
+}

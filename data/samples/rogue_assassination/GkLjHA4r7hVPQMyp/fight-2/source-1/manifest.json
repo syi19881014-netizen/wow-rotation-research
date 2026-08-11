@@ -1,0 +1,396 @@
+{
+  "collected_at_utc": "2026-08-11T08:04:40Z",
+  "collector": {
+    "commit": "796cbb0e4557cab1b49aa2a1e7cc82063b8797ed",
+    "name": "wcl_report_event_sample",
+    "version": "1.0.0"
+  },
+  "completeness": {
+    "complete": true,
+    "full_fight_covered": false,
+    "raw_stream_event_count": 8239,
+    "scope": "selected_window",
+    "stream_count": 4,
+    "streams": [
+      {
+        "complete": true,
+        "data_type": "All",
+        "include_resources": true,
+        "name": "source:1:All",
+        "page_count": 1,
+        "pages": [
+          {
+            "event_count": 7965,
+            "next_page_timestamp": null,
+            "page": 1,
+            "report_revision": 22,
+            "start_time": 2569254.0
+          }
+        ],
+        "rate_limit_after": {
+          "limitPerHour": 3600,
+          "pointsResetIn": 2924,
+          "pointsSpentThisHour": 51.14
+        },
+        "raw_event_count": 7965,
+        "source_id": 1,
+        "target_id": null
+      },
+      {
+        "complete": true,
+        "data_type": "Buffs",
+        "include_resources": false,
+        "name": "target:1:Buffs",
+        "page_count": 1,
+        "pages": [
+          {
+            "event_count": 273,
+            "next_page_timestamp": null,
+            "page": 1,
+            "report_revision": 22,
+            "start_time": 2569254.0
+          }
+        ],
+        "rate_limit_after": {
+          "limitPerHour": 3600,
+          "pointsResetIn": 2924,
+          "pointsSpentThisHour": 52.14
+        },
+        "raw_event_count": 273,
+        "source_id": null,
+        "target_id": 1
+      },
+      {
+        "complete": true,
+        "data_type": "Debuffs",
+        "include_resources": false,
+        "name": "target:1:Debuffs",
+        "page_count": 1,
+        "pages": [
+          {
+            "event_count": 1,
+            "next_page_timestamp": null,
+            "page": 1,
+            "report_revision": 22,
+            "start_time": 2569254.0
+          }
+        ],
+        "rate_limit_after": {
+          "limitPerHour": 3600,
+          "pointsResetIn": 2924,
+          "pointsSpentThisHour": 53.14
+        },
+        "raw_event_count": 1,
+        "source_id": null,
+        "target_id": 1
+      },
+      {
+        "complete": true,
+        "data_type": "Deaths",
+        "include_resources": false,
+        "name": "target:1:Deaths",
+        "page_count": 1,
+        "pages": [
+          {
+            "event_count": 0,
+            "next_page_timestamp": null,
+            "page": 1,
+            "report_revision": 22,
+            "start_time": 2569254.0
+          }
+        ],
+        "rate_limit_after": {
+          "limitPerHour": 3600,
+          "pointsResetIn": 2923,
+          "pointsSpentThisHour": 54.14
+        },
+        "raw_event_count": 0,
+        "source_id": null,
+        "target_id": 1
+      }
+    ],
+    "unique_event_count": 7843
+  },
+  "fight": {
+    "difficulty": 10,
+    "dungeon_pull_count": 14,
+    "encounter_id": 62813,
+    "end_time": 4436640,
+    "game_zone": {
+      "id": 2813,
+      "name": "Murder Row"
+    },
+    "keystone_level": 19,
+    "kill": true,
+    "name": "Murder Row",
+    "start_time": 2555953
+  },
+  "identity": {
+    "owned_actor_ids": [
+      1
+    ],
+    "resolution": {
+      "actor": {
+        "gameID": null,
+        "icon": "Rogue",
+        "id": 1,
+        "name": "Player 1",
+        "petOwner": null,
+        "server": null,
+        "subType": "Rogue",
+        "type": "Player"
+      },
+      "candidate_ids": [
+        1
+      ],
+      "method": "friendly_class_and_spec_unique",
+      "scores": {},
+      "source_id": 1
+    },
+    "source_id": 1,
+    "talent_import_code": "CMQAAAAAAAAAAAAAAAAAAAAAAYmlZmlZwAAAAAAzygtZAAAAAAttNzMzMzMGLzMzsNzyMzYmxMDmxMjxAYgFYGjGzGgtBsZAwMzgB"
+  },
+  "limitations": [
+    "This is an L5 event sample, not an L6 per-GCD decision-state reconstruction.",
+    "Cooldown and charge state must be derived from spell data and the event sequence.",
+    "Cast cancellation and channel clipping must be inferred from begin/cast/interrupt timing.",
+    "Event completeness applies to the selected window, not necessarily the full fight.",
+    "Warcraft Logs documents report events as mutable data; report revision is pinned here."
+  ],
+  "metadata": {
+    "abilities": {
+      "bytes": 35439,
+      "path": "metadata/abilities.json.gz",
+      "row_count": 1921,
+      "sha256": "9c338390915f038d028d121e17463305896f9fb8b48cd528b1f915926c8d75dd"
+    },
+    "actors": {
+      "bytes": 10120,
+      "path": "metadata/actors.json.gz",
+      "row_count": 590,
+      "sha256": "90af7d7afc6c4a01116b20d391f3039ef3337387154aa39f02bace5bcd5927be"
+    },
+    "fight": {
+      "bytes": 23909,
+      "path": "metadata/fight.json",
+      "sha256": "8a899b894fdd156cc6332743833793f183acbda653417c30920a277c9c26dd41"
+    },
+    "fight_segments": {
+      "bytes": 15961,
+      "path": "derived/fight_segments.json",
+      "sha256": "bc3adacd9a4ab52e9a721236e9ff9b0273d8ba996fb40477974537f2470d645b"
+    },
+    "player_details": {
+      "bytes": 5452,
+      "path": "metadata/player_details.json.gz",
+      "sha256": "ee94c6ce519c4aa0a83c54ca09ebb0a6c09729319e9586ac76f9d50fa157120d"
+    },
+    "report": {
+      "bytes": 785,
+      "path": "metadata/report.json",
+      "sha256": "7ea77ae6dfb6c1bb9d150d959fa17d742c0f5d441f2256d149f7e7f338103871"
+    },
+    "targets": {
+      "bytes": 4081,
+      "path": "derived/targets.json",
+      "row_count": 21,
+      "sha256": "25eba429e64fa788b74e00e5954998aaca375210492d0324dde1061744e8ed8c"
+    }
+  },
+  "privacy": {
+    "player_game_ids_redacted": true,
+    "player_names_redacted": true,
+    "player_servers_redacted": true,
+    "report_actor_ids_preserved": true
+  },
+  "report_versions": {
+    "game_version": 1,
+    "language": "en",
+    "log_version": 17
+  },
+  "sample_window": {
+    "duration_ms": 58583.0,
+    "encounter_id": 0,
+    "end_time": 2627837.0,
+    "full_fight_covered": false,
+    "id": 1,
+    "index": 0,
+    "kind": "dungeon_pull",
+    "name": "Bribed Captain",
+    "start_time": 2569254.0
+  },
+  "schema_version": "wcl.report-sample-manifest.v1",
+  "secrets_exposed": false,
+  "source": {
+    "api": "https://www.warcraftlogs.com/api/v2/client",
+    "fight_id": 2,
+    "query_sha256": {
+      "events": "caa0666115704e5f04adf8e5ed6b37e30f3f2690cd255cb04dfd5e2496785cb0",
+      "metadata": "7aebb2c9d458129cd16f356881dfa83f8dc50f3c4cfd48b56f31aeb5b88e4e2f",
+      "talent": "185005e8adf3c374a5f9018b6f2ffd3ccde84c7706ca7dd1a7ec6da93b2d630f"
+    },
+    "ranking_pointer": {
+      "anonymous_name": "Character 138937865-11644643",
+      "class": "Rogue",
+      "encounter_id": 62813,
+      "gear_ids": [
+        271875,
+        268265,
+        271508,
+        271513,
+        271507,
+        271509,
+        271512,
+        271506,
+        271511,
+        240949,
+        268249,
+        270164,
+        270175,
+        239656,
+        271093,
+        237837
+      ],
+      "ranking_start_time": 1785708999154,
+      "spec": "Assassination",
+      "spec_key": "rogue_assassination",
+      "talent_ids": [
+        112509,
+        112510,
+        112511,
+        112513,
+        112515,
+        112518,
+        112519,
+        112520,
+        112521,
+        112526,
+        112572,
+        112574,
+        112575,
+        112583,
+        112585,
+        112630,
+        112633,
+        112634,
+        112635,
+        112636,
+        112638,
+        112639,
+        112640,
+        112642,
+        112643,
+        112644,
+        112646,
+        112648,
+        112649,
+        112650,
+        112651,
+        112652,
+        112654,
+        112655,
+        112657,
+        112659,
+        112660,
+        112661,
+        112662,
+        112663,
+        112664,
+        112667,
+        112668,
+        112669,
+        112672,
+        112673,
+        112676,
+        114737,
+        117106,
+        117129,
+        117131,
+        117133,
+        117135,
+        117139,
+        117145,
+        117152,
+        117704,
+        117711,
+        117716,
+        117717,
+        117719,
+        117722,
+        117724,
+        117726,
+        117736,
+        117740,
+        123371,
+        125132,
+        125140,
+        125615,
+        136024,
+        136025,
+        136026,
+        136881,
+        137065,
+        137066,
+        137067
+      ]
+    },
+    "report_code": "GkLjHA4r7hVPQMyp",
+    "report_revision": 22
+  },
+  "tables": {
+    "all": {
+      "bytes": 476004,
+      "path": "events/all.jsonl.gz",
+      "row_count": 7843,
+      "sha256": "4540112dde81752b76f62c4328d51bbc6debc0db029cebcc9a616aab186c3434"
+    },
+    "auras": {
+      "bytes": 66494,
+      "path": "events/auras.jsonl.gz",
+      "row_count": 1410,
+      "sha256": "8497db26dbf701405f3d0e497aad2d890102cdb2e0eab3ad62215672b1a4726d"
+    },
+    "casts": {
+      "bytes": 15782,
+      "path": "events/casts.jsonl.gz",
+      "row_count": 255,
+      "sha256": "f59cbda61fc2690331419256434f051c8888483e6716998f5efeeb98696ac6fa"
+    },
+    "damage": {
+      "bytes": 339579,
+      "path": "events/damage.jsonl.gz",
+      "row_count": 5511,
+      "sha256": "bbc0bfc12ce13f719f207b8ea8349df3bedaafd646ba0857a3bf08620bd1bd1a"
+    },
+    "deaths": {
+      "bytes": 20,
+      "path": "events/deaths.jsonl.gz",
+      "row_count": 0,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    },
+    "interrupts": {
+      "bytes": 323,
+      "path": "events/interrupts.jsonl.gz",
+      "row_count": 3,
+      "sha256": "1af586fbd64c63274e4f523f54fa76bda67db4a29a105c2c27cba03f3af0889f"
+    },
+    "other": {
+      "bytes": 2418,
+      "path": "events/other.jsonl.gz",
+      "row_count": 44,
+      "sha256": "da05d51b1631ab13569fd9457f3e78a27745335829d17a234f0cc38e324ca209"
+    },
+    "resources": {
+      "bytes": 394452,
+      "path": "events/resources.jsonl.gz",
+      "row_count": 6316,
+      "sha256": "cf0c49ab2f6e4783c504144b6ada889ea8786978aac8d48140cc4e857225ba51"
+    },
+    "summons": {
+      "bytes": 20,
+      "path": "events/summons.jsonl.gz",
+      "row_count": 0,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
+    }
+  }
+}

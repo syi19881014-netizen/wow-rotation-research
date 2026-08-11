@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/syi19881014-netizen/wow-rotation-research/blob/main/schemas/report-sample-manifest.schema.json",
+  "title": "WCL report event sample manifest",
+  "type": "object",
+  "required": ["schema_version", "collected_at_utc", "collector", "source", "identity", "report_versions", "fight", "sample_window", "completeness", "tables", "metadata", "limitations", "privacy", "secrets_exposed"],
+  "properties": {
+    "schema_version": {"const": "wcl.report-sample-manifest.v1"},
+    "collected_at_utc": {"type": "string"},
+    "collector": {"type": "object"},
+    "source": {"type": "object"},
+    "identity": {
+      "type": "object",
+      "required": ["source_id", "owned_actor_ids", "resolution"]
+    },
+    "report_versions": {"type": "object"},
+    "fight": {"type": "object"},
+    "sample_window": {
+      "type": "object",
+      "required": ["kind", "start_time", "end_time", "full_fight_covered"],
+      "properties": {
+        "kind": {"enum": ["fight", "dungeon_pull"]},
+        "start_time": {"type": "number"},
+        "end_time": {"type": "number"},
+        "full_fight_covered": {"type": "boolean"}
+      }
+    },
+    "completeness": {
+      "type": "object",
+      "required": ["complete", "scope", "full_fight_covered", "stream_count", "raw_stream_event_count", "unique_event_count", "streams"],
+      "properties": {
+        "complete": {"type": "boolean"},
+        "scope": {"const": "selected_window"},
+        "full_fight_covered": {"type": "boolean"},
+        "stream_count": {"type": "integer", "minimum": 1},
+        "raw_stream_event_count": {"type": "integer", "minimum": 0},
+        "unique_event_count": {"type": "integer", "minimum": 0},
+        "streams": {"type": "array", "minItems": 1}
+      }
+    },
+    "tables": {
+      "type": "object",
+      "required": ["all", "casts", "auras", "resources", "damage", "summons", "interrupts", "deaths", "other"]
+    },
+    "metadata": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "privacy": {
+      "type": "object",
+      "required": ["player_names_redacted", "player_servers_redacted", "player_game_ids_redacted", "report_actor_ids_preserved"]
+    },
+    "secrets_exposed": {"const": false}
+  }
+}
