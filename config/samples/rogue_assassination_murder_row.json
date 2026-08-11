@@ -40,11 +40,14 @@
       136026, 136881, 137065, 137066, 137067
     ]
   },
+  "sample_window": {
+    "kind": "dungeon_pull",
+    "index": 0
+  },
   "collection": {
-    "include_actor_target_events": true,
     "include_owned_pet_source_events": true,
-    "include_owned_pet_target_events": false,
     "include_resources": true,
+    "target_event_types": ["Buffs", "Debuffs", "Deaths"],
     "event_page_limit": 10000,
     "max_pages_per_stream": 200,
     "rate_limit_reserve_points": 100

@@ -14,6 +14,7 @@ from wcl_collect_report_sample import (  # noqa: E402
     merge_and_classify_events,
     resolve_actor,
     sanitize_player_data,
+    select_sample_window,
     validate_config,
 )
 
@@ -116,6 +117,7 @@ class ReportSampleTests(unittest.TestCase):
             stream_name="source:7",
             source_id=7,
             target_id=None,
+            data_type="All",
             include_resources=True,
             page_limit=10000,
             max_pages=4,
@@ -125,6 +127,31 @@ class ReportSampleTests(unittest.TestCase):
         self.assertTrue(manifest["complete"])
         self.assertEqual(manifest["page_count"], 2)
         self.assertEqual([call["startTime"] for call in client.calls], [0.0, 15.0])
+        self.assertEqual([call["dataType"] for call in client.calls], ["All", "All"])
+
+    def test_selects_exact_dungeon_pull_window(self):
+        window = select_sample_window(
+            {
+                "id": 2,
+                "name": "Dungeon",
+                "startTime": 0,
+                "endTime": 1000,
+                "dungeonPulls": [
+                    {
+                        "id": 9,
+                        "encounterID": 42,
+                        "name": "Pull 1",
+                        "startTime": 100,
+                        "endTime": 350,
+                    }
+                ],
+            },
+            {"kind": "dungeon_pull", "index": 0},
+        )
+        self.assertEqual(window["start_time"], 100.0)
+        self.assertEqual(window["end_time"], 350.0)
+        self.assertEqual(window["duration_ms"], 250.0)
+        self.assertFalse(window["full_fight_covered"])
 
     def test_deduplicates_streams_and_builds_overlapping_tables(self):
         event = {

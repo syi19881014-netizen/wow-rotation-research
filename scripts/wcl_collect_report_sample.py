@@ -143,6 +143,7 @@ query ReportActorEvents(
   $fightIDs: [Int]!
   $startTime: Float!
   $endTime: Float!
+  $dataType: EventDataType!
   $sourceID: Int
   $targetID: Int
   $includeResources: Boolean!
@@ -153,7 +154,7 @@ query ReportActorEvents(
     report(code: $code) {
       revision
       events(
-        dataType: All
+        dataType: $dataType
         fightIDs: $fightIDs
         startTime: $startTime
         endTime: $endTime
@@ -194,6 +195,38 @@ def validate_config(config: dict[str, Any]) -> None:
             raise ValueError(f"ranking.{field} is required")
     if not isinstance(collection, dict):
         raise ValueError("collection must be an object")
+    sample_window = config.get("sample_window") or {"kind": "fight"}
+    if not isinstance(sample_window, dict) or sample_window.get("kind") not in {
+        "fight",
+        "dungeon_pull",
+    }:
+        raise ValueError("sample_window.kind must be fight or dungeon_pull")
+    if sample_window.get("kind") == "dungeon_pull" and (
+        not isinstance(sample_window.get("index"), int)
+        or sample_window["index"] < 0
+    ):
+        raise ValueError("dungeon_pull sample_window requires a non-negative index")
+    allowed_event_types = {
+        "All",
+        "Buffs",
+        "Casts",
+        "CombatantInfo",
+        "DamageDone",
+        "DamageTaken",
+        "Deaths",
+        "Debuffs",
+        "Dispels",
+        "Healing",
+        "Interrupts",
+        "Resources",
+        "Summons",
+        "Threat",
+    }
+    target_event_types = collection.get("target_event_types", [])
+    if not isinstance(target_event_types, list) or any(
+        value not in allowed_event_types for value in target_event_types
+    ):
+        raise ValueError("collection.target_event_types contains an invalid EventDataType")
     limit = collection.get("event_page_limit", 10000)
     max_pages = collection.get("max_pages_per_stream", 200)
     if not isinstance(limit, int) or not 100 <= limit <= 10000:
@@ -363,6 +396,7 @@ def collect_event_stream(
     fight_start: float,
     fight_end: float,
     stream_name: str,
+    data_type: str,
     source_id: int | None,
     target_id: int | None,
     include_resources: bool,
@@ -387,6 +421,7 @@ def collect_event_stream(
             "fightIDs": [fight_id],
             "startTime": start,
             "endTime": float(fight_end),
+            "dataType": data_type,
             "sourceID": source_id,
             "targetID": target_id,
             "includeResources": include_resources,
@@ -422,6 +457,8 @@ def collect_event_stream(
                 "name": stream_name,
                 "source_id": source_id,
                 "target_id": target_id,
+                "data_type": data_type,
+                "include_resources": include_resources,
                 "complete": True,
                 "page_count": len(pages),
                 "raw_event_count": len(events),
@@ -441,6 +478,40 @@ def collect_event_stream(
     raise WCLRequestError(
         f"event stream {stream_name} exceeded max_pages_per_stream={max_pages}"
     )
+
+
+def select_sample_window(
+    fight: dict[str, Any], selection: dict[str, Any] | None
+) -> dict[str, Any]:
+    selection = selection or {"kind": "fight"}
+    kind = selection.get("kind", "fight")
+    if kind == "fight":
+        return {
+            "kind": "fight",
+            "id": fight.get("id"),
+            "name": fight.get("name"),
+            "start_time": float(fight["startTime"]),
+            "end_time": float(fight["endTime"]),
+            "full_fight_covered": True,
+        }
+    pulls = fight.get("dungeonPulls") or []
+    index = selection.get("index")
+    if not isinstance(index, int) or index < 0 or index >= len(pulls):
+        raise ValueError(
+            f"dungeon pull index {index!r} is outside available range 0..{len(pulls)-1}"
+        )
+    pull = pulls[index]
+    return {
+        "kind": "dungeon_pull",
+        "index": index,
+        "id": pull.get("id"),
+        "encounter_id": pull.get("encounterID"),
+        "name": pull.get("name"),
+        "start_time": float(pull["startTime"]),
+        "end_time": float(pull["endTime"]),
+        "duration_ms": float(pull["endTime"]) - float(pull["startTime"]),
+        "full_fight_covered": False,
+    }
 
 
 def _contains_resource_payload(event: dict[str, Any]) -> bool:
@@ -614,6 +685,7 @@ def write_sample(
     config: dict[str, Any],
     report: dict[str, Any],
     fight: dict[str, Any],
+    sample_window: dict[str, Any],
     actor_resolution: dict[str, Any],
     talent_import_code: str | None,
     streams: list[tuple[str, list[dict[str, Any]]]],
@@ -661,6 +733,7 @@ def write_sample(
         )
         report_header["source_id"] = source_id
         report_header["talent_import_code"] = talent_import_code
+        report_header["sample_window"] = sample_window
 
         metadata_dir = staged / "metadata"
         write_json(metadata_dir / "report.json", report_header)
@@ -739,8 +812,11 @@ def write_sample(
                 "game_zone": fight.get("gameZone"),
                 "dungeon_pull_count": len(fight.get("dungeonPulls") or []),
             },
+            "sample_window": sample_window,
             "completeness": {
                 "complete": all(item["complete"] for item in stream_manifests),
+                "scope": "selected_window",
+                "full_fight_covered": sample_window["full_fight_covered"],
                 "stream_count": len(stream_manifests),
                 "raw_stream_event_count": sum(
                     item["raw_event_count"] for item in stream_manifests
@@ -768,6 +844,7 @@ def write_sample(
                 "This is an L5 event sample, not an L6 per-GCD decision-state reconstruction.",
                 "Cooldown and charge state must be derived from spell data and the event sequence.",
                 "Cast cancellation and channel clipping must be inferred from begin/cast/interrupt timing.",
+                "Event completeness applies to the selected window, not necessarily the full fight.",
                 "Warcraft Logs documents report events as mutable data; report revision is pinned here.",
             ],
             "privacy": {
@@ -849,6 +926,7 @@ def main() -> int:
             explicit_source_id=args.source_id,
         )
         source_id = int(resolution["source_id"])
+        sample_window = select_sample_window(fight, config.get("sample_window"))
 
         talent_response = client.query(
             TALENT_QUERY,
@@ -871,30 +949,54 @@ def main() -> int:
             and item.get("petOwner") == source_id
             and normalize(item.get("type")) == "pet"
         ]
-        stream_specs: list[tuple[str, int | None, int | None]] = [
-            (f"source:{source_id}", source_id, None)
+        stream_specs: list[
+            tuple[str, int | None, int | None, str, bool]
+        ] = [
+            (
+                f"source:{source_id}:All",
+                source_id,
+                None,
+                "All",
+                bool(collection.get("include_resources", True)),
+            )
         ]
-        if collection.get("include_actor_target_events", True):
-            stream_specs.append((f"target:{source_id}", None, source_id))
+        stream_specs.extend(
+            (f"target:{source_id}:{data_type}", None, source_id, data_type, False)
+            for data_type in collection.get("target_event_types", [])
+        )
         if collection.get("include_owned_pet_source_events", True):
-            stream_specs.extend((f"source:{pet_id}", pet_id, None) for pet_id in owned_pets)
-        if collection.get("include_owned_pet_target_events", False):
-            stream_specs.extend((f"target:{pet_id}", None, pet_id) for pet_id in owned_pets)
+            stream_specs.extend(
+                (
+                    f"source:{pet_id}:All",
+                    pet_id,
+                    None,
+                    "All",
+                    bool(collection.get("include_resources", True)),
+                )
+                for pet_id in owned_pets
+            )
 
         streams: list[tuple[str, list[dict[str, Any]]]] = []
         stream_manifests: list[dict[str, Any]] = []
-        for stream_name, stream_source, stream_target in stream_specs:
+        for (
+            stream_name,
+            stream_source,
+            stream_target,
+            data_type,
+            include_resources,
+        ) in stream_specs:
             print(f"collecting {stream_name}", flush=True)
             events, stream_manifest = collect_event_stream(
                 client,
                 report_code=report_code,
                 fight_id=fight_id,
-                fight_start=float(fight["startTime"]),
-                fight_end=float(fight["endTime"]),
+                fight_start=sample_window["start_time"],
+                fight_end=sample_window["end_time"],
                 stream_name=stream_name,
                 source_id=stream_source,
                 target_id=stream_target,
-                include_resources=bool(collection.get("include_resources", True)),
+                data_type=data_type,
+                include_resources=include_resources,
                 page_limit=int(collection.get("event_page_limit", 10000)),
                 max_pages=int(collection.get("max_pages_per_stream", 200)),
                 reserve_points=float(collection.get("rate_limit_reserve_points", 100)),
@@ -907,6 +1009,7 @@ def main() -> int:
             config=config,
             report=report,
             fight=fight,
+            sample_window=sample_window,
             actor_resolution=resolution,
             talent_import_code=talent_import_code,
             streams=streams,

@@ -20,7 +20,8 @@ ranking pointer
 
 `scripts/wcl_collect_report_sample.py` follows every `nextPageTimestamp`, pins report
 revision and game/log versions, records query hashes and checksums, and refuses to publish
-an incomplete stream. It writes only a bounded compressed sample under `data/samples/`.
+an incomplete stream. It writes only the configured fight or dungeon-pull window as a
+bounded compressed sample under `data/samples/`.
 Player names, realms and stable game IDs are redacted before a sample is committed; only
 report-local actor IDs needed to join events are preserved.
 
