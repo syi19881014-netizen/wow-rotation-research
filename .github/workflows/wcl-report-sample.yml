@@ -1,0 +1,64 @@
+name: WCL Report Event Sample
+
+on:
+  workflow_dispatch:
+    inputs:
+      sample_config:
+        description: "Path to a checked-in sample pointer"
+        required: false
+        default: "config/samples/rogue_assassination_murder_row.json"
+      source_id:
+        description: "Optional explicit report actor ID"
+        required: false
+  push:
+    branches:
+      - "agent/**"
+    paths:
+      - "config/samples/**"
+      - "scripts/wcl_common.py"
+      - "scripts/wcl_collect_report_sample.py"
+      - ".github/workflows/wcl-report-sample.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wcl-report-sample-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate collector
+        run: |
+          python3 -m compileall -q scripts tests
+          python3 -m unittest discover -s tests -v
+          python3 scripts/wcl_collect_report_sample.py --validate-only
+      - name: Collect report event sample
+        env:
+          WCL_CLIENT_ID: ${{ secrets.WCL_CLIENT_ID }}
+          WCL_CLIENT_SECRET: ${{ secrets.WCL_CLIENT_SECRET }}
+          INPUT_SAMPLE_CONFIG: ${{ inputs.sample_config }}
+          INPUT_SOURCE_ID: ${{ inputs.source_id }}
+        shell: bash
+        run: |
+          config="${INPUT_SAMPLE_CONFIG:-config/samples/rogue_assassination_murder_row.json}"
+          args=(--config "$config" --output data/samples)
+          if [[ -n "$INPUT_SOURCE_ID" ]]; then args+=(--source-id "$INPUT_SOURCE_ID"); fi
+          python3 scripts/wcl_collect_report_sample.py "${args[@]}"
+      - name: Save bounded sample
+        shell: bash
+        run: |
+          git config user.name "wcl-research-bot"
+          git config user.email "wcl-research-bot@users.noreply.github.com"
+          git add data/samples
+          if git diff --cached --quiet; then
+            echo "No sample changes to commit."
+            exit 0
+          fi
+          git commit -m "Update WCL report event sample"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
