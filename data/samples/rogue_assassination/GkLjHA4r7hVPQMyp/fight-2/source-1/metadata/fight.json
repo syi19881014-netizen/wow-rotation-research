@@ -1,0 +1,1125 @@
+{
+  "averageItemLevel": 334,
+  "bossPercentage": 0,
+  "difficulty": 10,
+  "dungeonPulls": [
+    {
+      "encounterID": 0,
+      "endTime": 2627837,
+      "enemyNPCs": [
+        {
+          "gameID": 252529,
+          "id": 97,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236071,
+          "id": 100,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236085,
+          "id": 90,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 18,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236084,
+          "id": 89,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 9,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236073,
+          "id": 99,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 1,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2433
+        }
+      ],
+      "name": "Bribed Captain",
+      "startTime": 2569254,
+      "x": 487222,
+      "y": 875762
+    },
+    {
+      "encounterID": 0,
+      "endTime": 2695544,
+      "enemyNPCs": [
+        {
+          "gameID": 236082,
+          "id": 103,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236071,
+          "id": 100,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 2
+        },
+        {
+          "gameID": 236085,
+          "id": 90,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 6,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 3
+        },
+        {
+          "gameID": 236084,
+          "id": 89,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 4,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 3
+        },
+        {
+          "gameID": 255604,
+          "id": 102,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236073,
+          "id": 99,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 4,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 3
+        }
+      ],
+      "id": 2,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2433
+        }
+      ],
+      "name": "Bribed Guard",
+      "startTime": 2635449,
+      "x": 492076,
+      "y": 876345
+    },
+    {
+      "encounterID": 0,
+      "endTime": 2798531,
+      "enemyNPCs": [
+        {
+          "gameID": 236902,
+          "id": 96,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236085,
+          "id": 90,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 12,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 7
+        },
+        {
+          "gameID": 236084,
+          "id": 89,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 7,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 5
+        },
+        {
+          "gameID": 236091,
+          "id": 93,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 6,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 3
+        },
+        {
+          "gameID": 236073,
+          "id": 99,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 8,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 5
+        },
+        {
+          "gameID": 253324,
+          "id": 106,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 8,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 3,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2433
+        }
+      ],
+      "name": "Massive Felwyrm",
+      "startTime": 2713020,
+      "x": 484625,
+      "y": 876359
+    },
+    {
+      "encounterID": 0,
+      "endTime": 2879631,
+      "enemyNPCs": [
+        {
+          "gameID": 236091,
+          "id": 93,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236073,
+          "id": 99,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 10,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 9
+        }
+      ],
+      "id": 4,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2433
+        }
+      ],
+      "name": "Street Sneak",
+      "startTime": 2862808,
+      "x": 487818,
+      "y": 877481
+    },
+    {
+      "encounterID": 3101,
+      "endTime": 3039673,
+      "enemyNPCs": [
+        {
+          "gameID": 234660,
+          "id": 88,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236091,
+          "id": 93,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 255050,
+          "id": 108,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 20,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236073,
+          "id": 99,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 10,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 9
+        },
+        {
+          "gameID": 234648,
+          "id": 87,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 5,
+      "kill": true,
+      "maps": [
+        {
+          "id": 2433
+        }
+      ],
+      "name": "Kystia Manaheart",
+      "startTime": 2879707,
+      "x": 485085,
+      "y": 885857
+    },
+    {
+      "encounterID": 0,
+      "endTime": 3095991,
+      "enemyNPCs": [
+        {
+          "gameID": 253081,
+          "id": 116,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 2
+        }
+      ],
+      "id": 7,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2435
+        }
+      ],
+      "name": "Influentual Reviewer",
+      "startTime": 3095464,
+      "x": 481542,
+      "y": 894486
+    },
+    {
+      "encounterID": 0,
+      "endTime": 3109054,
+      "enemyNPCs": [
+        {
+          "gameID": 253081,
+          "id": 116,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 4,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 3
+        }
+      ],
+      "id": 8,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2435
+        }
+      ],
+      "name": "Influentual Reviewer",
+      "startTime": 3108047,
+      "x": 481892,
+      "y": 895229
+    },
+    {
+      "encounterID": 0,
+      "endTime": 3152199,
+      "enemyNPCs": [
+        {
+          "gameID": 236897,
+          "id": 118,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236893,
+          "id": 119,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 6,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 9,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2435
+        }
+      ],
+      "name": "Keen Taskmaster",
+      "startTime": 3135258,
+      "x": 475839,
+      "y": 895761
+    },
+    {
+      "encounterID": 3102,
+      "endTime": 3344328,
+      "enemyNPCs": [
+        {
+          "gameID": 236897,
+          "id": 118,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 234649,
+          "id": 120,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236893,
+          "id": 119,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 6,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 10,
+      "kill": true,
+      "maps": [
+        {
+          "id": 2435
+        }
+      ],
+      "name": "Zaen Bladesorrow",
+      "startTime": 3152202,
+      "x": 472966,
+      "y": 893862
+    },
+    {
+      "encounterID": 0,
+      "endTime": 3694922,
+      "enemyNPCs": [
+        {
+          "gameID": 235267,
+          "id": 129,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 7,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 236082,
+          "id": 103,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 2
+        },
+        {
+          "gameID": 234849,
+          "id": 126,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 3,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 235265,
+          "id": 132,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 235268,
+          "id": 128,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 5,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 255604,
+          "id": 102,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 2
+        },
+        {
+          "gameID": 235465,
+          "id": 127,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 2,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 235257,
+          "id": 131,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 20,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 235261,
+          "id": 94,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 8,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 11,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2434
+        }
+      ],
+      "name": "Shivan Punisher",
+      "startTime": 3377639,
+      "x": 490133,
+      "y": 891111
+    },
+    {
+      "encounterID": 3103,
+      "endTime": 3903910,
+      "enemyNPCs": [
+        {
+          "gameID": 235520,
+          "id": 135,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 4,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 234647,
+          "id": 134,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 12,
+      "kill": true,
+      "maps": [
+        {
+          "id": 2434
+        }
+      ],
+      "name": "Xathuux the Annihilator",
+      "startTime": 3707452,
+      "x": 503900,
+      "y": 862892
+    },
+    {
+      "encounterID": 0,
+      "endTime": 4096196,
+      "enemyNPCs": [
+        {
+          "gameID": 235267,
+          "id": 129,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 11,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 8
+        },
+        {
+          "gameID": 234849,
+          "id": 126,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 27,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 4
+        },
+        {
+          "gameID": 235265,
+          "id": 132,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 3,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 3
+        },
+        {
+          "gameID": 235268,
+          "id": 128,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 7,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 6
+        },
+        {
+          "gameID": 235261,
+          "id": 94,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 15,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 9
+        }
+      ],
+      "id": 13,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2434
+        }
+      ],
+      "name": "Corrupted Warlock",
+      "startTime": 3932944,
+      "x": 499172,
+      "y": 878936
+    },
+    {
+      "encounterID": 0,
+      "endTime": 4189439,
+      "enemyNPCs": [
+        {
+          "gameID": 235268,
+          "id": 128,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 9,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 8
+        },
+        {
+          "gameID": 235322,
+          "id": 136,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 235261,
+          "id": 94,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 15,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 14
+        }
+      ],
+      "id": 14,
+      "kill": false,
+      "maps": [
+        {
+          "id": 2434
+        }
+      ],
+      "name": "Defiled Golem",
+      "startTime": 4108923,
+      "x": 497745,
+      "y": 899987
+    },
+    {
+      "encounterID": 3105,
+      "endTime": 4436234,
+      "enemyNPCs": [
+        {
+          "gameID": 234763,
+          "id": 138,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 237626,
+          "id": 141,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 60,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        },
+        {
+          "gameID": 238414,
+          "id": 139,
+          "maximumInstanceGroupID": null,
+          "maximumInstanceID": 1,
+          "minimumInstanceGroupID": null,
+          "minimumInstanceID": 1
+        }
+      ],
+      "id": 15,
+      "kill": true,
+      "maps": [
+        {
+          "id": 2434
+        }
+      ],
+      "name": "Lithiel Cinderfury",
+      "startTime": 4218319,
+      "x": 494934,
+      "y": 913942
+    }
+  ],
+  "encounterID": 62813,
+  "endTime": 4436640,
+  "enemyNPCs": [
+    {
+      "gameID": 235267,
+      "groupCount": 5,
+      "id": 129,
+      "instanceCount": 13,
+      "petOwner": null
+    },
+    {
+      "gameID": 235265,
+      "groupCount": 3,
+      "id": 132,
+      "instanceCount": 3,
+      "petOwner": null
+    },
+    {
+      "gameID": 235520,
+      "groupCount": 4,
+      "id": 135,
+      "instanceCount": 4,
+      "petOwner": null
+    },
+    {
+      "gameID": 235268,
+      "groupCount": 5,
+      "id": 128,
+      "instanceCount": 9,
+      "petOwner": null
+    },
+    {
+      "gameID": 234763,
+      "groupCount": 1,
+      "id": 138,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 255050,
+      "groupCount": 4,
+      "id": 108,
+      "instanceCount": 20,
+      "petOwner": null
+    },
+    {
+      "gameID": 235465,
+      "groupCount": 2,
+      "id": 127,
+      "instanceCount": 2,
+      "petOwner": null
+    },
+    {
+      "gameID": 238414,
+      "groupCount": 2,
+      "id": 139,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 253324,
+      "groupCount": 1,
+      "id": 106,
+      "instanceCount": 8,
+      "petOwner": null
+    },
+    {
+      "gameID": 234647,
+      "groupCount": 1,
+      "id": 134,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 253081,
+      "groupCount": 2,
+      "id": 116,
+      "instanceCount": 4,
+      "petOwner": null
+    },
+    {
+      "gameID": 234649,
+      "groupCount": 1,
+      "id": 120,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 234648,
+      "groupCount": 2,
+      "id": 87,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 236893,
+      "groupCount": 1,
+      "id": 119,
+      "instanceCount": 6,
+      "petOwner": null
+    },
+    {
+      "gameID": 236897,
+      "groupCount": 1,
+      "id": 118,
+      "instanceCount": 2,
+      "petOwner": null
+    },
+    {
+      "gameID": 234849,
+      "groupCount": 5,
+      "id": 126,
+      "instanceCount": 27,
+      "petOwner": null
+    },
+    {
+      "gameID": 236071,
+      "groupCount": 2,
+      "id": 100,
+      "instanceCount": 2,
+      "petOwner": null
+    },
+    {
+      "gameID": 237415,
+      "groupCount": 3,
+      "id": 123,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 236902,
+      "groupCount": 2,
+      "id": 96,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 234660,
+      "groupCount": 2,
+      "id": 88,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 234852,
+      "groupCount": 6,
+      "id": 121,
+      "instanceCount": 28,
+      "petOwner": null
+    },
+    {
+      "gameID": 236905,
+      "groupCount": 3,
+      "id": 98,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 236073,
+      "groupCount": 4,
+      "id": 99,
+      "instanceCount": 10,
+      "petOwner": null
+    },
+    {
+      "gameID": 236525,
+      "groupCount": 1,
+      "id": 113,
+      "instanceCount": 6,
+      "petOwner": null
+    },
+    {
+      "gameID": 234860,
+      "groupCount": 9,
+      "id": 122,
+      "instanceCount": 8,
+      "petOwner": null
+    },
+    {
+      "gameID": 236082,
+      "groupCount": 2,
+      "id": 103,
+      "instanceCount": 2,
+      "petOwner": null
+    },
+    {
+      "gameID": 252529,
+      "groupCount": 3,
+      "id": 97,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 234359,
+      "groupCount": 1,
+      "id": 91,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 236085,
+      "groupCount": 5,
+      "id": 90,
+      "instanceCount": 18,
+      "petOwner": null
+    },
+    {
+      "gameID": 236084,
+      "groupCount": 4,
+      "id": 89,
+      "instanceCount": 9,
+      "petOwner": null
+    },
+    {
+      "gameID": 255604,
+      "groupCount": 2,
+      "id": 102,
+      "instanceCount": 2,
+      "petOwner": null
+    },
+    {
+      "gameID": 236091,
+      "groupCount": 3,
+      "id": 93,
+      "instanceCount": 6,
+      "petOwner": null
+    },
+    {
+      "gameID": 235322,
+      "groupCount": 1,
+      "id": 136,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 237626,
+      "groupCount": 4,
+      "id": 141,
+      "instanceCount": 60,
+      "petOwner": null
+    },
+    {
+      "gameID": 235257,
+      "groupCount": 2,
+      "id": 131,
+      "instanceCount": 20,
+      "petOwner": null
+    },
+    {
+      "gameID": 235261,
+      "groupCount": 11,
+      "id": 94,
+      "instanceCount": 15,
+      "petOwner": null
+    }
+  ],
+  "enemyPets": [
+    {
+      "gameID": 234799,
+      "groupCount": 0,
+      "id": 140,
+      "instanceCount": 4,
+      "petOwner": 138
+    }
+  ],
+  "enemyPlayers": [],
+  "fightPercentage": 100,
+  "friendlyItemLevels": [
+    334,
+    334,
+    334,
+    334,
+    334
+  ],
+  "friendlyNPCs": [
+    {
+      "gameID": 263940,
+      "groupCount": 3,
+      "id": 109,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 240289,
+      "groupCount": 3,
+      "id": 114,
+      "instanceCount": 3,
+      "petOwner": null
+    },
+    {
+      "gameID": 235841,
+      "groupCount": 2,
+      "id": 117,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 235850,
+      "groupCount": 3,
+      "id": 143,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 234984,
+      "groupCount": 1,
+      "id": 115,
+      "instanceCount": 11,
+      "petOwner": null
+    },
+    {
+      "gameID": 243247,
+      "groupCount": 1,
+      "id": 111,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 243249,
+      "groupCount": 1,
+      "id": 112,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 243248,
+      "groupCount": 1,
+      "id": 110,
+      "instanceCount": 1,
+      "petOwner": null
+    },
+    {
+      "gameID": 236089,
+      "groupCount": 1,
+      "id": 92,
+      "instanceCount": 1,
+      "petOwner": null
+    }
+  ],
+  "friendlyPets": [
+    {
+      "gameID": 63508,
+      "groupCount": 0,
+      "id": 17,
+      "instanceCount": 15,
+      "petOwner": 5
+    },
+    {
+      "gameID": 3527,
+      "groupCount": 0,
+      "id": 20,
+      "instanceCount": 58,
+      "petOwner": 3
+    },
+    {
+      "gameID": 27893,
+      "groupCount": 0,
+      "id": 7,
+      "instanceCount": 121,
+      "petOwner": 4
+    },
+    {
+      "gameID": 26125,
+      "groupCount": 0,
+      "id": 8,
+      "instanceCount": 15,
+      "petOwner": 4
+    },
+    {
+      "gameID": 53006,
+      "groupCount": 0,
+      "id": 24,
+      "instanceCount": 4,
+      "petOwner": 3
+    },
+    {
+      "gameID": 5923,
+      "groupCount": 0,
+      "id": 41,
+      "instanceCount": 1,
+      "petOwner": 3
+    },
+    {
+      "gameID": 256196,
+      "groupCount": 0,
+      "id": 27,
+      "instanceCount": 35,
+      "petOwner": 3
+    },
+    {
+      "gameID": 225409,
+      "groupCount": 0,
+      "id": 14,
+      "instanceCount": 57,
+      "petOwner": 3
+    },
+    {
+      "gameID": 61245,
+      "groupCount": 0,
+      "id": 30,
+      "instanceCount": 5,
+      "petOwner": 3
+    },
+    {
+      "gameID": 59764,
+      "groupCount": 0,
+      "id": 31,
+      "instanceCount": 6,
+      "petOwner": 3
+    }
+  ],
+  "friendlyPlayers": [
+    4,
+    5,
+    2,
+    3,
+    1
+  ],
+  "friendlySpecs": [
+    "Blood",
+    "Windwalker",
+    "Arms",
+    "Restoration",
+    "Assassination"
+  ],
+  "gameZone": {
+    "id": 2813,
+    "name": "Murder Row"
+  },
+  "hardModeLevel": null,
+  "id": 2,
+  "inProgress": false,
+  "keystoneBonus": 0,
+  "keystoneLevel": 19,
+  "keystoneTime": 1916977,
+  "kill": true,
+  "lastPhase": 0,
+  "lastPhaseAsAbsoluteIndex": 0,
+  "lastPhaseIsIntermission": false,
+  "maps": [
+    {
+      "id": 2433
+    },
+    {
+      "id": 2435
+    },
+    {
+      "id": 2434
+    }
+  ],
+  "name": "Murder Row",
+  "originalEncounterID": null,
+  "phaseTransitions": null,
+  "rating": 472.260009765625,
+  "size": 5,
+  "startTime": 2555953
+}
