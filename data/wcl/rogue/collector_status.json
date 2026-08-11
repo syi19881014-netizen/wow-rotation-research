@@ -1,0 +1,125 @@
+{
+  "ok": true,
+  "checked_at_utc": "2026-08-11T05:26:06Z",
+  "collector": "rogue_rankings_v0.2",
+  "specs": [
+    "Assassination",
+    "Outlaw",
+    "Subtlety"
+  ],
+  "secrets_exposed": false,
+  "stage": "complete",
+  "latest_expansion": {
+    "id": 7,
+    "name": "Midnight"
+  },
+  "selected_zone_with_data": {
+    "id": 56,
+    "name": "Mythic+ Season 2 (PTR)"
+  },
+  "found_nonempty_rankings": true,
+  "attempts": [
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 62993,
+      "encounter_name": "Altar of Fangs",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/62993.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 62825,
+      "encounter_name": "Den of Nalorakk",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/62825.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 111762,
+      "encounter_name": "King's Rest",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/111762.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 62813,
+      "encounter_name": "Murder Row",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/62813.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 162521,
+      "encounter_name": "Ruby Life Pools",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/162521.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 111877,
+      "encounter_name": "Temple of Sethraliss",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/111877.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 62859,
+      "encounter_name": "The Blinding Vale",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/62859.json"
+    },
+    {
+      "zone_id": 56,
+      "zone_name": "Mythic+ Season 2 (PTR)",
+      "encounter_id": 62923,
+      "encounter_name": "Voidscar Arena",
+      "nonempty_specs": [
+        "Assassination",
+        "Outlaw",
+        "Subtlety"
+      ],
+      "file": "data/wcl/rogue/rankings/56/62923.json"
+    }
+  ],
+  "rate_limit_after": {
+    "limitPerHour": 3600,
+    "pointsSpentThisHour": 26.89,
+    "pointsResetIn": 723
+  },
+  "message": "Rogue ranking data collected successfully."
+}
