@@ -1,292 +1,115 @@
 {
-  "collected_at_utc": "2026-08-11T07:54:09Z",
+  "collected_at_utc": "2026-08-11T08:04:40Z",
   "collector": {
-    "commit": "fb190e93c66bb9b2b02b900f558a45a097c67d31",
+    "commit": "796cbb0e4557cab1b49aa2a1e7cc82063b8797ed",
     "name": "wcl_report_event_sample",
     "version": "1.0.0"
   },
   "completeness": {
     "complete": true,
-    "raw_stream_event_count": 448154,
-    "stream_count": 2,
+    "full_fight_covered": false,
+    "raw_stream_event_count": 8239,
+    "scope": "selected_window",
+    "stream_count": 4,
     "streams": [
       {
         "complete": true,
-        "name": "source:1",
+        "data_type": "All",
+        "include_resources": true,
+        "name": "source:1:All",
         "page_count": 1,
         "pages": [
           {
-            "event_count": 109014,
+            "event_count": 7965,
             "next_page_timestamp": null,
             "page": 1,
             "report_revision": 22,
-            "start_time": 2555953.0
+            "start_time": 2569254.0
           }
         ],
         "rate_limit_after": {
           "limitPerHour": 3600,
-          "pointsResetIn": 3599,
-          "pointsSpentThisHour": 7.01
+          "pointsResetIn": 2924,
+          "pointsSpentThisHour": 51.14
         },
-        "raw_event_count": 109014,
+        "raw_event_count": 7965,
         "source_id": 1,
         "target_id": null
       },
       {
         "complete": true,
-        "name": "target:1",
-        "page_count": 34,
+        "data_type": "Buffs",
+        "include_resources": false,
+        "name": "target:1:Buffs",
+        "page_count": 1,
         "pages": [
           {
-            "event_count": 10004,
-            "next_page_timestamp": 2593325,
+            "event_count": 273,
+            "next_page_timestamp": null,
             "page": 1,
             "report_revision": 22,
-            "start_time": 2555953.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 2613076,
-            "page": 2,
-            "report_revision": 22,
-            "start_time": 2593325.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 2662681,
-            "page": 3,
-            "report_revision": 22,
-            "start_time": 2613076.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 2692639,
-            "page": 4,
-            "report_revision": 22,
-            "start_time": 2662681.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 2739478,
-            "page": 5,
-            "report_revision": 22,
-            "start_time": 2692639.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 2756888,
-            "page": 6,
-            "report_revision": 22,
-            "start_time": 2739478.0
-          },
-          {
-            "event_count": 10008,
-            "next_page_timestamp": 2776733,
-            "page": 7,
-            "report_revision": 22,
-            "start_time": 2756888.0
-          },
-          {
-            "event_count": 10002,
-            "next_page_timestamp": 2894035,
-            "page": 8,
-            "report_revision": 22,
-            "start_time": 2776733.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 2937686,
-            "page": 9,
-            "report_revision": 22,
-            "start_time": 2894035.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 3009843,
-            "page": 10,
-            "report_revision": 22,
-            "start_time": 2937686.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 3158968,
-            "page": 11,
-            "report_revision": 22,
-            "start_time": 3009843.0
-          },
-          {
-            "event_count": 10002,
-            "next_page_timestamp": 3187299,
-            "page": 12,
-            "report_revision": 22,
-            "start_time": 3158968.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 3263159,
-            "page": 13,
-            "report_revision": 22,
-            "start_time": 3187299.0
-          },
-          {
-            "event_count": 10001,
-            "next_page_timestamp": 3379869,
-            "page": 14,
-            "report_revision": 22,
-            "start_time": 3263159.0
-          },
-          {
-            "event_count": 10036,
-            "next_page_timestamp": 3427910,
-            "page": 15,
-            "report_revision": 22,
-            "start_time": 3379869.0
-          },
-          {
-            "event_count": 10001,
-            "next_page_timestamp": 3462485,
-            "page": 16,
-            "report_revision": 22,
-            "start_time": 3427910.0
-          },
-          {
-            "event_count": 10002,
-            "next_page_timestamp": 3504428,
-            "page": 17,
-            "report_revision": 22,
-            "start_time": 3462485.0
-          },
-          {
-            "event_count": 10042,
-            "next_page_timestamp": 3522755,
-            "page": 18,
-            "report_revision": 22,
-            "start_time": 3504428.0
-          },
-          {
-            "event_count": 10001,
-            "next_page_timestamp": 3575388,
-            "page": 19,
-            "report_revision": 22,
-            "start_time": 3522755.0
-          },
-          {
-            "event_count": 10008,
-            "next_page_timestamp": 3600582,
-            "page": 20,
-            "report_revision": 22,
-            "start_time": 3575388.0
-          },
-          {
-            "event_count": 10001,
-            "next_page_timestamp": 3634560,
-            "page": 21,
-            "report_revision": 22,
-            "start_time": 3600582.0
-          },
-          {
-            "event_count": 10004,
-            "next_page_timestamp": 3666383,
-            "page": 22,
-            "report_revision": 22,
-            "start_time": 3634560.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 3753869,
-            "page": 23,
-            "report_revision": 22,
-            "start_time": 3666383.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 3836313,
-            "page": 24,
-            "report_revision": 22,
-            "start_time": 3753869.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 3942114,
-            "page": 25,
-            "report_revision": 22,
-            "start_time": 3836313.0
-          },
-          {
-            "event_count": 10002,
-            "next_page_timestamp": 3973582,
-            "page": 26,
-            "report_revision": 22,
-            "start_time": 3942114.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 4024984,
-            "page": 27,
-            "report_revision": 22,
-            "start_time": 3973582.0
-          },
-          {
-            "event_count": 10012,
-            "next_page_timestamp": 4060752,
-            "page": 28,
-            "report_revision": 22,
-            "start_time": 4024984.0
-          },
-          {
-            "event_count": 10014,
-            "next_page_timestamp": 4120077,
-            "page": 29,
-            "report_revision": 22,
-            "start_time": 4060752.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 4170115,
-            "page": 30,
-            "report_revision": 22,
-            "start_time": 4120077.0
-          },
-          {
-            "event_count": 10000,
-            "next_page_timestamp": 4261295,
-            "page": 31,
-            "report_revision": 22,
-            "start_time": 4170115.0
-          },
-          {
-            "event_count": 10002,
-            "next_page_timestamp": 4322326,
-            "page": 32,
-            "report_revision": 22,
-            "start_time": 4261295.0
-          },
-          {
-            "event_count": 10001,
-            "next_page_timestamp": 4383756,
-            "page": 33,
-            "report_revision": 22,
-            "start_time": 4322326.0
-          },
-          {
-            "event_count": 8997,
-            "next_page_timestamp": null,
-            "page": 34,
-            "report_revision": 22,
-            "start_time": 4383756.0
+            "start_time": 2569254.0
           }
         ],
         "rate_limit_after": {
           "limitPerHour": 3600,
-          "pointsResetIn": 3581,
-          "pointsSpentThisHour": 42.13
+          "pointsResetIn": 2924,
+          "pointsSpentThisHour": 52.14
         },
-        "raw_event_count": 339140,
+        "raw_event_count": 273,
+        "source_id": null,
+        "target_id": 1
+      },
+      {
+        "complete": true,
+        "data_type": "Debuffs",
+        "include_resources": false,
+        "name": "target:1:Debuffs",
+        "page_count": 1,
+        "pages": [
+          {
+            "event_count": 1,
+            "next_page_timestamp": null,
+            "page": 1,
+            "report_revision": 22,
+            "start_time": 2569254.0
+          }
+        ],
+        "rate_limit_after": {
+          "limitPerHour": 3600,
+          "pointsResetIn": 2924,
+          "pointsSpentThisHour": 53.14
+        },
+        "raw_event_count": 1,
+        "source_id": null,
+        "target_id": 1
+      },
+      {
+        "complete": true,
+        "data_type": "Deaths",
+        "include_resources": false,
+        "name": "target:1:Deaths",
+        "page_count": 1,
+        "pages": [
+          {
+            "event_count": 0,
+            "next_page_timestamp": null,
+            "page": 1,
+            "report_revision": 22,
+            "start_time": 2569254.0
+          }
+        ],
+        "rate_limit_after": {
+          "limitPerHour": 3600,
+          "pointsResetIn": 2923,
+          "pointsSpentThisHour": 54.14
+        },
+        "raw_event_count": 0,
         "source_id": null,
         "target_id": 1
       }
     ],
-    "unique_event_count": 331236
+    "unique_event_count": 7843
   },
   "fight": {
     "difficulty": 10,
@@ -331,6 +154,7 @@
     "This is an L5 event sample, not an L6 per-GCD decision-state reconstruction.",
     "Cooldown and charge state must be derived from spell data and the event sequence.",
     "Cast cancellation and channel clipping must be inferred from begin/cast/interrupt timing.",
+    "Event completeness applies to the selected window, not necessarily the full fight.",
     "Warcraft Logs documents report events as mutable data; report revision is pinned here."
   ],
   "metadata": {
@@ -362,15 +186,15 @@
       "sha256": "ee94c6ce519c4aa0a83c54ca09ebb0a6c09729319e9586ac76f9d50fa157120d"
     },
     "report": {
-      "bytes": 533,
+      "bytes": 785,
       "path": "metadata/report.json",
-      "sha256": "0bf3065aaa25b1fcb574a0ddf2d9511bf841cd08f95b07a8773d09784496f158"
+      "sha256": "7ea77ae6dfb6c1bb9d150d959fa17d742c0f5d441f2256d149f7e7f338103871"
     },
     "targets": {
-      "bytes": 156397,
+      "bytes": 4081,
       "path": "derived/targets.json",
-      "row_count": 811,
-      "sha256": "ce9d2cb7b1ded81f003afbc97b38df37588e1a8d1c62832d5c0e9348335f18b3"
+      "row_count": 21,
+      "sha256": "25eba429e64fa788b74e00e5954998aaca375210492d0324dde1061744e8ed8c"
     }
   },
   "privacy": {
@@ -384,13 +208,24 @@
     "language": "en",
     "log_version": 17
   },
+  "sample_window": {
+    "duration_ms": 58583.0,
+    "encounter_id": 0,
+    "end_time": 2627837.0,
+    "full_fight_covered": false,
+    "id": 1,
+    "index": 0,
+    "kind": "dungeon_pull",
+    "name": "Bribed Captain",
+    "start_time": 2569254.0
+  },
   "schema_version": "wcl.report-sample-manifest.v1",
   "secrets_exposed": false,
   "source": {
     "api": "https://www.warcraftlogs.com/api/v2/client",
     "fight_id": 2,
     "query_sha256": {
-      "events": "947ad3945d69799a41b6ab4f3fdbc0cc0747ecc2509827c466f8fe8a141bc151",
+      "events": "caa0666115704e5f04adf8e5ed6b37e30f3f2690cd255cb04dfd5e2496785cb0",
       "metadata": "7aebb2c9d458129cd16f356881dfa83f8dc50f3c4cfd48b56f31aeb5b88e4e2f",
       "talent": "185005e8adf3c374a5f9018b6f2ffd3ccde84c7706ca7dd1a7ec6da93b2d630f"
     },
@@ -504,58 +339,58 @@
   },
   "tables": {
     "all": {
-      "bytes": 20896493,
+      "bytes": 476004,
       "path": "events/all.jsonl.gz",
-      "row_count": 331236,
-      "sha256": "f2bed27edc2eb6b27d52b24e303723f4aa94d3cc13e3f5333f28f79c32df5f9e"
+      "row_count": 7843,
+      "sha256": "4540112dde81752b76f62c4328d51bbc6debc0db029cebcc9a616aab186c3434"
     },
     "auras": {
-      "bytes": 5308893,
+      "bytes": 66494,
       "path": "events/auras.jsonl.gz",
-      "row_count": 109674,
-      "sha256": "ed96aba38e68dc6992f21ff81521a1c5f2a5ac62bda52e182a39a52e1fb6f5ac"
+      "row_count": 1410,
+      "sha256": "8497db26dbf701405f3d0e497aad2d890102cdb2e0eab3ad62215672b1a4726d"
     },
     "casts": {
-      "bytes": 1365851,
+      "bytes": 15782,
       "path": "events/casts.jsonl.gz",
-      "row_count": 21275,
-      "sha256": "c3151072c3b262d3d2e4c3f3f78bd93fbe21cac29ed48e971c16edef5516f54b"
+      "row_count": 255,
+      "sha256": "f59cbda61fc2690331419256434f051c8888483e6716998f5efeeb98696ac6fa"
     },
     "damage": {
-      "bytes": 9803232,
+      "bytes": 339579,
       "path": "events/damage.jsonl.gz",
-      "row_count": 148617,
-      "sha256": "2ae50f8a14601a67f050def316d06fc21f1f878a43a2a7e0b77cfc1029cb4ba9"
+      "row_count": 5511,
+      "sha256": "bbc0bfc12ce13f719f207b8ea8349df3bedaafd646ba0857a3bf08620bd1bd1a"
     },
     "deaths": {
-      "bytes": 9515,
+      "bytes": 20,
       "path": "events/deaths.jsonl.gz",
-      "row_count": 183,
-      "sha256": "7d44a5ab39be375151fdd62186b568503b73f7c8de63d43889cd600a95d553fa"
+      "row_count": 0,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
     },
     "interrupts": {
-      "bytes": 5595,
+      "bytes": 323,
       "path": "events/interrupts.jsonl.gz",
-      "row_count": 105,
-      "sha256": "30afa255f0e5a7825fbba399bf8ba1f776724f451eaf65d7ef89743693d4e1d4"
+      "row_count": 3,
+      "sha256": "1af586fbd64c63274e4f523f54fa76bda67db4a29a105c2c27cba03f3af0889f"
     },
     "other": {
-      "bytes": 396793,
+      "bytes": 2418,
       "path": "events/other.jsonl.gz",
-      "row_count": 7111,
-      "sha256": "1e1aa0e1c610f8a499f5d8fae63d06d08026dda8000e2e54b09c148b361bd954"
+      "row_count": 44,
+      "sha256": "da05d51b1631ab13569fd9457f3e78a27745335829d17a234f0cc38e324ca209"
     },
     "resources": {
-      "bytes": 14000480,
+      "bytes": 394452,
       "path": "events/resources.jsonl.gz",
-      "row_count": 204947,
-      "sha256": "ec57d3aba68b2750a6eea880b12ee1c5913a5ea4fb1e5e4fe8f5929f9e7ebc00"
+      "row_count": 6316,
+      "sha256": "cf0c49ab2f6e4783c504144b6ada889ea8786978aac8d48140cc4e857225ba51"
     },
     "summons": {
-      "bytes": 26298,
+      "bytes": 20,
       "path": "events/summons.jsonl.gz",
-      "row_count": 533,
-      "sha256": "e21face3b5ebab10a03bd1b1c9be7618137b330a9b2a43f9874e3c26c96acee4"
+      "row_count": 0,
+      "sha256": "f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec"
     }
   }
 }
