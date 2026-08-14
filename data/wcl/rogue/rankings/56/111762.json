@@ -1,5 +1,5 @@
 {
-  "collected_at_utc": "2026-08-14T15:10:31Z",
+  "collected_at_utc": "2026-08-14T20:04:09Z",
   "expansion": {
     "id": 7,
     "name": "Midnight"
@@ -36660,8 +36660,143 @@
     "Subtlety": {
       "page": 1,
       "hasMorePages": false,
-      "count": 16,
+      "count": 17,
       "rankings": [
+        {
+          "name": "Character 139453111-11670704",
+          "class": "Rogue",
+          "spec": "Subtlety",
+          "amount": -359999536.35998535,
+          "hardModeLevel": 18,
+          "duration": 1523576,
+          "startTime": 1786726741800,
+          "report": {
+            "code": "X8Bn6qyLFChfgzwQ",
+            "fightID": 18,
+            "startTime": 1786715663472
+          },
+          "bracketData": 18,
+          "faction": 0,
+          "affixes": [
+            9,
+            10,
+            147
+          ],
+          "medal": "none",
+          "score": 463.64001464844,
+          "leaderboard": 0,
+          "talents": [],
+          "gear": [
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            }
+          ]
+        },
         {
           "name": "Character 138992492-17070614",
           "class": "Rogue",
@@ -46323,6 +46458,6 @@
   "rate_limit_after_query": {
     "limitPerHour": 3600,
     "pointsSpentThisHour": 10.79,
-    "pointsResetIn": 3598
+    "pointsResetIn": 3599
   }
 }
