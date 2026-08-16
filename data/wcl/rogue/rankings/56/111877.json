@@ -1,5 +1,5 @@
 {
-  "collected_at_utc": "2026-08-16T07:48:20Z",
+  "collected_at_utc": "2026-08-16T13:46:55Z",
   "expansion": {
     "id": 7,
     "name": "Midnight"
@@ -34674,6 +34674,6 @@
   "rate_limit_after_query": {
     "limitPerHour": 3600,
     "pointsSpentThisHour": 19.85,
-    "pointsResetIn": 3597
+    "pointsResetIn": 3596
   }
 }
