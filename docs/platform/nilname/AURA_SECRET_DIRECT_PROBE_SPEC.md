@@ -1,230 +1,347 @@
-# NilName 12.1 Aura Secret Direct-Path Probe Spec
+# NilName 12.1 Aura Capability Probe Spec
 
-> 状态：SPEC ONLY — 不代表 runtime confirmed  
-> 日期：2026-08-17
+> Status: SPEC ONLY — not runtime confirmed  
+> Updated: 2026-08-17 after the Curse of Ula'tek Aura-refactor audit
 
-## 目标
+## Goal
 
-验证 BadRotations 公共 NN adapter 暴露出的关键线索是否在用户当前 NilName + WoW 12.1 环境中成立：
+Determine which Aura access paths actually work in the user's **current WoW 12.1 + NilName build**.
 
-- `C_Timer.Nn`
-- `issecretvalue`
-- `secretunwrap`
-- `C_UnitAuras` index-based AuraData direct path
-- `C_Spell` secret-sensitive return values
-- `CombatLogGetCurrentEventInfo()` secret-sensitive return values
+This spec no longer assumes that the pre-12.1 BadRotations path (`GetAuraDataByIndex -> secretunwrap`) survives the 12.1 Aura refactor. Blizzard changed the Aura interface model, and current ordinary-addon implementations show that index/slot/auraInstanceID reads may hard-error while Auras are secret.
 
-第一版 Probe **不自动施法、不做职业循环、不加载 Sirus、不依赖 PrimeKit**。
+The probe must establish a capability matrix for:
 
-## 环境要求
+```text
+ordinary WoW execution
+vs
+NilName privileged execution
+vs
+any NN-native Aura provider discovered at runtime
+```
 
-1. `_PrimeKitCore.nn` 暂时移出 `/scripts/` 或禁用自动加载。
-2. 只加载 Probe 本身。
-3. 记录 NilName build / WoW build / locale / spec。
-4. 测试分为脱战与战斗两个阶段。
+First version is read-only: **no automatic casting, no profession rotation, no Sirus Core, no PrimeKit dependency, no raw ObjectField offsets**.
 
-## Gate A — Runtime namespace discovery
+## Environment
 
-只检查存在性与 `type()`，禁止猜调用：
+1. Temporarily move/disable `_PrimeKitCore.nn` so it cannot auto-load.
+2. Load only the probe.
+3. Record WoW build, locale, specialization and any safely available NilName build/version identifier.
+4. Run out-of-combat and in-combat/restricted phases.
+5. Use `pcall/xpcall` around every call that may hard-error.
+6. Never concatenate, compare or perform arithmetic on a value until Secret behavior is known.
 
+## Phase A — Runtime namespace discovery
+
+Check only existence/type first:
+
+- script vararg `nn = ...`
 - `C_Timer`
 - `C_Timer.Nn`
 - `C_Timer.Nn.issecretvalue`
 - `C_Timer.Nn.secretunwrap`
-- 当前 script vararg `nn = ...`
+- `_G.issecretvalue` / other already-present official Secret detector locations if exposed by the current client
 
-输出：
+Also enumerate the **names** of safe NilName runtime namespaces/tables looking for explicit Aura-related providers/helpers. Do not guess signatures or invoke unknown functions simply because their name contains `Aura`.
+
+Output example:
 
 ```text
-[AURA_PROBE] namespace C_Timer.Nn type=...
-[AURA_PROBE] symbol issecretvalue type=...
-[AURA_PROBE] symbol secretunwrap type=...
+[NN12_AURA] phase=A symbol=C_Timer.Nn type=table
+[NN12_AURA] phase=A symbol=secretunwrap type=function
+[NN12_AURA] phase=A discovered_namespace=<name> type=<type>
 ```
 
-若 `secretunwrap` 不存在，停止 Direct-Path 分支，转入普通 Secret 行为测量；不要发明替代 API。
+## Phase B — Restriction-state baseline
 
-## Gate B — Safe normal-value behavior
+If available, record the current Aura restriction state using the game-provided restriction/Secret API (for example a current `C_Secrets` capability), protected by `pcall`.
 
-目的：确认 helper 对普通 Lua 值的行为，不先碰 Aura。
+Run each meaningful Aura test twice:
 
-测试输入：
+```text
+state=OUT_OF_COMBAT_OR_UNRESTRICTED
+state=IN_COMBAT_OR_RESTRICTED
+```
 
-- nil
-- false/true
-- integer
-- float
-- string
+Do not assume `InCombatLockdown()` and Aura secrecy are identical; record both if available.
 
-只在明确不会导致 fatal error 的前提下逐项 protected-call。
+## Phase C — Ordinary WoW Aura API control group
 
-记录：
+The control group establishes what ordinary addon execution can do in this exact build.
 
-- `issecretvalue(normal)` 返回 shape
-- `secretunwrap(normal)` 是 no-op、报错还是其他行为
+### C1. Index/enumeration family
 
-所有调用必须 `pcall/xpcall` 隔离。
+Probe existence and call behavior for currently present APIs such as:
 
-## Gate C — Player Aura direct path
+- `C_UnitAuras.GetAuraDataByIndex`
+- `C_UnitAuras.GetAuraDataBySlot`
+- `C_UnitAuras.GetAuraDataByAuraInstanceID`
+- Aura-slot enumeration APIs if present
 
-选择人为可触发、容易观察的 player buff。Probe 不负责施放，用户手动触发。
+Expected from public 12.1 addon evidence: some/all of these may hard-error while Auras are secret. Record the error; that is a useful result, not a probe failure.
 
-对同一个 AuraData 记录：
+### C2. Identifier family
 
-- table 是否返回
-- 每个关键 field 的 `type`
-- `issecretvalue(field)`
-- 若为 secret，`secretunwrap(field)` 后的 `type` 与值
-- unwrap 后能否：
-  - `==`
-  - `< / >`
-  - `- GetTime()`
-  - 存入普通 table
+Probe currently present APIs such as:
 
-关键 fields：
+- `C_UnitAuras.GetUnitAuraBySpellID`
+- `C_UnitAuras.GetAuraDataBySpellName`
+
+Do not assume these return all Auras. Record whether a known Aura is:
+
+- returned as a table;
+- absent/nil;
+- returned with Secret fields;
+- usable only when Blizzard marks that Aura non-secret.
+
+### C3. Field matrix
+
+For every returned AuraData table, inspect these fields safely if present:
 
 - `spellId`
+- `name`
 - `applications`
 - `duration`
 - `expirationTime`
 - `sourceUnit`
 - `isHelpful`
 - `isHarmful`
-- `points`
+- `dispelName`
+- `isStealable`
+- `auraInstanceID`
+- `points` / nested value fields
 
-禁止把 secret value 直接拼接进字符串或做算术；必须先通过安全检测。
+For each field record `type`, Secret status, and whether it can be consumed by ordinary Lua logic.
 
-## Gate D — Target / harmful Aura
+## Phase D — NilName privileged execution of the same calls
 
-用户手动给训练假人施加一个可识别 debuff。
+Repeat Phase C through the actual NilName privileged environment/calling convention confirmed by runtime discovery.
 
-重复 Gate C，同时验证：
+Important: do not assume `Unlock(C_UnitAuras...)` is equivalent to executing inside `C_Timer.Nn`, and do not assume either changes Secret restrictions. Test each confirmed mechanism separately.
 
-- `target`
-- target change 后是否 stale
-- debuff refresh
-- debuff remove
-
-## Gate E — NilName Object / 非当前目标
-
-如果 Object Manager / Object bridge 已在独立 Probe 中确认安全，再测试：
-
-1. 获取附近至少两个 attackable objects；
-2. 不切目标；
-3. 对 object reference 调用已确认的 Unit/Aura bridge；
-4. 验证非当前目标 Aura 是否可直读和 unwrap。
-
-成功标准不是“能看到名字”，而是能得到普通 Lua 类型的：
+For each API compare:
 
 ```text
-spellId / stacks / expirationTime
+ordinary_call_result
+NN_privileged_call_result
 ```
 
-这一步决定刺杀等多目标 DoT 是否能做真正 per-object tracking。
+Possible outcomes:
 
-## Gate F — C_Spell
+- ordinary hard-error, NN returns AuraData;
+- both return AuraData but NN can normalize Secret fields;
+- both are identifier-only;
+- both blocked;
+- NN exposes a different Aura API entirely.
 
-只读测试若干 rotation 会依赖的 API，至少覆盖：
+## Phase E — Secret detector/unwrap behavior
+
+Only if the current NN runtime actually exposes a Secret detector/unwrap primitive.
+
+### E1. Normal-value sanity
+
+Protected-call the helper with controlled ordinary values:
+
+- nil
+- boolean
+- integer
+- float
+- string
+
+Record no-op/error behavior.
+
+### E2. Returned Secret scalar
+
+For an Aura field already proven Secret:
+
+1. detect Secret state;
+2. call unwrap only when appropriate;
+3. record unwrapped type;
+4. test whether the result can safely participate in:
+   - equality;
+   - numeric comparison;
+   - arithmetic for `expirationTime - now` when numeric;
+   - table-key/index use when string/token-like.
+
+Never blindly call `secretunwrap(auraTable)`. Tables and fields are separate capabilities.
+
+## Phase F — `UNIT_AURA` event behavior
+
+Register `UNIT_AURA` and record:
+
+- whether the unit argument remains ordinary/usable;
+- payload type/shape;
+- which payload fields are Secret/unreadable;
+- whether the event can be used only as an invalidation signal in restricted mode.
+
+Do not depend on old delta payload semantics until this probe proves them.
+
+If the payload is unusable but unit identity remains usable, record:
+
+```text
+EVENT_INVALIDATION_ONLY
+```
+
+because Sirus may re-read only its tracked Aura identifiers on that unit.
+
+## Phase G — Representative Aura classes
+
+Use manually triggered/observed effects; the probe does not cast them.
+
+Test at least:
+
+1. `SELF_BUFF` — ordinary deterministic player buff
+2. `SELF_PROC` — proc/stacking player buff important to an APL
+3. `TARGET_DEBUFF` — player's debuff on current target
+4. `TARGET_BUFF` — buff on current hostile target if reproducible
+5. `NON_TARGET_DEBUFF` — player's debuff on a second nearby enemy without making it the current target
+
+For Outlaw a later run may use representative proc/buff spell IDs from the project rotation module, but the generic probe must not hard-code profession logic as its foundation.
+
+## Phase H — NilName Object coverage
+
+After Object Manager / UnitRef bridging is separately confirmed:
+
+1. obtain at least two nearby attackable NN objects;
+2. identify the current target and a non-current enemy;
+3. test the successful Aura API/provider against both references;
+4. verify that the non-current object's Aura state can return ordinary framework-consumable values.
+
+Minimum multi-target success fields:
+
+```text
+exists/up
+applications/stacks
+expirationTime/remains
+source/source-is-player
+```
+
+This phase determines whether Sirus can support genuine per-object multidot logic.
+
+## Phase I — NN-native Aura provider discovery
+
+If Phase A exposes an explicit NN-specific Aura API/namespace, make a **separate** capability branch for it.
+
+Rules:
+
+- first log function/table names and types;
+- do not infer parameters from names;
+- use official docs or safe runtime introspection/sample usage before calling;
+- compare results against manually known Aura state and the WoW API control group.
+
+A successful NN-native provider can become the primary 12.1 source even if Blizzard index APIs remain blocked.
+
+## Phase J — Other Secret-sensitive combat inputs
+
+Aura is not the only possible compatibility surface. Separately probe:
+
+### `C_Spell`
 
 - spell info
-- cooldown data
+- cooldown
 - charges
-- usable/range（若 API 在当前 build 存在）
+- usable/range where current APIs exist
 
-记录 table/scalar field 是否 secret，以及同一 unwrap 层是否有效。
+### Combat Log
 
-## Gate G — CombatLog
+- `CombatLogGetCurrentEventInfo()` return positions needed by Sirus
+- source/dest GUID
+- spell ID
+- damage/event identifiers
 
-注册 `COMBAT_LOG_EVENT_UNFILTERED`，取得 `CombatLogGetCurrentEventInfo()`：
-
-- 记录每个返回位置的 `type`
-- 标记 secret scalar
-- 尝试 unwrap
-- 对 spellID/sourceGUID/destGUID 等 rotation/event-cache 关键字段验证普通 Lua 可消费性
-
-## Gate H — Health / TTD inputs
-
-只读：
+### Health / TTD
 
 - `UnitHealth(target)`
 - `UnitHealthMax(target)`
-- 已确认 object/unit bridge 后，对非当前 enemy object 重复
+- same reads for a confirmed non-current NN object
 
-验证：
-
-- 返回普通 number 还是 secret
-- unwrap 是否需要/是否可用
-- 高频采样是否稳定
-
-这一步只是确认 TTD 数据源，不在本 Probe 内实现 TTD 算法。
+For each, record ordinary vs NN-privileged result and Secret normalization requirements.
 
 ## Logging schema
 
-每条结果统一：
+One structured record per API/field test:
 
 ```text
 [NN12_AURA]
-phase=<A-H>
-source=<WOW|NN_ENV|AURA|SPELL|CLEU|HEALTH>
+phase=<A-J>
+restriction=<UNRESTRICTED|RESTRICTED|UNKNOWN>
+execution=<WOW_NORMAL|NN_ENV|NN_UNLOCK|NN_NATIVE>
 api=<name>
 unit=<token/object-kind>
+aura_class=<SELF_BUFF|SELF_PROC|TARGET_DEBUFF|TARGET_BUFF|NON_TARGET_DEBUFF|NA>
 field=<field-or-return-index>
-raw_type=<type>
+call_ok=<true|false>
+raw_type=<type|na>
 is_secret=<true|false|unknown>
 unwrap_ok=<true|false|na>
 unwrapped_type=<type|na>
 operation_test=<pass|fail|na>
+classification=<result-class>
 error=<sanitized-error|none>
 ```
 
-不要输出账户名、session token、HTTP credential 等敏感值。
+Do not log account IDs, session tokens, license tokens or HTTP credentials.
 
-## Result classification
+## Result classifications
 
-### RUNTIME_CONFIRMED_DIRECT
+Use per-capability classifications, not one global PASS/FAIL:
 
-当前 build 中：
+- `NORMAL_AVAILABLE`
+- `EXPECTED_BLOCKED_NORMAL`
+- `NN_PRIVILEGED_INDEX`
+- `NN_PRIVILEGED_IDENTIFIER`
+- `NN_NATIVE_PROVIDER`
+- `SECRET_RETURNED_UNWRAPPED`
+- `SECRET_RETURNED_NOT_CONSUMABLE`
+- `IDENTIFIER_ONLY`
+- `EVENT_INVALIDATION_ONLY`
+- `NO_DIRECT_PATH`
+- `UNKNOWN`
 
-- helper 存在；
-- combat 中工作；
-- 关键 AuraData 字段成功变为普通 Lua 类型；
-- 连续刷新/移除/换目标稳定。
+## Sirus decision rule
 
-### PARTIAL_DIRECT
-
-部分字段/单位类型可用，但存在 coverage gap。
-
-### DIRECT_FAILED
-
-helper 不存在，或不能把 rotation 关键字段转换为普通可计算值。
-
-### UNKNOWN
-
-测试环境/目标不满足，不能下结论。
-
-## 对 Sirus 的决策规则
-
-如果 `RUNTIME_CONFIRMED_DIRECT`：
+Only after the matrix exists should Sirus choose provider precedence. Example:
 
 ```text
-Sirus.Aura
-  ↓
-NilName Direct Aura Provider   [primary]
-  ↓
-Event Cache                    [validation/recovery]
-  ↓
-Mechanic Reconstruction        [exception only]
+if NN_NATIVE_PROVIDER covers required fields:
+    use NN native provider
+elseif NN_PRIVILEGED_IDENTIFIER covers tracked Aura set:
+    use identifier provider + tracked cache
+elseif NN_PRIVILEGED_INDEX is proven safe/current:
+    use privileged enumeration provider
+elseif ordinary identifier path covers the specific non-secret Aura:
+    use limited ordinary provider
+else:
+    use event/mechanic reconstruction only for explicitly supported effects
 ```
 
-如果 `PARTIAL_DIRECT`：按字段/单位类型建立 provider capability matrix，不做“一刀切”。
+Do not promote March/April 2026 BadRotations index wrappers to current production dependencies without this probe.
 
-如果 `DIRECT_FAILED`：才正式投资 Event/cache reconstruction。
+## Minimal “12.1 Aura solved” gate
+
+The current NilName build must provide stable combat/restricted-mode framework state for:
+
+```text
+player proc:      Up + Stacks + Remains
+current target:   Debuff Up + Remains + Source
+non-current mob:  Debuff Up + Remains + Source
+```
+
+and survive refresh/removal/target swap/reload without PrimeKit dependency.
+
+Until then:
+
+```text
+12.1_NN_AURA_SOLUTION = IMPLEMENTATION_UNKNOWN
+```
 
 ## Codex implementation constraints
 
-- 不依赖 BadRotations 源码；按本规格独立实现 Probe。
-- 不复制 GPL-3.0 wrapper。
-- 不加载 PrimeKit。
-- 不自动施法。
-- 不写 Sirus Core。
-- 不使用 `ObjectField` raw offsets。
-- 所有未知 symbol 先 `type`/protected-call 探测，禁止假设签名。
+- implement this spec clean-room;
+- do not copy BadRotations GPL code;
+- do not load/depend on PrimeKit;
+- do not auto-cast;
+- do not implement Sirus Core yet;
+- do not use raw `ObjectField` offsets;
+- do not invent undocumented function signatures;
+- all risky calls use `pcall/xpcall` and fail closed;
+- preserve ordinary-vs-NN comparison in the logs.
