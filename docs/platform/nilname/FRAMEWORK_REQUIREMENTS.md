@@ -1,6 +1,6 @@
 # Sirus on NilName — Framework Requirements
 
-> Updated: 2026-08-17
+> Updated: 2026-08-17; 12.1 Aura-refactor correction applied
 
 NilName 应作为 Sirus 的第一个 platform backend，而不是直接把职业 Rotation 写在 NN API 上。
 
@@ -15,7 +15,11 @@ Platform/NilName
         ├─ Object Adapter
         ├─ Unit Adapter
         ├─ Spell Adapter
-        ├─ Aura Provider
+        ├─ Aura Capability Router
+        │    ├─ NN Native Provider
+        │    ├─ NN Privileged Identifier Provider
+        │    ├─ NN Privileged Enumeration Provider
+        │    └─ WoW Identifier Fallback
         ├─ Event Provider
         ├─ Geometry Adapter
         ├─ Navigation Adapter
@@ -94,16 +98,18 @@ Sirus.TTD(ref)
 
 Platform/NilName 负责把 UnitRef 转成 NilName/WoW 当前调用实际接受的 representation。
 
-## 5. SecretValue Adapter — 12.1 新增的核心要求
+## 5. SecretValue Adapter — pre-12.1 evidence, current runtime gate
 
-BadRotations 当前 NN adapter 为我们提供了强外部证据：Midnight NN runtime 可能暴露：
+BadRotations 的公开 NN adapter 为 **pre-12.1 Midnight** 提供了强外部证据：当时 NilName environment 暴露/可用过类似：
 
 - `issecretvalue`
 - `secretunwrap`
 
-并且成熟 framework 把其用于 AuraData、`C_Spell`、CombatLog 等 rotation-critical 数据。
+成熟 framework 将其用于 AuraData、`C_Spell`、CombatLog 等 rotation-critical 数据。
 
-所以 Sirus 必须单独建立：
+但 Blizzard 2026-06-18 的 12.1 Aura refactor 改变了 Aura API access model：某些 Aura calls 可能在返回值产生之前就 hard-error。因此 SecretValue Adapter 仍然值得建立，但它**不能被假定为 12.1 Aura 的完整答案**。
+
+Sirus 仍建立：
 
 ```text
 Platform/NilName/SecretValueAdapter
@@ -112,7 +118,7 @@ Platform/NilName/SecretValueAdapter
 职责：
 
 - detect secret-wrapped scalar；
-- unwrap scalar；
+- unwrap scalar（仅在当前 runtime 证明确实可用时）；
 - normalize flat table；
 - 对需要的 nested structures 做 schema-aware normalization；
 - 类型验证；
@@ -137,35 +143,53 @@ secret.health
 
 每项 runtime probe 后单独标记，避免“一项成功 = 所有 secret 都可用”的错误推断。
 
-## 6. Aura Engine
+## 6. Aura Engine — 12.1 capability-routed provider
 
-新的 provider 顺序：
+12.1 不再预设固定 provider 顺序。
+
+候选 provider：
 
 ```text
-NilName Direct Aura Provider
-        ↓
-Event Cache
-        ↓
-Mechanic Reconstruction
+NN_NATIVE_PROVIDER
+NN_PRIVILEGED_IDENTIFIER
+NN_PRIVILEGED_INDEX
+WOW_IDENTIFIER_FALLBACK
+EVENT_CACHE
+MECHANIC_RECONSTRUCTION
 ```
 
-### Direct provider
+### Capability router
 
-如果 `AURA_SECRET_DIRECT_PROBE_SPEC.md` 通过，直接读取 AuraData 并由 SecretValueAdapter 正常化。
+`AURA_SECRET_DIRECT_PROBE_SPEC.md` 必须先建立当前 build 的 matrix：
+
+- index / slot / auraInstanceID family；
+- by-spellID / by-name identifier family；
+- ordinary WoW vs NN privileged execution；
+- `UNIT_AURA` event semantics；
+- runtime-discovered NN-native Aura APIs；
+- player / target / non-target NN object coverage。
+
+只有 runtime-proven provider 才进入生产路由。
+
+### Direct/privileged providers
+
+如果某条 current-12.1 path 可以直接取得 rotation 需要的 ordinary framework values，它应作为该 capability 的 truth source。不要因为 pre-12.1 代码存在就假定 index enumeration 一定是这个 provider。
 
 ### Event cache
 
-即便 Direct 可用，仍保留：
+Event/cache 可以承担：
 
-- applied/refresh/remove 变化触发；
+- invalidation / tracked-Aura re-read trigger；
 - direct 结果交叉校验；
 - stale state recovery；
 - proc history；
 - TTD / damage history 输入。
 
+如果 12.1 `UNIT_AURA` payload 不可读，但 unit identity 可用，则 event 只作为 invalidation signal。
+
 ### Reconstruction
 
-只用于 direct/event 均不能完整覆盖的个别效果。必须有 confidence 标记：
+只用于所有 direct/identifier/native paths 都无法完整覆盖的明确效果。必须有 confidence 标记：
 
 ```text
 CONFIRMED
@@ -190,7 +214,7 @@ UNKNOWN
 - queue/retry 行为；
 - ground-target sequence。
 
-BadRotations 线索表明 `C_Spell` 也可能受到 secret wrapping，因此 Spell Provider 必须经过 SecretValueAdapter，而不是直接把 `C_Spell` table 交给 APL。
+Pre-12.1 framework 线索表明 `C_Spell` 也可能受到 secret wrapping，因此 Spell Provider 仍需独立 capability probe，并在需要时经过 SecretValueAdapter，而不是把 `C_Spell` table 直接交给 APL。
 
 ## 8. Action Queue
 
@@ -236,7 +260,7 @@ confidence
 
 还要支持 per-object 与 pack-level TTD。
 
-开发前必须确认 health 对 non-target NN objects 在 combat 中可读，并确定是否需要 SecretValueAdapter。
+开发前必须确认 health 对 non-target NN objects 在 combat 中可读，并确定是否 Secret / 是否需要当前 NN runtime 的 normalization。
 
 ## 10. Target Engine
 
@@ -277,15 +301,17 @@ Enemy XYZ set
 
 ## 12. Event Layer
 
-统一输出 NORMALIZED_EVENT。
+统一输出 `NORMALIZED_EVENT`。
 
-如果 CombatLog 字段 secret-wrapped：
+如果 CombatLog 字段 secret-wrapped 且当前 NN runtime 可以合法/稳定 normalize：
 
 ```text
 CombatLogGetCurrentEventInfo
 → NilName SecretValueAdapter
 → NORMALIZED_EVENT
 ```
+
+如果 12.1 某事件 payload 本身不可读，则 Event Provider 必须降级为触发/失效信号，不可伪造 payload。
 
 Event consumers 不应知道 secret wrapper。
 
@@ -295,7 +321,8 @@ Event consumers 不应知道 secret wrapper。
 
 - Tick cost
 - Object scan cost
-- Aura query count/cost
+- Aura query count/cost by provider
+- Aura hard-error counts
 - Secret unwrap count/failures
 - TTD update cost
 - APL branch
@@ -310,7 +337,7 @@ Event consumers 不应知道 secret wrapper。
 
 UI 与 Core 解耦。
 
-UI 只消费状态，不驱动 combat runtime。未来可实现 Sirus 控制台，但第一阶段 runtime/Aura/GCD/TTD 未确认前不要投入 UI。
+UI 只消费状态，不驱动 combat runtime。第一阶段 runtime/Aura/GCD/TTD 未确认前不要投入 UI。
 
 ## 15. Licensing / Distribution
 
@@ -346,21 +373,31 @@ BadRotations 为 GPL-3.0。
 
 1. Pure NN loader
 2. Runtime namespace discovery
-3. SecretValue direct-path probe
-4. Aura player/target/non-target object
-5. C_Spell secret-sensitive fields
-6. CombatLog secret-sensitive fields
-7. Health/TTD inputs
-8. Object snapshot semantics/performance
-9. Cast/GCD semantics
-10. Ground-target minimum proof
+3. 12.1 Aura restriction baseline
+4. Ordinary index/slot/instance control group
+5. Ordinary identifier-read control group
+6. NN privileged execution comparison
+7. NN-native Aura provider discovery
+8. Aura player/self-proc/target/non-target object matrix
+9. C_Spell Secret-sensitive fields
+10. CombatLog Secret-sensitive fields
+11. Health/TTD inputs
+12. Object snapshot semantics/performance
+13. Cast/GCD semantics
+14. Ground-target minimum proof
 
 然后冻结：
 
 ```text
 NILNAME_API_WHITELIST v1
 NILNAME_SECRET_CAPABILITY_MATRIX v1
-NILNAME_WOW_API_COMPAT_MATRIX v1
+NILNAME_WOW_12_1_COMPAT_MATRIX v1
 ```
 
 再开始职业 Rotation Module 迁移。
+
+## 18. Evidence policy
+
+- March/April 2026 BadRotations/Ascended Secret-Aura behavior = **pre-12.1 architecture evidence**.
+- August 2026 Ascended 12.1 releases = **post-refactor viability evidence**, not implementation evidence.
+- Only the user's current runtime probe may upgrade an Aura provider to `LOCAL_RUNTIME_CONFIRMED`.
