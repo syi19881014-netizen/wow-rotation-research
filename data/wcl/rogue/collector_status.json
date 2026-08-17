@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checked_at_utc": "2026-08-17T14:00:47Z",
+  "checked_at_utc": "2026-08-17T19:42:43Z",
   "collector": "rogue_rankings_v0.2",
   "specs": [
     "Assassination",
@@ -13,113 +13,158 @@
     "id": 7,
     "name": "Midnight"
   },
-  "selected_zone_with_data": {
-    "id": 56,
-    "name": "Mythic+ Season 2 (PTR)"
-  },
-  "found_nonempty_rankings": true,
+  "selected_zone_with_data": null,
+  "found_nonempty_rankings": false,
   "attempts": [
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 62993,
+      "zone_id": 510,
+      "zone_name": "The Venomous Abyss Complete Raid",
+      "encounter_id": 3191,
+      "encounter_name": "The Venomous Abyss",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/510/3191.json"
+    },
+    {
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 12993,
       "encounter_name": "Altar of Fangs",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/62993.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/12993.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 62825,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 12825,
       "encounter_name": "Den of Nalorakk",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/62825.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/12825.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 111762,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 61762,
       "encounter_name": "King's Rest",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/111762.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/61762.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 62813,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 12813,
       "encounter_name": "Murder Row",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/62813.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/12813.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 162521,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 112521,
       "encounter_name": "Ruby Life Pools",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/162521.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/112521.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 111877,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 61877,
       "encounter_name": "Temple of Sethraliss",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/111877.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/61877.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 62859,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 12859,
       "encounter_name": "The Blinding Vale",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/62859.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/12859.json"
     },
     {
-      "zone_id": 56,
-      "zone_name": "Mythic+ Season 2 (PTR)",
-      "encounter_id": 62923,
+      "zone_id": 55,
+      "zone_name": "Mythic+ Season 2",
+      "encounter_id": 12923,
       "encounter_name": "Voidscar Arena",
-      "nonempty_specs": [
-        "Assassination",
-        "Outlaw",
-        "Subtlety"
-      ],
-      "file": "data/wcl/rogue/rankings/56/62923.json"
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/55/12923.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3470,
+      "encounter_name": "Nek'zali the Soulcoiler",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3470.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3445,
+      "encounter_name": "Entombed Sentinels",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3445.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3455,
+      "encounter_name": "Vashnik the Malignant",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3455.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3497,
+      "encounter_name": "The Lost Explorers",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3497.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3420,
+      "encounter_name": "Sszorak",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3420.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3421,
+      "encounter_name": "The Twin Fangs",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3421.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3429,
+      "encounter_name": "The Coiled Altar",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3429.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3492,
+      "encounter_name": "Ula'tek",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3492.json"
+    },
+    {
+      "zone_id": 53,
+      "zone_name": "The Venomous Abyss",
+      "encounter_id": 3379,
+      "encounter_name": "Nymrissa Wavecaller",
+      "nonempty_specs": [],
+      "file": "data/wcl/rogue/rankings/53/3379.json"
     }
   ],
   "rate_limit_after": {
     "limitPerHour": 3600,
-    "pointsSpentThisHour": 25.89,
-    "pointsResetIn": 3595
+    "pointsSpentThisHour": 54.07,
+    "pointsResetIn": 3594
   },
-  "message": "Rogue ranking data collected successfully."
+  "message": "WCL API worked, but no non-empty Rogue rankings were found in the newest candidate zones."
 }

@@ -1,112 +1,100 @@
 {
-  "collected_at_utc": "2026-08-17T14:00:47Z",
+  "collected_at_utc": "2026-08-17T19:42:44Z",
   "expansion": {
     "id": 7,
     "name": "Midnight"
   },
   "candidate_zones": [
     {
-      "id": 56,
-      "name": "Mythic+ Season 2 (PTR)",
+      "id": 510,
+      "name": "The Venomous Abyss Complete Raid",
       "frozen": false,
       "encounters": [
         {
-          "id": 62993,
+          "id": 3191,
+          "name": "The Venomous Abyss"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Mythic+ Season 2",
+      "frozen": false,
+      "encounters": [
+        {
+          "id": 12993,
           "name": "Altar of Fangs"
         },
         {
-          "id": 62825,
+          "id": 12825,
           "name": "Den of Nalorakk"
         },
         {
-          "id": 111762,
+          "id": 61762,
           "name": "Kings' Rest"
         },
         {
-          "id": 62813,
+          "id": 12813,
           "name": "Murder Row"
         },
         {
-          "id": 162521,
+          "id": 112521,
           "name": "Ruby Life Pools"
         },
         {
-          "id": 111877,
+          "id": 61877,
           "name": "Temple of Sethraliss"
         },
         {
-          "id": 62859,
+          "id": 12859,
           "name": "The Blinding Vale"
         },
         {
-          "id": 62923,
+          "id": 12923,
           "name": "Voidscar Arena"
         }
       ]
     },
     {
-      "id": 54,
+      "id": 53,
       "name": "The Venomous Abyss",
       "frozen": false,
       "encounters": [
         {
-          "id": 53470,
+          "id": 3470,
           "name": "Nek'zali the Soulcoiler"
         },
         {
-          "id": 53445,
+          "id": 3445,
           "name": "Entombed Sentinels"
         },
         {
-          "id": 53455,
+          "id": 3455,
           "name": "Vashnik the Malignant"
         },
         {
-          "id": 53497,
+          "id": 3497,
           "name": "The Lost Explorers"
         },
         {
-          "id": 53420,
+          "id": 3420,
           "name": "Sszorak"
         },
         {
-          "id": 53421,
+          "id": 3421,
           "name": "The Twin Fangs"
         },
         {
-          "id": 53429,
+          "id": 3429,
           "name": "The Coiled Altar"
         },
         {
-          "id": 53492,
+          "id": 3492,
           "name": "Ula'tek"
-        }
-      ]
-    },
-    {
-      "id": 52,
-      "name": "Dummy Dome",
-      "frozen": false,
-      "encounters": [
-        {
-          "id": 3591,
-          "name": "Sinister Single"
         },
         {
-          "id": 3590,
-          "name": "Diabolical Duo"
-        },
-        {
-          "id": 3592,
-          "name": "Terrible Trio"
-        },
-        {
-          "id": 3593,
-          "name": "Fearsome Five"
-        },
-        {
-          "id": 3594,
-          "name": "Hazardous Healer"
+          "id": 3379,
+          "name": "Nymrissa Wavecaller"
         }
       ]
     }

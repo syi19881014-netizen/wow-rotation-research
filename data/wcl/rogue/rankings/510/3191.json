@@ -1,0 +1,32 @@
+{
+  "collected_at_utc": "2026-08-17T19:42:44Z",
+  "expansion": {
+    "id": 7,
+    "name": "Midnight"
+  },
+  "zone": {
+    "id": 510,
+    "name": "The Venomous Abyss Complete Raid",
+    "frozen": false
+  },
+  "encounter": {
+    "id": 3191,
+    "name": "The Venomous Abyss"
+  },
+  "rankings": {
+    "Assassination": {
+      "error": "Fight data doesn't exist yet. Try again later."
+    },
+    "Outlaw": {
+      "error": "Fight data doesn't exist yet. Try again later."
+    },
+    "Subtlety": {
+      "error": "Fight data doesn't exist yet. Try again later."
+    }
+  },
+  "rate_limit_after_query": {
+    "limitPerHour": 3600,
+    "pointsSpentThisHour": 4.75,
+    "pointsResetIn": 3600
+  }
+}

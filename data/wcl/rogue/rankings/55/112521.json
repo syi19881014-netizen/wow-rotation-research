@@ -1,0 +1,41 @@
+{
+  "collected_at_utc": "2026-08-17T19:42:46Z",
+  "expansion": {
+    "id": 7,
+    "name": "Midnight"
+  },
+  "zone": {
+    "id": 55,
+    "name": "Mythic+ Season 2",
+    "frozen": false
+  },
+  "encounter": {
+    "id": 112521,
+    "name": "Ruby Life Pools"
+  },
+  "rankings": {
+    "Assassination": {
+      "page": 1,
+      "hasMorePages": false,
+      "count": 0,
+      "rankings": []
+    },
+    "Outlaw": {
+      "page": 1,
+      "hasMorePages": false,
+      "count": 0,
+      "rankings": []
+    },
+    "Subtlety": {
+      "page": 1,
+      "hasMorePages": false,
+      "count": 0,
+      "rankings": []
+    }
+  },
+  "rate_limit_after_query": {
+    "limitPerHour": 3600,
+    "pointsSpentThisHour": 17.83,
+    "pointsResetIn": 3598
+  }
+}
