@@ -1,125 +1,123 @@
-# NilName Documentation Fetch Gaps
+# NilName API Fetch / Runtime Gaps
 
-抓取日期：2026-08-17。
+> Updated: 2026-08-17
 
-当前 NilName 文档站存在一种明显现象：侧栏/索引完整可见，但部分具体 API 页面通过抓取环境会返回 `403 Forbidden`。因此本档案把“知道 API 名称存在”和“知道准确签名/返回值”严格分离。
+本文件只记录当前尚未被官方正文、用户客户端静态审计或本地 runtime probe 完全确认的缺口。不要用函数名猜签名。
 
-## 当前正文无法取得（403 / index-only）
+## 1. Current docs index-only / body unavailable
+
+当前官方导航明确出现，但正文抓取受 403/站点限制或尚未完整获得的接口包括：
 
 ### Objects
-
-- `ObjectBoundingRadius`
-- `ObjectFlags`
-- `ObjectHeight`
-- `ObjectLootable`
-- `ObjectRawPosition`
-- `ObjectType` 独立页面（但当前 Getting Started 已确认调用 `ObjectType(object)`）
+- ObjectBoundingRadius
+- ObjectFlags
+- ObjectHeight
+- ObjectLootable
+- ObjectRawPosition
+- ObjectUnitId
 
 ### Units
-
-- `DynamicFlags`
-- `GetUnitBoundingRadius`
-- `GetUnitCreatedBy`
-- `UnitFlags`
-- `UnitFlags2`
-- `UnitFlags3`
-- `GetUnitIsTapped` ⚠️
-- `GetUnitLootable`
-- `GetUnitSummonedBy`
-- `UnitTarget`
-- `ObjectSkinType` ⚠️
-- `UnitFacing`
-
-### Movement
-
-- `GetCorpsePosition` 当前正文（旧镜像有）
-- `GetPitch`
-- `LastTerrainClick`
-- `SetPitch`
+- DynamicFlags
+- GetUnitBoundingRadius
+- GetUnitCreatedBy
+- UnitFlags
+- UnitFlags2
+- UnitFlags3
+- GetUnitIsTapped
+- GetUnitLootable
+- GetUnitSummonedBy
+- UnitTarget
+- ObjectSkinType
+- UnitCreatureTypeId
+- UnitFacing
 
 ### Targeting
+- SetMouseover
+- SetNPCObject
+- UnitTarget
+- CastTarget
+- PlayerTarget
 
-- `SetMouseover` 当前正文（旧镜像有）
-- `UnitTarget`
-- `CastTarget`
-- `PlayerTarget`
-
-### HTTP
-
-- `HTTPGet` ⚠️
-- `HTTPPost` ⚠️
+### Movement
+- GetCorpsePosition
+- GetPitch
+- LastTerrainClick
+- SetPitch
 
 ### Misc
+- GetSessionId
+- GetSessionIndex
 
-- `GetSessionId`
-- `GetSessionIndex`
+## 2. ObjectManager performance path
 
-### General
+Guidelines 明确建议优先 `ObjectManager(type)`，避免每帧对全部对象执行 `ObjectType`，但当前需要进一步取得/验证它的当前签名和返回 shape。
 
-- 当前 `API Summary` 页面抓取受限。
-- 当前 `Scripts` 页面抓取受限。
-- `ObjectManager(type)` 与 `ObjectPointer` 在当前 Guidelines 中被点名，但没有从当前侧栏抓到单独可读正文。
+这属于 Sirus 性能关键路径，正式 Object Cache 前必须补齐。
 
-## 当前页面存在但内容不完整
+## 3. 12.1 Aura / Secret Value — 新的最高优先级 runtime gap
 
-- `LibDraw`：官方正文仍是 TODO。
+BadRotations 当前公开 NN adapter 提供了非常强的外部证据：Midnight NN environment 中存在：
 
-## 当前文档明显不一致
+- `C_Timer.Nn`
+- `issecretvalue`
+- `secretunwrap`
 
-- `SetNPCObject` 页面代码块疑似写错函数名。
-- `ObjectUnitId` 正文拼写为 `ObjetUnitId`。
-- `UnitCreatureTypeId` return prose 出现不相关 loot 文案。
-- `ScreenToWorld` 页面 heading 误写 `GetFocus`。
-- `json.encode` 返回类型字段与正文语义矛盾。
-- `json.decode` 参数类型字段与正文语义矛盾。
-- `HTTP:Request` body 字段出现 `params` / `body` 两种写法。
+并且成熟框架使用它们处理 AuraData、`C_Spell` 和 CombatLog secret-wrapped values。
 
-## 补全优先级
+但是 NilName 当前公开官方 docs 未检索到这些符号的正式说明，用户提供客户端静态 strings 也没有直接暴露这些名称。因此当前状态只能是：
 
-### P0：决定循环框架性能/结构
+**`EXTERNAL_FRAMEWORK_OBSERVED / LOCAL_RUNTIME_UNKNOWN`**
 
-1. `ObjectManager(type)`
-2. `ObjectPointer`
-3. `ObjectType`
-4. `UnitFacing`
-5. `ObjectRawPosition`
+必须按 `AURA_SECRET_DIRECT_PROBE_SPEC.md` 实机验证。
 
-### P1：账号/多开/授权
+### 必须回答的问题
 
-1. `GetSessionId`
-2. `GetSessionIndex`
-3. 继续确认 `GetWowAccount` 在多 Wow1/Wow2、不同角色、重启客户端下的稳定性
+1. 当前用户 NN build 是否真的暴露 `C_Timer.Nn`？
+2. `issecretvalue` / `secretunwrap` 是否存在于该 environment？
+3. normal value 输入行为是什么？
+4. AuraData 的哪些 fields 是 secret？
+5. unwrap 后是否得到普通 boolean/number/string？
+6. player/target/non-target NN object 是否都可用？
+7. nested `points[]` 等字段如何处理？
+8. `C_Spell` 和 CombatLog 是否需要同一层？
+9. zone/reload/combat/target swap 后是否稳定？
 
-### P1：目标管理
+在这组问题得到答案前，不再假定“只能 Event/cache 重建”，也不把 direct unwrap 当生产事实。
 
-1. `UnitTarget`
-2. `CastTarget`
-3. `PlayerTarget`
-4. `SetMouseover`
+## 4. Health / TTD runtime gap
 
-### P2：高级 Unit metadata
+BadRotations NN adapter 的 capability mapping 强烈暗示 `UnitHealth/UnitHealthMax` 可通过 NN object/unit bridge 使用，但用户环境仍需实测：
 
-- `UnitFlags*`
-- `DynamicFlags`
-- creator/summoner APIs
-- bounding radius/height
-- loot/tap/skin APIs
+- target
+- 非当前 enemy object
+- combat 中
+- 高频采样
+- 是否 secret / 是否需要 unwrap
 
-这些并不是第一版纯 DPS rotation 的阻塞项。
+TTD Engine 开发应等这条数据源确认后再开始。
 
-## 不能做的推断
+## 5. Navigation mesh gap
 
-以下规则是硬约束：
+用户提供客户端包含 NilName navigation executable，但 `mmaps/` 只有下载说明，缺少 retail mesh bundle。
 
-- 页面 403 ≠ API 不存在。
-- 侧栏存在 ≠ 我们知道参数。
-- 旧镜像签名 ≠ 当前签名。
-- 函数名很直观 ≠ 返回类型可猜。
-- 普通 WoW Lua 的同名/相似 API ≠ NilName API 契约。
+因此当前客户端包**不能视为导航 ready**。未来测试 `GeneratePath` 前先安装匹配当前 Retail 的 mesh bundle。
 
-## 后续补全方法
+## 6. PrimeKit contamination risk
 
-1. 继续利用当前官方页面内部链接和搜索引擎缓存。
-2. 对比旧 IPFS 文档镜像，但只做历史提示。
-3. NilName 客户端到手后，对 P0/P1 API 运行 capability probe，输出 `type(fn)`、最小合法调用和返回 shape。
-4. Probe 通过后把条目从 `CURRENT_INDEX_ONLY` 提升为 `RUNTIME_CONFIRMED`，并记录产品版本/Build。
+用户包内 `_PrimeKitCore.nn` 为自动加载的第三方 framework。所有 NilName native capability probe 必须在 PrimeKit 禁用/隔离状态下进行，否则无法判断函数来自 NN 还是 PrimeKit。
+
+## 7. Protected `.nn` modules
+
+`.nn` 文件为受保护/混淆的 Lua 5.1 bytecode。当前研究不尝试绕过其保护，也不把逆向 PrimeKit 当成 API 发现方法。
+
+优先顺序：
+
+```text
+官方文档
+→ 公开框架源码证据
+→ NilName runtime namespace discovery
+→ 黑盒 capability probe
+→ 必要时向作者确认
+```
+
+而不是破解第三方 `.nn`。
