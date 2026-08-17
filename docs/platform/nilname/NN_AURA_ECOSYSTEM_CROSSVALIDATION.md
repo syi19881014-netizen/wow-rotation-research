@@ -1,183 +1,137 @@
-# NilName 12.1 Aura Ecosystem Cross-Validation
+# NilName Aura Ecosystem Cross-Validation
 
-Date: 2026-08-17
-Status: Research baseline; external evidence only until local runtime probe
+Date: 2026-08-17  
+Status: external research only; **post-12.1 claims are superseded/qualified by `NN_12_1_POST_REFACTOR_AURA_AUDIT.md`**
 
-## Scope
+## Scope and correction
 
-This audit searches the publicly discoverable NilName ecosystem for frameworks/rotation products that run on NilName and asks one narrow question: how do they make WoW 12.1/Midnight Aura data usable by rotation logic?
+This file records what public NilName frameworks teach us about Aura handling. It must distinguish two eras:
 
-Important limitation: most commercial frameworks are closed/protected. “All frameworks” here means all publicly discoverable candidates plus every implementation for which code or sufficiently specific release history could be audited. Closed-source products are listed but their Aura internals are not guessed.
+1. **Midnight / pre-12.1 Aura-refactor Secret-value handling** — public NilName framework code exists.
+2. **12.1 Curse of Ula'tek Aura refactor (announced 2026-06-18)** — Blizzard changed the Aura access model again; pre-June code cannot be promoted to 12.1 proof.
+
+The earlier conclusion that “direct `C_UnitAuras` + `secretunwrap` is the best-supported 12.1 model” was too broad. That model is strongly supported for the **pre-refactor Midnight Secret-value layer**, not yet for the post-refactor 12.1 API contract.
+
+For current conclusions, read `NN_12_1_POST_REFACTOR_AURA_AUDIT.md` first.
 
 ## Evidence classes
 
-- `CODE_CONFIRMED`: public source shows the Aura implementation.
-- `RELEASE_HISTORY_CONFIRMED`: protected build, but public release history records specific Aura/Secret implementation behavior.
-- `SUPPORT_CONFIRMED`: NilName support is confirmed, Aura implementation is not public.
-- `LOCAL_RUNTIME_CONFIRMED`: reserved for our own NilName client probe; none yet.
+- `PRE_12_1_CODE_CONFIRMED`: public source shows the pre-refactor implementation.
+- `POST_12_1_RELEASE_CONFIRMED`: current protected NilName distribution ships explicit 12.1 rotations; implementation hidden.
+- `ECOSYSTEM_ONLY`: NilName support/product existence confirmed; Aura implementation not public.
+- `LOCAL_RUNTIME_CONFIRMED`: reserved for our current client probe; none yet.
 
 ## Framework matrix
 
-| Framework / product | NilName use | Aura evidence | Observed 12.1 strategy | Confidence |
-|---|---|---|---|---|
-| BadRotations | Yes | Public source | Direct `C_UnitAuras` read in NN environment -> guarded Secret-value normalization -> normalized Aura table; proxy/wrapper layer hides Secret handling from framework | `CODE_CONFIRMED` |
-| Ascended Rotation Midnight | Yes / NilName-oriented distribution | Protected `.nn`, detailed public release history | Direct Aura table remains framework truth; individual Secret-tainted fields are unwrapped/normalized; later adds unit/aura caches for performance | `RELEASE_HISTORY_CONFIRMED` |
-| PrimeKitCore (user-supplied NN package) | Yes | Protected `.nn` only | Unknown | `SUPPORT_CONFIRMED`, implementation unknown |
-| Lunar | NilName partner/support | Closed | Unknown | `SUPPORT_CONFIRMED` |
-| Clipper | NilName partner/support | Closed | Unknown | `SUPPORT_CONFIRMED` |
-| Go Hands Free | NilName partner/support | Closed | Unknown | `SUPPORT_CONFIRMED` |
-| NilName in-house rotations | Native | Closed | Unknown | `SUPPORT_CONFIRMED` |
-| Baneto / GMR / WD and related partners | NilName partner ecosystem | Closed / bot-oriented | No public 12.1 Aura implementation found | `SUPPORT_CONFIRMED` only |
-| Phoenix / Wings and other community-listed products | Community reports of NilName use | No primary implementation found | Unknown | Secondary evidence only; do not use as implementation proof |
+| Framework / product | NilName use | Aura evidence | Correct classification |
+|---|---|---|---|
+| BadRotations | Yes | Public NN adapter with `C_Timer.Nn`, Secret detection/unwrap, Aura/C_Spell/CLEU normalization; relevant commits Mar-Apr 2026 | `PRE_12_1_CODE_CONFIRMED` |
+| Ascended Rotation Midnight | NilName-oriented | Pre-refactor release history shows Secret-Aura handling; Aug 2026 releases explicitly update multiple rotations for 12.1 | `POST_12_1_RELEASE_CONFIRMED`, exact 12.1 Aura path unknown |
+| PrimeKitCore | Bundled in user NN package | Protected `.nn` only | `ECOSYSTEM_ONLY` / client-static observed |
+| Lunar | NilName partner/support | Closed | `ECOSYSTEM_ONLY` |
+| Clipper | NilName partner/support | Closed | `ECOSYSTEM_ONLY` |
+| Go Hands Free | NilName partner/support | Closed | `ECOSYSTEM_ONLY` |
+| NilName in-house rotations | Native | Closed | `ECOSYSTEM_ONLY` |
+| Phoenix / Wings / other community-listed products | Secondary reports | No primary implementation found | discovery only |
 
-## 1. BadRotations: direct code evidence
+## 1. BadRotations — what it actually proves
 
-BadRotations' NilName adapter is the strongest public source because both pre-Midnight and post-Midnight versions are visible.
+BadRotations' public NN adapter is valuable because both the older adapter and the Midnight transition are visible.
 
-### Before Midnight support
-
-The older NN adapter simply bridged object references and called:
-
-- `C_UnitAuras.GetAuraDataByIndex(...)`
-- `C_UnitAuras.GetBuffDataByIndex(...)`
-- `C_UnitAuras.GetDebuffDataByIndex(...)`
-
-There was no Secret-value normalization layer.
-
-### Midnight transition
-
-The 2026-03-27 commit explicitly states `Initial Midnight NN support` and introduces a Secret compatibility layer in the NilName environment. The current adapter enters `C_Timer.Nn` and resolves runtime symbols named:
+The 2026-03-27 `Initial Midnight NN support` work introduces a Secret compatibility layer in the NilName environment and uses runtime symbols such as:
 
 - `issecretvalue`
 - `secretunwrap`
 
-It then defines three levels of normalization:
+The adapter normalizes Secret-tainted scalar/table fields and has Aura-specific handling, including nested values. The same platform-boundary idea is used for `C_Spell` and `CombatLogGetCurrentEventInfo()`.
 
-1. scalar return normalization;
-2. generic table field normalization;
-3. Aura-specific table normalization, including nested `points` values.
+Its Aura path in this era is effectively:
 
-Aura access still uses `C_UnitAuras` directly; the wrapper normalizes Secret-tainted fields before upper framework code consumes the AuraData.
+```text
+C_UnitAuras
+  -> AuraData
+  -> guarded per-field Secret normalization
+  -> ordinary framework state
+```
 
-The same adapter also normalizes returns from `C_Spell`, `CombatLogGetCurrentEventInfo()` and selected unit/global APIs. This strongly suggests Secret handling belongs in a platform boundary adapter, not inside every combat subsystem.
+This is excellent evidence for **how Sirus should isolate Secret handling at the platform boundary**, and excellent evidence that NilName had a privileged Secret-value path in the earlier Midnight environment.
 
-### Architecture implication
+It is **not** post-12.1 Aura-refactor proof because the relevant public implementation predates Blizzard's June 18 announcement/refactor work.
 
-BadRotations is not reconstructing the ordinary Aura state from spell history as its first-line solution. It treats the direct Aura table as the truth source and normalizes Secret values at the NN adapter boundary.
+## 2. Ascended — what the older and newer history prove
 
-## 2. Ascended Rotation Midnight: independent corroboration
+Pre-refactor public release history records highly specific behavior:
 
-Ascended is particularly useful because its current distribution is protected, but release notes expose many highly specific Aura bug fixes.
+- Secret `sourceUnit` needed normalization before table-key use;
+- a HasAura fast path broke on secret-tainted Auras;
+- blindly applying `secretunwrap` to an Aura table was wrong because a table is not an atomic Secret scalar;
+- private Aura debug/display paths and later per-pulse/source-aware Aura caches existed.
 
-Observed release-history evidence includes:
+Those observations independently corroborate BadRotations' **pre-refactor** field-level Secret-normalization model.
 
-- v0.1.95: explicitly fixes a failure by unwrapping Secret `sourceUnit` from Aura data before using it as a table key.
-- v0.1.246: records that a HasAura fast path broke on “secret-tainted auras” and explicitly removes an incorrect `secretunwrap` call on `GetUnitAuraBySpellID` because that helper returns a table rather than an atomic Secret value.
-- v0.1.572: debug mode can display “private auras (decrypted)” and unit data is cached once per pulse.
-- later releases add source-filtered Aura cache checks, per-pulse Aura-query caches, and avoidance of unnecessary 40-slot scans.
+After the June 18 refactor, Ascended continues shipping protected NilName builds and, on 2026-08-16/17, publishes explicit `Midnight 12.1` rotation updates for multiple specs including Affliction, Outlaw and Unholy.
 
-These details independently reinforce the same design seen in BadRotations:
+That establishes current production viability but not implementation details:
 
-1. Direct AuraData is available to the framework.
-2. Secret taint exists at field/value granularity.
-3. Unwrap must be type/Secret aware; blindly unwrapping a table or a non-Secret value is incorrect.
-4. `sourceUnit` can itself be Secret and must be normalized before identity/source comparisons.
-5. Cache layers are then added for CPU/performance, not because the framework has to infer all Aura state from casts/events.
+```text
+12.1 NN rotation viability = strong external evidence
+12.1 Aura transport/source = still unknown
+```
 
 ## 3. Closed frameworks
 
-NilName's official partner ecosystem publicly identifies Lunar, Clipper and Go Hands Free as rotation products/partners. NilName also ships its own in-house rotations. The user-supplied client contains `_PrimeKitCore.nn`, a protected third-party framework.
+Lunar, Clipper, Go Hands Free, NilName's own rotations, and the bundled PrimeKitCore are useful as ecosystem evidence only. No public primary implementation was found that allows us to say whether they use:
 
-No public primary source was found that reveals how these products implement Midnight Aura handling. Therefore we intentionally do **not** infer that they use `secretunwrap`, ObjectField offsets, combat-log reconstruction, or any other specific method.
+- Blizzard identifier Aura APIs;
+- NN-native/internal Aura data;
+- a privileged post-refactor unwrap route;
+- object/descriptor state;
+- event reconstruction;
+- a mixed design.
 
-Their practical existence on the current NilName ecosystem is useful only as weak corroboration that 12.1 Aura is solvable in production. It is not implementation evidence.
+Do not guess.
 
-## 4. Cross-validated model
+## 4. Architecture facts still safe to retain
 
-The strongest evidence from two independent public NilName framework lines converges on this model:
+The following ideas survive the 12.1 correction because they are framework-level rather than dependent on one Aura API:
 
-```text
-NilName privileged Lua environment
-    |
-    +-- Secret-value detector
-    +-- Secret-value unwrap/normalizer
-    |
-Direct game-state API
-    +-- C_UnitAuras
-    +-- C_Spell
-    +-- CombatLog / selected Unit APIs
-    |
-Guarded per-field normalization
-    |
-Plain framework state
-    |
-Tracked Aura cache / per-pulse cache
-    |
-Rotation API
-    +-- Up
-    +-- Remains
-    +-- Stacks
-    +-- Source / FromPlayer
-```
+1. Put NilName-specific Secret handling under `Platform/NilName`.
+2. Normalize UnitRef/ObjectRef before combat modules consume state.
+3. Cache normalized results per pulse; do not make every APL branch rescan Auras.
+4. Treat `sourceUnit` and nested fields as separately capability-tested values.
+5. Keep direct provider, event support, and reconstruction decoupled so 12.1 can choose the working provider at runtime.
+6. Do not copy BadRotations GPL-3.0 implementation into a proprietary Sirus distribution; clean-room implement against our own interface contract.
 
-### Most likely conclusion
+## 5. Current provider decision
 
-For NilName on 12.1, the best-supported public explanation is **direct read + guarded Secret normalization + cache**, not pure combat-event reconstruction.
-
-Event/cache reconstruction remains a fallback for unusual effects that cannot be represented reliably through the direct path; it should not be the default Sirus design assumption.
-
-## 5. Critical safety/correctness details for Sirus
-
-1. Never call an unwrap primitive blindly. Check whether the value is actually Secret first.
-2. Do not assume an AuraData table itself is an atomic Secret value. Normalize fields individually.
-3. Include `sourceUnit` in normalization; it is used for “my debuff” / source-filtered checks and has been observed Secret-tainted in another NN framework.
-4. Include nested fields such as Aura `points` in the probe.
-5. Keep Secret handling below `Sirus.Aura`; profession modules should only receive ordinary Lua values.
-6. Cache normalized data. Do not scan 40 Aura slots for every unit on every rotation tick.
-7. Preserve a direct provider plus fallback providers; do not couple the entire framework to one implementation detail.
-
-## 6. Revised Sirus plan
-
-Recommended boundary:
+Do **not** freeze this old ordering yet:
 
 ```text
-Platform/NilName
-  SecretValueAdapter
-  UnitRef/ObjectRef bridge
-  AuraDirectProvider
-        |
-Sirus/Aura
-  tracked-spell cache
-  source-aware lookup
-  per-pulse memoization
-  optional UNIT_AURA invalidation/update
-        |
-Rotation modules
+Direct index Aura -> Secret unwrap -> Event fallback
 ```
 
-Fallback order:
+Use capability routing instead:
 
-1. normalized direct Aura data;
-2. event/cache support where direct access is incomplete;
-3. mechanic reconstruction only for explicitly proven exceptions;
-4. UNKNOWN/fail-closed rather than inventing state.
+```text
+NN-native provider?             -> probe
+NN-privileged identifier read?  -> probe
+NN-privileged index read?       -> probe
+ordinary identifier fallback?   -> probe/limited
+Event cache/invalidation         -> support
+mechanic reconstruction          -> exception
+```
 
-## 7. Local runtime gate
+The working combination is selected only after the current client passes `AURA_SECRET_DIRECT_PROBE_SPEC.md` (now upgraded to a 12.1 interface capability matrix).
 
-External evidence is now strong enough to justify a focused direct-path probe, but it is **not** equivalent to confirmation on the user's current NN build.
+## 6. Supersession rule
 
-First local probe should isolate PrimeKitCore and test:
+Any project note that uses March/April 2026 BadRotations or early Ascended Secret-Aura behavior as direct proof of the **post-refactor 12.1** Aura solution is superseded.
 
-- whether `C_Timer.Nn` exists;
-- whether the NN environment exposes a Secret-value detector and unwrap primitive;
-- player, target and non-current-target/object Auras;
-- Aura fields: `spellId`, `applications`, `duration`, `expirationTime`, `sourceUnit`, `points`, name/icon if relevant;
-- guarded unwrap on Secret and non-Secret values;
-- `C_Spell` and `CombatLogGetCurrentEventInfo()` Secret behavior;
-- direct UnitHealth/UnitHealthMax separately for TTD.
+Those sources remain valid for:
 
-Only after this probe succeeds should `NILNAME_API_WHITELIST.md` promote the Secret/Aura path to `LOCAL_RUNTIME_CONFIRMED`.
+- the pre-12.1 Midnight Secret model;
+- SecretValueAdapter architecture;
+- probe targets;
+- clean separation between platform/backend and rotation modules.
 
-## 8. Licensing boundary
-
-BadRotations is GPL-3.0. Sirus should use this research as behavioral/architectural evidence and implement its own adapter clean-room. Do not copy GPL implementation code into a proprietary distribution unless a deliberate licensing decision is made.
+For the current 12.1 conclusion, use `NN_12_1_POST_REFACTOR_AURA_AUDIT.md` plus local runtime results.
