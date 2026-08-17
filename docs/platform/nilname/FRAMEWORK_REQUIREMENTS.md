@@ -1,321 +1,366 @@
-# NilName Rotation Framework Requirements
+# Sirus on NilName — Framework Requirements
 
-## 目标
+> Updated: 2026-08-17
 
-NilName 给出了足够强的底层能力，但并没有证据显示它提供 Workout 式完整 Rotation Host。因此如果后续决定迁移，应把“平台 API”和“循环框架”严格分离。
+NilName 应作为 Sirus 的第一个 platform backend，而不是直接把职业 Rotation 写在 NN API 上。
 
-## 推荐架构
-
-```text
-NilName / WoW
-    |
-    +-- Script Bootstrap
-    +-- Unlock protected WoW APIs
-    +-- Object Manager / XYZ / TraceLine
-    +-- Navigation / HTTP / Crypto / FS
-    |
-    v
-Rotation Framework (我们自建)
-    |
-    +-- Scheduler / Clock
-    +-- API Facade
-    +-- Object Cache
-    +-- State Snapshot
-    +-- GCD + Action Scheduler
-    +-- Target Manager
-    +-- APL Engine
-    +-- Ground AoE Solver
-    +-- Manual Override
-    +-- Optional Navigation
-    +-- Settings / UI / Logging
-    +-- Licensing / Build
-    |
-    v
-Class/Spec Modules
-```
-
-## 1. Bootstrap
-
-NilName 当前入门页证明：脚本放 `/scripts/`，进入世界或 `/reload` 后执行；`local nn = ...` 可获得 NilName 对象。
-
-框架需要自己定义：
-
-- 唯一 bootstrap 入口
-- 模块加载顺序
-- duplicate-load 防护
-- reload 后状态清理
-- fatal error 隔离
-
-不要假设存在 Workout 的 `Main()`。
-
-## 2. Scheduler / Tick
-
-官方示例自行用 `C_Timer.After(...)` 构造周期函数，因此我们必须自己管理 tick。
-
-建议：
-
-- Core tick：20–50 ms 可配置，但实际频率必须通过 CPU/frame-time benchmark 决定。
-- Object refresh：不必每 core tick 全量扫描；分层刷新。
-- UI/debug：低频。
-- HTTP/license：极低频、异步。
-
-必须实现：
-
-- reentrancy guard
-- frame hitch detection
-- per-layer execution budget
-- rolling performance counters
-
-## 3. API Facade
-
-禁止职业模块直接散落调用 NilName API。
-
-Facade 应至少提供：
+## 1. Target architecture
 
 ```text
-GetObject(token)
-ObjectExists(obj)
-ObjectPosition(obj)
-Enemies(range/filter)
-Distance(a,b)
-Facing(a,b)
-Aura(...)
-Cooldown(...)
-Resource(...)
-Cast(...)
-CastGround(x,y,z)
-Interact(...)
+NilName Runtime / Unlock / WoW Lua
+        ↓
+Platform/NilName
+        ├─ Runtime Adapter
+        ├─ SecretValue Adapter
+        ├─ Object Adapter
+        ├─ Unit Adapter
+        ├─ Spell Adapter
+        ├─ Aura Provider
+        ├─ Event Provider
+        ├─ Geometry Adapter
+        ├─ Navigation Adapter
+        ├─ HTTP/Crypto/File Adapter
+        └─ Identity Adapter
+                ↓
+Sirus Core
+        ├─ Scheduler
+        ├─ Snapshot
+        ├─ Combat State
+        ├─ GCD / Action Queue
+        ├─ Aura Engine
+        ├─ TTD Engine
+        ├─ Target Engine
+        ├─ AoE Solver
+        ├─ APL Engine
+        ├─ Logging / Profiler
+        └─ Module Host
+                ↓
+Rotations
 ```
 
-其中 Aura/Cooldown/Resource/Spell usability 可能主要来源于解锁后的 WoW API，而不是 NilName 独立函数；必须按当前客户端实测建立白名单，不能凭普通 WoW AddOn 经验猜。
+职业模块只消费 Sirus API，不直接调用 `Unlock`, `Object`, `C_UnitAuras`, `secretunwrap` 等 NilName/WoW backend 细节。
 
-## 4. Object Cache
+## 2. Scheduler
 
-Guidelines 的性能警告是整个框架最重要的设计约束之一。
+NilName 不提供 Workout 风格的固定 `Main()` contract，因此我们需要自己的 Scheduler。
 
-不要：
+要求：
+
+- 可配置 Tick 频率；
+- combat 与 out-of-combat 可不同频率；
+- 单 Tick 内建立一致 Snapshot；
+- 重活分帧/降频；
+- 有运行预算与 profiler；
+- zone/load/reload 时安全暂停与恢复。
+
+## 3. Object Snapshot
+
+当前成熟 NN framework 参考显示，同一轮对象枚举最好只调用一次 `Objects()`，随后所有消费者共用同一张 snapshot。
+
+Sirus 要求：
 
 ```text
-Objects()
- -> 每个对象 ObjectType()
- -> 每个职业模块再次重复扫描
+Tick N
+  Objects() once
+     ↓
+  ObjectSnapshot[N]
+     ├─ Targeting
+     ├─ Aura
+     ├─ TTD
+     ├─ AoE
+     └─ Movement
 ```
 
-优先：
+这样既减少调用量，也避免 count/index 来自不同瞬间。
 
-- 如果 `ObjectManager(type)` 当前实机确认可用，按 type 获取。
-- 一次扫描形成 frame snapshot。
-- unit/player/gameobject 分开缓存。
-- 缓存中保存 object id、exists、position、基础 flags。
-- aura/spell 等高成本数据按需求 lazy read。
+## 4. UnitRef normalization
 
-## 5. State Snapshot
-
-每个 rotation decision 只能读取同一 snapshot，避免一个决策周期中数据时序漂移。
-
-建议字段：
+统一引用类型：
 
 ```text
-now
-player
-  combat
-  position
-  facing
-  health
-  resources
-  movement
-  casting/channeling
-  gcd
-  buffs
-
-target
-  exists/alive/attackable
-  position
-  distance/reach
-  casting
-  debuffs
-  ttd(optional)
-enemies[]
-  object
-  id
-  position
-  distance
-  health
-  combat state
-  relevant auras
+player / target / focus / nameplate token
+NN object reference
 ```
 
-## 6. Protected Action Layer
-
-`Unlock(function, ...)` 是 NilName 与普通 WoW Lua 最大的结构差异之一。
-
-Action 层必须集中处理：
-
-- 受保护 spell call
-- target/focus/mouseover bridge
-- facing/movement
-- ground targeting
-- interact
-
-不要让职业 APL 自己决定哪些函数要 Unlock。
-
-## 7. GCD / Queue / Action Scheduler
-
-不能把 Workout 的 pending/queue 经验直接照搬。
-
-NilName 要单独实测：
-
-- 在 GCD 剩余 400/300/200/100/50ms 时一次性提交技能，是否进入 WoW Spell Queue。
-- 连续 tick 重复提交的行为。
-- `Unlock(CastSpellByName/ID)` 的返回/错误行为。
-- spellcast callbacks/events 是否可作为 ACK。
-- off-GCD 与 on-GCD action 是否可同 tick 安全处理。
-
-框架最终需要：
+上层接口示例：
 
 ```text
-Intent -> Admission -> Queue/Submit -> ACK/Fail -> Re-evaluate
+Sirus.Unit.Exists(ref)
+Sirus.Unit.Health(ref)
+Sirus.Unit.Position(ref)
+Sirus.Aura.Remains(ref, spellID)
+Sirus.TTD(ref)
 ```
 
-## 8. APL Engine
+Platform/NilName 负责把 UnitRef 转成 NilName/WoW 当前调用实际接受的 representation。
 
-职业模块只负责：
+## 5. SecretValue Adapter — 12.1 新增的核心要求
 
-- variables
-- target branch
-- cooldown admission
-- finisher/builder priority
-- pool conditions
-- movement/TTD conditions
+BadRotations 当前 NN adapter 为我们提供了强外部证据：Midnight NN runtime 可能暴露：
 
-框架负责执行语义。
+- `issecretvalue`
+- `secretunwrap`
 
-这可以让 SimC APL 映射保持平台无关。
+并且成熟 framework 把其用于 AuraData、`C_Spell`、CombatLog 等 rotation-critical 数据。
 
-## 9. Ground AoE Solver
-
-这是 NilName 相比当前 Workout 已知接口最大的优势之一。
-
-基础链：
+所以 Sirus 必须单独建立：
 
 ```text
-Enemy Object Cache
- -> ObjectPosition(obj)
- -> generate candidate centers
- -> calculate coverage by spell radius
- -> optional TraceLine / terrain validation
- -> select best center
- -> Unlock(spell)
- -> ClickPosition(bestX,bestY,bestZ)
+Platform/NilName/SecretValueAdapter
 ```
 
-候选中心不应只用“某只怪脚下”。后续可以实现：
+职责：
 
-- enemy positions
-- pairwise circle intersections
-- weighted targets
-- min-target threshold
-- boss/high-priority weighting
-- movement prediction
-- LoS/terrain check
+- detect secret-wrapped scalar；
+- unwrap scalar；
+- normalize flat table；
+- 对需要的 nested structures 做 schema-aware normalization；
+- 类型验证；
+- 范围/NaN/invalid 校验；
+- error isolation；
+- capability flags。
 
-适用：Blizzard、Flamestrike、Rain of Fire、Earthquake 等地面技能。
+禁止让职业模块自行调用 `secretunwrap`。
 
-## 10. Target Manager
+### Capability examples
 
-NilName 的 Object Manager 允许比普通 target-token 更强的 target selection。
+```text
+secret.scalar
+secret.aura.spellId
+secret.aura.duration
+secret.aura.expirationTime
+secret.aura.points
+secret.spell.cooldown
+secret.cleu.spellId
+secret.health
+```
 
-框架应支持：
+每项 runtime probe 后单独标记，避免“一项成功 = 所有 secret 都可用”的错误推断。
 
-- highest priority target
+## 6. Aura Engine
+
+新的 provider 顺序：
+
+```text
+NilName Direct Aura Provider
+        ↓
+Event Cache
+        ↓
+Mechanic Reconstruction
+```
+
+### Direct provider
+
+如果 `AURA_SECRET_DIRECT_PROBE_SPEC.md` 通过，直接读取 AuraData 并由 SecretValueAdapter 正常化。
+
+### Event cache
+
+即便 Direct 可用，仍保留：
+
+- applied/refresh/remove 变化触发；
+- direct 结果交叉校验；
+- stale state recovery；
+- proc history；
+- TTD / damage history 输入。
+
+### Reconstruction
+
+只用于 direct/event 均不能完整覆盖的个别效果。必须有 confidence 标记：
+
+```text
+CONFIRMED
+INFERRED_HIGH
+INFERRED_LOW
+UNKNOWN
+```
+
+重要爆发决策默认不得消费低置信度状态。
+
+## 7. Spell/GCD Engine
+
+需要独立确认 NilName/WoW 12.1 当前：
+
+- cast API semantics；
+- protected action 通过 `Unlock` 的调用模式；
+- GCD start/duration；
+- spell cooldown；
+- charges；
+- usable/range；
+- cast/channel；
+- queue/retry 行为；
+- ground-target sequence。
+
+BadRotations 线索表明 `C_Spell` 也可能受到 secret wrapping，因此 Spell Provider 必须经过 SecretValueAdapter，而不是直接把 `C_Spell` table 交给 APL。
+
+## 8. Action Queue
+
+不要继承 Workout PendingAction 的具体实现；在 NilName 上重新实测。
+
+至少需要：
+
+```text
+Intent
+→ Admission
+→ Queue/Retry
+→ Execute
+→ Confirm/Reject
+→ Recover
+```
+
+并区分：
+
+- GCD action
+- off-GCD action
+- ground-target action
+- channel/cast protection
+- manual override/insertion
+
+## 9. TTD Engine
+
+第一阶段数据源：
+
+- UnitHealth
+- UnitHealthMax
+- stable UnitRef/object identity
+- Event/damage history
+
+输出不要只有一个数字：
+
+```text
+TTD_FAST
+TTD_MID
+TTD_SLOW
+TTD_STABLE
+confidence
+```
+
+还要支持 per-object 与 pack-level TTD。
+
+开发前必须确认 health 对 non-target NN objects 在 combat 中可读，并确定是否需要 SecretValueAdapter。
+
+## 10. Target Engine
+
+输入：
+
+- Object Snapshot
+- attackable/dead/visible
+- health / TTD
+- position / distance / facing
+- Aura state
+- target priority
+
+输出：
+
+- primary target
+- multidot targets
+- AoE candidate set
 - interrupt target
-- multi-dot target
-- densest AoE cluster
-- independent pet/player target（若职业需要）
-- mouseover/focus/npc bridge
+- swap recommendation
 
-所有切目标行为需要配置“是否真正改变玩家当前 target”，尽量优先无目标切换施法路径，避免 UI/人工操作冲突。
+## 11. Ground AoE Solver
 
-## 11. Movement / Navigation
+NilName 当前官方文档已经提供 `ObjectPosition`, `ClickPosition`, `TraceLine` 等关键底层能力。
 
-Rotation 与 Bot/Nav 必须分层。
-
-Rotation 默认只允许：
-
-- facing suggestion/optional correction
-- short-range skill-required movement（如明确开启）
-- ground spell geometry
-
-完整 `GeneratePath` / `ClickToMove` 进入可选 Navigation 模块，不应默认影响纯 DPS rotation。
-
-## 12. Manual Override
-
-必须从第一版就支持玩家人工插入：
-
-- 识别当前玩家手动 cast/channel
-- 不抢占用户关键技能
-- 可配置下一 GCD 插入优先级
-- cooldown toggle / AoE toggle / interrupt toggle
-
-NilName 的低层能力越强，越要明确人工优先级，避免自动动作与玩家输入互相争抢。
-
-## 13. Logging / Replay
-
-建议统一事件格式：
+Sirus AoE Solver 目标：
 
 ```text
-TICK
-SNAPSHOT
-DECISION
-INTENT
-SUBMIT
-SPELLCAST_ACK
-ERROR
-TARGET_CHANGE
-GROUND_POINT
-PERF
+Enemy XYZ set
+→ candidate centers
+→ skill radius scoring
+→ priority/TTD weighting
+→ terrain/LOS validation
+→ best point
+→ ground-target execute
 ```
 
-后续可以把实机日志与 SimC/WCL action timeline 做自动差异分析。
+不能只做“选择最密集那只怪”作为最终方案。
 
-## 14. Licensing / Distribution
+## 12. Event Layer
 
-NilName 当前公开能力允许不依赖额外本地 loader 构建基本授权体系：
+统一输出 NORMALIZED_EVENT。
+
+如果 CombatLog 字段 secret-wrapped：
 
 ```text
-GetWowAccount()
-  -> HTTPS request
-  -> server UTC + license record
-  -> signed token
-  -> HMAC verify
-  -> encrypted/local cached grace token
+CombatLogGetCurrentEventInfo
+→ NilName SecretValueAdapter
+→ NORMALIZED_EVENT
 ```
 
-推荐：
+Event consumers 不应知道 secret wrapper。
 
-- 服务端为时间真源，本地系统时间不作为授权最终依据。
-- 账号标识以 `GetWowAccount()` 实机稳定性为前提。
-- token 必须签名，不信任客户端返回字段。
-- 允许短离线宽限期。
-- Lua 混淆只是增加逆向成本，不作为安全根。
-- 如果使用 AES 脚本加载，密钥管理仍应避免静态硬编码成为唯一保护。
+## 13. Logging / Profiler
 
-## 15. 首轮开发 Probe 清单
+至少记录：
 
-在写任何职业循环前，只做一次平台能力验收：
+- Tick cost
+- Object scan cost
+- Aura query count/cost
+- Secret unwrap count/failures
+- TTD update cost
+- APL branch
+- Intent reject reason
+- cast confirm/reject
+- ground AoE candidate count
+- stale cache recovery
 
-1. script bootstrap/reload lifecycle
-2. scheduler jitter / max sustainable tick rate
-3. `ObjectManager(type)` 是否当前真正可用、返回格式
-4. `Object`/`Objects`/`ObjectExists` 生命周期
-5. position/facing/trace accuracy
-6. protected spell casting + GCD queue behavior
-7. aura/cooldown/resource 所需 WoW APIs 的 Unlock/availability
-8. ground spell `ClickPosition` 顺序和 cursor state
-9. focus/mouseover bridge
-10. `GetWowAccount` 稳定性
-11. HTTP callback/threading/reload behavior
-12. FileSystem path sandbox
-13. crypto functions current names/casing
+正式框架必须有性能预算，避免把高频 Object/Aura API 每 Tick 无限制重复调用。
 
-Probe 通过后冻结 `NILNAME_API_WHITELIST`，职业模块才允许开始接入。
+## 14. UI
+
+UI 与 Core 解耦。
+
+UI 只消费状态，不驱动 combat runtime。未来可实现 Sirus 控制台，但第一阶段 runtime/Aura/GCD/TTD 未确认前不要投入 UI。
+
+## 15. Licensing / Distribution
+
+NilName 已确认的 HTTP/Crypto/File/Identity 能力使未来授权系统可行，但授权不进入第一阶段 Combat Core。
+
+优先顺序：
+
+```text
+Combat correctness
+→ Stability/performance
+→ Rotation modules
+→ UI
+→ Licensing/distribution
+```
+
+## 16. Source-license boundary
+
+BadRotations 为 GPL-3.0。
+
+本项目可以借鉴：
+
+- adapter 分层思想；
+- object snapshot 原则；
+- secret-value capability 发现；
+- probe target；
+- 公开 API 名称。
+
+不得在未做 GPL 发布决策前复制其代码实现到 Sirus。
+
+## 17. Pre-Sirus Gates
+
+正式写 Sirus Core 前必须通过：
+
+1. Pure NN loader
+2. Runtime namespace discovery
+3. SecretValue direct-path probe
+4. Aura player/target/non-target object
+5. C_Spell secret-sensitive fields
+6. CombatLog secret-sensitive fields
+7. Health/TTD inputs
+8. Object snapshot semantics/performance
+9. Cast/GCD semantics
+10. Ground-target minimum proof
+
+然后冻结：
+
+```text
+NILNAME_API_WHITELIST v1
+NILNAME_SECRET_CAPABILITY_MATRIX v1
+NILNAME_WOW_API_COMPAT_MATRIX v1
+```
+
+再开始职业 Rotation Module 迁移。
