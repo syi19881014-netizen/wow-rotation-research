@@ -1,139 +1,114 @@
-# NilName Source Index
+# NilName Research Sources
 
-抓取日期：2026-08-17。
+> Updated: 2026-08-17
 
-## 证据优先级
+## Official NilName / NoName documentation
 
-1. 当前官方正文：`https://docs.nilname.com/...`
-2. 当前官方 Guidelines / Getting Started 示例
-3. 当前官方侧栏索引（只能证明页面/API 名称存在）
-4. 旧官方文档 IPFS 镜像（用于版本漂移和补线索）
-5. 社区/第三方资料：本轮 API catalog **不作为函数契约来源**
+Primary documentation domain:
 
-## 当前官方入口
+- `https://docs.nilname.com/`
 
-- Setup/Home: `https://docs.nilname.com/`
-- API Guidelines: `https://docs.nilname.com/API/Guidelines/`
-- Getting Started as developer: `https://docs.nilname.com/Home/Getting_started_as_a_developer/`
-- API Summary: `https://docs.nilname.com/Home/LuaAPISummary/`（本轮正文抓取受限）
-- Scripts: `https://docs.nilname.com/Scripts/`（本轮正文抓取受限）
-- Cryptography: `https://docs.nilname.com/API/Crypto/`
-- FileSystem: `https://docs.nilname.com/FileSystem/`
-- HTTP REST API (resellers): `https://docs.nilname.com/REST_API/readme/`
+Important confirmed sections used in this research baseline:
 
-## Targeting
+- `/API/Guidelines/`
+- `/Home/LuaAPISummary/`
+- `/Home/Getting_started_as_a_developer/`
+- `/Scripts/`
+- `/Crypto/`
+- `/FileSystem/`
+- `/LuaAPI/Targeting/*`
+- `/LuaAPI/Objects/*`
+- `/LuaAPI/Units/*`
+- `/LuaAPI/Movement/*`
+- `/LuaAPI/HTTP/*`
+- `/LuaAPI/Miscellaneous/*`
 
-- `https://docs.nilname.com/LuaAPI/Targeting/GetFocus/`
-- `https://docs.nilname.com/LuaAPI/Targeting/GetMouseover/`
-- `https://docs.nilname.com/LuaAPI/Targeting/GetNPCObject/`
-- `https://docs.nilname.com/LuaAPI/Targeting/SetFocus/`
-- `https://docs.nilname.com/LuaAPI/Targeting/SetMouseover/`
-- `https://docs.nilname.com/LuaAPI/Targeting/SetNPCObject/`
-- `https://docs.nilname.com/LuaAPI/Targeting/UnitTarget/`
-- `https://docs.nilname.com/LuaAPI/Targeting/CastTarget/`
-- `https://docs.nilname.com/LuaAPI/Targeting/PlayerTarget/`
+Official docs are treated as the primary contract source. When current pages are unavailable, legacy mirrors are tagged separately and never silently promoted to current.
 
-## Objects
+## User-supplied client package
 
-- `https://docs.nilname.com/LuaAPI/Objects/Object/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectAnimationFlag/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectBoundingRadius/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectExists/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectFacing/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectField/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectFlags/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectHeight/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectId/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectInteract/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectLootable/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectName/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectPosition/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectRawPosition/`
-- `https://docs.nilname.com/LuaAPI/Objects/Objects/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectSkinnable/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectType/`
-- `https://docs.nilname.com/LuaAPI/Objects/GameObjectType/`
-- `https://docs.nilname.com/LuaAPI/Objects/ObjectUnitId/`
+Artifact supplied in conversation:
 
-## Units
+- `NN.zip`
 
-- `https://docs.nilname.com/LuaAPI/Units/CombatReach/`
-- `https://docs.nilname.com/LuaAPI/Units/DynamicFlags/`
-- `https://docs.nilname.com/LuaAPI/Units/GetUnitBoundingRadius/`
-- `https://docs.nilname.com/LuaAPI/Units/GetUnitCreatedBy/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitFlags/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitFlags2/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitFlags3/`
-- `https://docs.nilname.com/LuaAPI/Units/GetUnitIsTapped/`
-- `https://docs.nilname.com/LuaAPI/Units/GetUnitLootable/`
-- `https://docs.nilname.com/LuaAPI/Units/GetUnitSummonedBy/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitTarget/`
-- `https://docs.nilname.com/LuaAPI/Units/ObjectSkinType/`
-- `https://docs.nilname.com/LuaAPI/Units/ObjectSkinnable/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitCreatureTypeId/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitFacing/`
-- `https://docs.nilname.com/LuaAPI/Units/UnitMovementFlag/`
+Static audit only. No executable was run.
 
-## Movement / Geometry
+Observed package elements include:
 
-- `https://docs.nilname.com/LuaAPI/Movement/GenerateLocalPath/`
-- `https://docs.nilname.com/LuaAPI/Movement/GeneratePath/`
-- `https://docs.nilname.com/LuaAPI/Movement/ClickPosition/`
-- `https://docs.nilname.com/LuaAPI/Movement/ClickToMove/`
-- `https://docs.nilname.com/LuaAPI/Movement/GetCameraPosition/`
-- `https://docs.nilname.com/LuaAPI/Movement/GetCorpsePosition/`
-- `https://docs.nilname.com/LuaAPI/Movement/GetPitch/`
-- `https://docs.nilname.com/LuaAPI/Movement/LastTerrainClick/`
-- `https://docs.nilname.com/LuaAPI/Movement/SendMovementHeartbeat/`
-- `https://docs.nilname.com/LuaAPI/Movement/SetPitch/`
-- `https://docs.nilname.com/LuaAPI/Movement/SetPlayerFacing/`
-- `https://docs.nilname.com/LuaAPI/Movement/TraceLine/`
-- `https://docs.nilname.com/LuaAPI/Movement/ScreenToWorld/`
-- `https://docs.nilname.com/LuaAPI/Movement/WorldToScreen/`
+- renamed NilName launcher executable
+- NilName navigation executable/update files
+- `/scripts/_PrimeKitCore.nn`
+- `/load_glue/reloggerV9.lua`
+- protected `.nn` Lua 5.1 bytecode modules
+- `mmaps` download instructions without installed retail mesh files
 
-## Utils
+See `CLIENT_AUDIT_2026-08-17.md`.
 
-- `https://docs.nilname.com/LuaAPI/Utils/LibDraw/`
-- `https://docs.nilname.com/LuaAPI/Utils/jsonencode/`
-- `https://docs.nilname.com/LuaAPI/Utils/jsondecode/`
+## Public mature framework reference — BadRotations
 
-## HTTP
+Repository:
 
-- `https://docs.nilname.com/LuaAPI/HTTP/HTTPRequest/`
-- `https://docs.nilname.com/LuaAPI/HTTP/HTTPGet/`
-- `https://docs.nilname.com/LuaAPI/HTTP/HTTPPost/`
+- `CuteOne/BadRotations`
+- default branch: `master`
+- license: GPL-3.0
 
-## Miscellaneous
+Primary audited files:
 
-- `https://docs.nilname.com/LuaAPI/Miscellaneous/GetKeyState/`
-- `https://docs.nilname.com/LuaAPI/Miscellaneous/SetNavHost/`
-- `https://docs.nilname.com/LuaAPI/Miscellaneous/GetSessionId/`
-- `https://docs.nilname.com/LuaAPI/Miscellaneous/GetWowAccount/`
-- `https://docs.nilname.com/LuaAPI/Miscellaneous/GetSessionIndex/`
+- `Unlockers/nn.lua`
+- `Expansions/Retail/Functions.lua`
 
-## 旧官方文档镜像
+Important history:
 
-抓到的旧文档镜像基址：
+- commit `740e678e981b77727b1aef4eabe52bf918643c6d` — 2026-03-27, message includes `Initial Midnight NN support`
+- its parent `97cc89582d9e7656a8e687f9e34dafa791fd17b1` — used to verify the pre-Midnight NN adapter did not yet contain the secret unwrap compatibility layer
+- commit `885beb3f4ef048f557918dbdcfc8d7cd0ffb7642` — 2026-04-20; adds/extends the `C_UnitAuras` proxy path used by the Retail compatibility layer
 
-`https://www.dweb3.wtf/ipfs/bafybeifghpknatq7mzilxlm4uzjm6yg6yrrquxfs2sykrfmt5m6fjjgd34/`
+Key external-framework observations:
 
-本轮使用的高价值旧页面：
+- execution environment switch through `C_Timer.Nn`
+- runtime symbols `issecretvalue` and `secretunwrap`
+- secret-value conversion applied to AuraData
+- same conversion concept applied to `C_Spell`
+- same conversion concept applied to `CombatLogGetCurrentEventInfo()`
+- object/unit normalization before aura calls
+- one-`Objects()`-snapshot-per-scan pattern
+- `UnitHealth/UnitHealthMax` mapped through the NN-facing compatibility layer
 
-- root/setup page：用于确认历史 `NoName.exe` / token / path / 多客户端 / NnNav 架构。
-- `/API/Utility/`：用于补充历史 `Unlock` 说明、`Distance`、`SetMouseover`、`GetCorpsePosition`、旧 `SetPlayerFacing` 等。
+These facts are stored as `EXTERNAL_FRAMEWORK_OBSERVED`, not `RUNTIME_CONFIRMED` for the user's NilName build.
 
-**旧镜像只用于历史差异，不能当作 2026 当前 API 白名单。**
+### License boundary
 
-## 版权/归档原则
+BadRotations is GPL-3.0. Its implementation is used only as research evidence and architectural/reference material. Sirus code should be independently implemented from our own interface contracts unless a future licensing decision explicitly permits GPL-3.0 code reuse.
 
-本仓库保存的是：
+See:
 
-- API 名称
-- 最小签名
-- 返回 shape
-- 能力摘要
-- 文档错误/版本差异
-- 框架设计结论
-- 官方 URL
+- `BADROTATIONS_NN_ADAPTER_AUDIT.md`
+- `AURA_SECRET_DIRECT_PROBE_SPEC.md`
 
-不保存官方文档全文镜像或大段复制内容。
+## Evidence levels used by this research
+
+### OFFICIAL_CURRENT_BODY
+
+Current NilName official docs body retrieved and contract recorded.
+
+### OFFICIAL_CURRENT_INDEX_ONLY
+
+Current NilName official navigation confirms the API exists, but body/signature is not available.
+
+### OFFICIAL_LEGACY_BODY
+
+Older official-doc mirror/body is available; current status must be verified.
+
+### CLIENT_STATIC_OBSERVED
+
+Observed directly in the user-supplied client package without running executables.
+
+### EXTERNAL_FRAMEWORK_OBSERVED
+
+Observed in a public third-party framework that explicitly supports NilName. Strong runtime-development clue, but not a contract for the user's build.
+
+### RUNTIME_CONFIRMED
+
+Reserved for functions/semantics confirmed by our own controlled NilName + WoW runtime probe.
+
+No API should be promoted to this level from documentation or third-party source alone.
