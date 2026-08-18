@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checked_at_utc": "2026-08-17T19:42:43Z",
+  "checked_at_utc": "2026-08-18T03:12:44Z",
   "collector": "rogue_rankings_v0.2",
   "specs": [
     "Assassination",
@@ -163,7 +163,7 @@
   ],
   "rate_limit_after": {
     "limitPerHour": 3600,
-    "pointsSpentThisHour": 54.07,
+    "pointsSpentThisHour": 56.09,
     "pointsResetIn": 3594
   },
   "message": "WCL API worked, but no non-empty Rogue rankings were found in the newest candidate zones."
