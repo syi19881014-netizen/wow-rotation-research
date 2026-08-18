@@ -17,33 +17,51 @@ Support response #3 to the broader 12.1 question, including non-current Objects(
 
 > "yes it can, should be able to use Unlock and pass down"
 
+Support response #4, after explicitly asking whether the NN object from `Objects()` can be passed directly through `Unlock` versus first mapping it with `SetNPCObject(object)` and then using the `npc` token:
+
+> "both work"
+>
+> "object shouldnt taint"
+>
+> "but if it does"
+>
+> "use setnpc"
+>
+> "but it shouldnt"
+
 ## Interpretation
 
 This is the strongest current direct support evidence for the multi-target Aura route needed by Sirus.
 
-There are now two support-described access styles that may be related rather than mutually exclusive:
+NilName support now explicitly confirms two valid access styles:
 
 ```text
-A) NN object pointer
-   -> SetNPCObject(object)
-   -> query tracked Aura IDs
-   -> unwrap Secret values
+A) Direct object path [preferred]
+   NN object pointer from Objects()
+   -> Unlock(<Aura function>, object, ...)
+   -> query tracked Aura ID
+   -> unwrap Secret values if returned
 
-B) call the relevant Aura function through Unlock(...)
-   -> pass the non-current object / required unit argument down to that function
+B) SetNPCObject fallback
+   NN object pointer
+   -> SetNPCObject(object)
+   -> use the mapped `npc` unit token in the Aura query through Unlock
    -> unwrap Secret values if returned
 ```
 
-The third response strongly suggests that `Unlock` itself can be used as the privileged call bridge, with the target object/unit arguments passed through to the underlying Aura query. It does **not** yet specify the exact function signature, so we must not hard-code a guessed call such as `Unlock(C_UnitAuras.GetUnitAuraBySpellID, object, spellID)` until runtime or support confirms the concrete argument form.
+Support says **both work**. They further state the direct NN object **should not taint**; if it does in a particular call/path, use `SetNPCObject` as the fallback, though they do not expect that to be necessary normally.
 
-The important capability conclusion is unchanged and strengthened: the enemy does not need to be the player's current target merely to inspect Aura state that the framework is tracking.
+This resolves the earlier uncertainty over whether the direct object must first be converted to the `npc` token. At support-guidance level, it does not: direct object pass-through is expected to work, with `SetNPCObject` retained as a compatibility/taint fallback.
+
+The enemy therefore does not need to be the player's current target merely to inspect Aura state that the framework is tracking.
 
 ## What is support-confirmed
 
 - NilName can query Aura state on a non-current object returned by `Objects()`.
-- `SetNPCObject` is one explicitly recommended bridge for a non-current NN object.
-- `Unlock` is also explicitly described by support as a path that can be used while passing the required object/unit arguments down to the Aura query.
-- Tracked Aura IDs can be checked after establishing the privileged/object path.
+- A non-current NN object can be passed directly through the privileged `Unlock` path to the relevant Aura query.
+- `SetNPCObject(object)` + `npc` token is also valid and is the recommended fallback if the direct object path taints/fails.
+- Support expects the direct object itself not to taint.
+- Tracked Aura IDs can be checked after establishing either privileged/object path.
 - Returned values may be Secret under 12.1.
 - Secret values should be unwrapped before the framework consumes them.
 - NilName support explicitly states that **all normal Aura data should be presentable after this path**.
@@ -63,13 +81,12 @@ This does not mean every Blizzard/internal/private Aura field is guaranteed, onl
 
 Local probe still needs to determine implementation details and stability:
 
-- whether `Unlock` can directly pass an NN object pointer to the chosen Aura function or first requires `SetNPCObject`;
-- whether the query uses the `npc` unit token after `SetNPCObject`;
-- exact supported by-spellID/by-name Aura function;
-- exact `Unlock` call signature and argument order;
+- exact supported by-spellID/by-name Aura function in the user's current Retail 12.1 build;
+- exact `Unlock` call signature and argument order for that Aura function;
+- whether any particular Aura API unexpectedly taints/errors with a direct NN object;
 - exact field names/shapes in the current 12.1 build;
 - refresh/expiry behavior;
-- rapid object rebinding / multi-object iteration behavior;
+- multi-object iteration behavior under load;
 - stale-state behavior when objects disappear/despawn;
 - performance when scanning multiple enemies each pulse.
 
@@ -77,6 +94,8 @@ Current capability labels:
 
 ```text
 NN_NON_TARGET_AURA_ACCESS       = SUPPORT_GUIDANCE_CONFIRMED
+NN_DIRECT_OBJECT_AURA_PATH      = SUPPORT_GUIDANCE_CONFIRMED_PREFERRED
+NN_SETNPC_AURA_FALLBACK         = SUPPORT_GUIDANCE_CONFIRMED
 NN_UNLOCK_AURA_BRIDGE           = SUPPORT_GUIDANCE_CONFIRMED_SIGNATURE_PENDING
 NN_NON_TARGET_NORMAL_AURA_DATA  = SUPPORT_GUIDANCE_CONFIRMED
 NN_NON_TARGET_AURA_REMAINS      = SUPPORT_GUIDANCE_CONFIRMED_PENDING_RUNTIME_VALIDATION
@@ -85,23 +104,19 @@ NN_MULTI_TARGET_DOT_ENGINE      = SUPPORT_CONFIRMED_FEASIBLE_PENDING_RUNTIME_VAL
 
 ## P0 runtime proof
 
-Use two or three training dummies. Apply Rupture/Garrote manually, target a different dummy, then test both support-described paths where applicable:
+Use two or three training dummies. Apply Rupture/Garrote manually, target a different dummy, then test the direct object path first and fall back to SetNPCObject only if required:
 
 ```text
-Path A:
+Preferred path:
+Unlock(<confirmed Aura function>, object, spellID / required args)
+-> detect/unwrap Secret fields
+-> record up/stacks/duration/expiration/source
+
+Fallback path if direct object taints/errors:
 SetNPCObject(object)
--> query tracked Aura spellID
+-> Unlock(<confirmed Aura function>, "npc", spellID / required args)
 -> detect/unwrap Secret fields
-
-Path B:
-Unlock(<confirmed Aura function>, <confirmed object/unit args>, spellID)
--> detect/unwrap Secret fields
-```
-
-Record:
-
-```text
-up / applications / duration / expirationTime / sourceUnit
+-> record up/stacks/duration/expiration/source
 ```
 
 Success requires independent non-current-object state such as:
@@ -121,10 +136,14 @@ Assuming the local runtime matches support guidance, the preferred Sirus multi-t
 ```text
 Objects()/ObjectManager
     -> tracked enemy object set
-    -> privileged Aura query via confirmed Unlock/Object bridge
+    -> direct privileged Aura query via Unlock(object, ...)
     -> Secret unwrap
     -> per-object Aura cache
     -> exact remains/stacks/source for APL decisions
+
+If direct object access taints/errors for a particular API:
+    -> SetNPCObject(object)
+    -> query through `npc` token
 ```
 
 This should be preferred over reconstructing non-current DoT duration purely from cast history whenever the direct path is stable and performant.
