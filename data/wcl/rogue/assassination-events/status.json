@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "collected_at_utc": "2026-08-21T18:10:29Z",
+  "collected_at_utc": "2026-08-21T18:11:57Z",
   "samples": [
     {
       "file": "data/wcl/rogue/assassination-events/samples/83RzXPcYMHpnd4QV-16-171.json",
@@ -11,7 +11,7 @@
       "level": 17,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 88,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -19,7 +19,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 79,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -37,7 +37,7 @@
       "level": 17,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 86,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -45,7 +45,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 78,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -63,7 +63,7 @@
       "level": 17,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 72,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -71,7 +71,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 69,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -89,7 +89,7 @@
       "level": 16,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 82,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -97,7 +97,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 79,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -115,7 +115,7 @@
       "level": 16,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 68,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -123,7 +123,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 49,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -141,7 +141,7 @@
       "level": 16,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 84,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -149,7 +149,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 77,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -167,7 +167,7 @@
       "level": 16,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 75,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -175,7 +175,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 68,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -193,7 +193,7 @@
       "level": 16,
       "summary": {
         "Garrote": {
-          "casts": 0,
+          "casts": 93,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
@@ -201,7 +201,7 @@
           "median_seconds_to_death": null
         },
         "Rupture": {
-          "casts": 0,
+          "casts": 68,
           "casts_with_observed_target_death": 0,
           "within_3s": 0,
           "within_6s": 0,
