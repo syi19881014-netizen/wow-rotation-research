@@ -1,0 +1,216 @@
+{
+  "ok": true,
+  "collected_at_utc": "2026-08-21T18:10:29Z",
+  "samples": [
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/83RzXPcYMHpnd4QV-16-171.json",
+      "player": "久仰",
+      "report_code": "83RzXPcYMHpnd4QV",
+      "fight_id": 16,
+      "source_id": 171,
+      "level": 17,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/P3j1myqhvQcMp6Tk-9-79.json",
+      "player": "久仰",
+      "report_code": "P3j1myqhvQcMp6Tk",
+      "fight_id": 9,
+      "source_id": 79,
+      "level": 17,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/TpKwBdAFGZkLaY34-3-51.json",
+      "player": "久仰",
+      "report_code": "TpKwBdAFGZkLaY34",
+      "fight_id": 3,
+      "source_id": 51,
+      "level": 17,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/P3j1myqhvQcMp6Tk-7-79.json",
+      "player": "久仰",
+      "report_code": "P3j1myqhvQcMp6Tk",
+      "fight_id": 7,
+      "source_id": 79,
+      "level": 16,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/4nYhQAB9VFW361Xy-4-61.json",
+      "player": "Zeross",
+      "report_code": "4nYhQAB9VFW361Xy",
+      "fight_id": 4,
+      "source_id": 61,
+      "level": 16,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/P3j1myqhvQcMp6Tk-8-79.json",
+      "player": "久仰",
+      "report_code": "P3j1myqhvQcMp6Tk",
+      "fight_id": 8,
+      "source_id": 79,
+      "level": 16,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/83RzXPcYMHpnd4QV-13-171.json",
+      "player": "久仰",
+      "report_code": "83RzXPcYMHpnd4QV",
+      "fight_id": 13,
+      "source_id": 171,
+      "level": 16,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    },
+    {
+      "file": "data/wcl/rogue/assassination-events/samples/vPMYzQGCZ2qxtFAB-11-236.json",
+      "player": "Chainbleed",
+      "report_code": "vPMYzQGCZ2qxtFAB",
+      "fight_id": 11,
+      "source_id": 236,
+      "level": 16,
+      "summary": {
+        "Garrote": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        },
+        "Rupture": {
+          "casts": 0,
+          "casts_with_observed_target_death": 0,
+          "within_3s": 0,
+          "within_6s": 0,
+          "within_10s": 0,
+          "median_seconds_to_death": null
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "message": "Event samples collected."
+}
