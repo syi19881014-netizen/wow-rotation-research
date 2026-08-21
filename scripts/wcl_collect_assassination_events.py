@@ -210,9 +210,9 @@ def main():
             source_id = player["id"]
             start = fight["startTime"]
             events = {
-                "Casts": paged_events(access_token, candidate["report_code"], candidate["fight_id"], source_id, "Casts", start),
-                "Debuffs": paged_events(access_token, candidate["report_code"], candidate["fight_id"], source_id, "Debuffs", start),
-                "Deaths": paged_events(access_token, candidate["report_code"], candidate["fight_id"], None, "Deaths", start),
+                "Casts": paged_events(access_token, candidate["report_code"], candidate["fight_id"], source_id, "Casts", None),
+                "Debuffs": paged_events(access_token, candidate["report_code"], candidate["fight_id"], source_id, "Debuffs", None),
+                "Deaths": paged_events(access_token, candidate["report_code"], candidate["fight_id"], None, "Deaths", None),
             }
             sample = {
                 "ranking": candidate,
