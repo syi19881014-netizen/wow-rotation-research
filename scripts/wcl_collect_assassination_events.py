@@ -67,11 +67,11 @@ query Meta($code: String!, $fightIDs: [Int!]) {
 """
 
 EVENT_QUERY = """
-query Events($code: String!, $fightIDs: [Int!], $sourceID: Int, $start: Float, $kind: EventDataType!) {
+query Events($code: String!, $fightIDs: [Int!], $sourceID: Int, $start: Float, $kind: EventDataType!, $hostility: HostilityType) {
   reportData {
     report(code: $code) {
       events(fightIDs: $fightIDs, sourceID: $sourceID, startTime: $start,
-             dataType: $kind, limit: 10000) {
+             dataType: $kind, hostilityType: $hostility, limit: 10000) {
         data
         nextPageTimestamp
       }
@@ -116,12 +116,12 @@ def find_player(actors, name):
     return (rogue or exact or [None])[0]
 
 
-def paged_events(access_token, code, fight_id, source_id, kind, start):
+def paged_events(access_token, code, fight_id, source_id, kind, start, hostility="Friendlies"):
     events, cursor = [], start
     for _ in range(30):
         data = gql(access_token, EVENT_QUERY, {
             "code": code, "fightIDs": [fight_id], "sourceID": source_id,
-            "start": cursor, "kind": kind,
+            "start": cursor, "kind": kind, "hostility": hostility,
         })
         page = data["reportData"]["report"]["events"]
         events.extend(page.get("data") or [])
@@ -157,7 +157,7 @@ def summarize(sample):
             "timestamp": timestamp,
             "spell_id": ability,
             "spell": DOT_IDS[ability],
-            "target_id": target,
+            "target_id": target[0],\n            "target_instance": target[1],
             "seconds_to_target_death": seconds_to_death,
             "within_3s_of_death": seconds_to_death is not None and seconds_to_death <= 3,
             "within_6s_of_death": seconds_to_death is not None and seconds_to_death <= 6,
@@ -212,7 +212,7 @@ def main():
             events = {
                 "Casts": paged_events(access_token, candidate["report_code"], candidate["fight_id"], source_id, "Casts", None),
                 "Debuffs": paged_events(access_token, candidate["report_code"], candidate["fight_id"], source_id, "Debuffs", None),
-                "Deaths": paged_events(access_token, candidate["report_code"], candidate["fight_id"], None, "Deaths", None),
+                "Deaths": paged_events(access_token, candidate["report_code"], candidate["fight_id"], None, "Deaths", None, "Enemies"),
             }
             sample = {
                 "ranking": candidate,
