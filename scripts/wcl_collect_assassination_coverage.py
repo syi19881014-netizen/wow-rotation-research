@@ -143,16 +143,19 @@ def main() -> int:
         try:
             aura_events = []
             for ability_id in DOT_IDS:
+                enemy_debuffs = events(
+                    token,
+                    candidate["code"],
+                    candidate["fight_id"],
+                    "Debuffs",
+                    None,
+                    "Enemies",
+                    ability_id,
+                )
                 aura_events.extend(
-                    events(
-                        token,
-                        candidate["code"],
-                        candidate["fight_id"],
-                        "Debuffs",
-                        candidate["source_id"],
-                        "Enemies",
-                        ability_id,
-                    )
+                    event
+                    for event in enemy_debuffs
+                    if int(event.get("sourceID") or -1) == candidate["source_id"]
                 )
             death_events = events(
                 token,
