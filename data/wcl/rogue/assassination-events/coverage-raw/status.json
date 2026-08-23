@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "samples": [
+    {
+      "file": "4nYhQAB9VFW361Xy-4-61.json",
+      "player": "Zeross",
+      "auras": 0,
+      "deaths": 142,
+      "damage": 77744
+    },
+    {
+      "file": "83RzXPcYMHpnd4QV-13-171.json",
+      "player": "久仰",
+      "auras": 0,
+      "deaths": 150,
+      "damage": 55109
+    },
+    {
+      "file": "83RzXPcYMHpnd4QV-16-171.json",
+      "player": "久仰",
+      "auras": 0,
+      "deaths": 131,
+      "damage": 69597
+    },
+    {
+      "file": "P3j1myqhvQcMp6Tk-7-79.json",
+      "player": "久仰",
+      "auras": 0,
+      "deaths": 243,
+      "damage": 67830
+    },
+    {
+      "file": "P3j1myqhvQcMp6Tk-8-79.json",
+      "player": "久仰",
+      "auras": 0,
+      "deaths": 160,
+      "damage": 77468
+    },
+    {
+      "file": "P3j1myqhvQcMp6Tk-9-79.json",
+      "player": "久仰",
+      "auras": 0,
+      "deaths": 155,
+      "damage": 76910
+    },
+    {
+      "file": "TpKwBdAFGZkLaY34-3-51.json",
+      "player": "久仰",
+      "auras": 0,
+      "deaths": 158,
+      "damage": 60275
+    },
+    {
+      "file": "vPMYzQGCZ2qxtFAB-11-236.json",
+      "player": "Chainbleed",
+      "auras": 0,
+      "deaths": 171,
+      "damage": 97722
+    }
+  ],
+  "errors": []
+}
