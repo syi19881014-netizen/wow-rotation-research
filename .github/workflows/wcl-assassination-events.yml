@@ -21,12 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Collect top Assassination event samples
+      - name: Collect enemy-side Assassination coverage samples
         env:
           WCL_CLIENT_ID: ${{ secrets.WCL_CLIENT_ID }}
           WCL_CLIENT_SECRET: ${{ secrets.WCL_CLIENT_SECRET }}
           WCL_EVENT_REPORTS: "8"
-        run: python3 scripts/wcl_collect_assassination_events.py
+        run: python3 scripts/wcl_collect_assassination_coverage.py
 
       - name: Save event research
         if: always()
