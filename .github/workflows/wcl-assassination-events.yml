@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "scripts/wcl_collect_assassination_events.py"
+      - "scripts/wcl_collect_assassination_coverage.py"
       - ".github/workflows/wcl-assassination-events.yml"
 
 permissions:
