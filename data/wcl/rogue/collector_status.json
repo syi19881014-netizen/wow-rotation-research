@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checked_at_utc": "2026-08-29T16:41:59Z",
+  "checked_at_utc": "2026-08-29T20:54:06Z",
   "collector": "rogue_rankings_v0.2",
   "specs": [
     "Assassination",
@@ -127,7 +127,7 @@
   "rate_limit_after": {
     "limitPerHour": 3600,
     "pointsSpentThisHour": 28.91,
-    "pointsResetIn": 3591
+    "pointsResetIn": 3593
   },
   "message": "Rogue ranking data collected successfully."
 }
