@@ -1,5 +1,5 @@
 {
-  "collected_at_utc": "2026-09-15T21:19:14Z",
+  "collected_at_utc": "2026-09-16T04:47:24Z",
   "expansion": {
     "id": 7,
     "name": "Midnight"
@@ -86991,6 +86991,637 @@
           ]
         },
         {
+          "name": "Devrak",
+          "class": "Rogue",
+          "spec": "Outlaw",
+          "amount": -379999529.6425781,
+          "hardModeLevel": 19,
+          "duration": 1901700,
+          "startTime": 1789506781847,
+          "report": {
+            "code": "1wTX8BCymLfDb63p",
+            "fightID": 1,
+            "startTime": 1789496627038
+          },
+          "guild": {
+            "id": 778679,
+            "name": "Rolling For Blame",
+            "faction": 0
+          },
+          "server": {
+            "id": 206,
+            "name": "Stormrage",
+            "region": "US"
+          },
+          "bracketData": 19,
+          "faction": 0,
+          "affixes": [
+            9,
+            10,
+            147
+          ],
+          "medal": "bronze",
+          "score": 470.357421875,
+          "leaderboard": 0,
+          "talents": [
+            {
+              "talentID": 112521,
+              "points": 1
+            },
+            {
+              "talentID": 112523,
+              "points": 1
+            },
+            {
+              "talentID": 112525,
+              "points": 2
+            },
+            {
+              "talentID": 112526,
+              "points": 1
+            },
+            {
+              "talentID": 112530,
+              "points": 1
+            },
+            {
+              "talentID": 112531,
+              "points": 1
+            },
+            {
+              "talentID": 112533,
+              "points": 1
+            },
+            {
+              "talentID": 112534,
+              "points": 1
+            },
+            {
+              "talentID": 112535,
+              "points": 1
+            },
+            {
+              "talentID": 112538,
+              "points": 1
+            },
+            {
+              "talentID": 112539,
+              "points": 1
+            },
+            {
+              "talentID": 112540,
+              "points": 1
+            },
+            {
+              "talentID": 112542,
+              "points": 1
+            },
+            {
+              "talentID": 112545,
+              "points": 1
+            },
+            {
+              "talentID": 112547,
+              "points": 1
+            },
+            {
+              "talentID": 112548,
+              "points": 1
+            },
+            {
+              "talentID": 112549,
+              "points": 1
+            },
+            {
+              "talentID": 112552,
+              "points": 1
+            },
+            {
+              "talentID": 112553,
+              "points": 2
+            },
+            {
+              "talentID": 112554,
+              "points": 1
+            },
+            {
+              "talentID": 112555,
+              "points": 2
+            },
+            {
+              "talentID": 112556,
+              "points": 1
+            },
+            {
+              "talentID": 112557,
+              "points": 1
+            },
+            {
+              "talentID": 112558,
+              "points": 1
+            },
+            {
+              "talentID": 112567,
+              "points": 1
+            },
+            {
+              "talentID": 112568,
+              "points": 1
+            },
+            {
+              "talentID": 112571,
+              "points": 1
+            },
+            {
+              "talentID": 112572,
+              "points": 1
+            },
+            {
+              "talentID": 112574,
+              "points": 1
+            },
+            {
+              "talentID": 112575,
+              "points": 1
+            },
+            {
+              "talentID": 112583,
+              "points": 1
+            },
+            {
+              "talentID": 112585,
+              "points": 1
+            },
+            {
+              "talentID": 112630,
+              "points": 1
+            },
+            {
+              "talentID": 112632,
+              "points": 1
+            },
+            {
+              "talentID": 112633,
+              "points": 1
+            },
+            {
+              "talentID": 112634,
+              "points": 1
+            },
+            {
+              "talentID": 112635,
+              "points": 1
+            },
+            {
+              "talentID": 112636,
+              "points": 1
+            },
+            {
+              "talentID": 112638,
+              "points": 1
+            },
+            {
+              "talentID": 112642,
+              "points": 1
+            },
+            {
+              "talentID": 112643,
+              "points": 2
+            },
+            {
+              "talentID": 112644,
+              "points": 1
+            },
+            {
+              "talentID": 112645,
+              "points": 1
+            },
+            {
+              "talentID": 112646,
+              "points": 1
+            },
+            {
+              "talentID": 112647,
+              "points": 1
+            },
+            {
+              "talentID": 112648,
+              "points": 1
+            },
+            {
+              "talentID": 112650,
+              "points": 1
+            },
+            {
+              "talentID": 112651,
+              "points": 2
+            },
+            {
+              "talentID": 112652,
+              "points": 1
+            },
+            {
+              "talentID": 112654,
+              "points": 1
+            },
+            {
+              "talentID": 112655,
+              "points": 1
+            },
+            {
+              "talentID": 112657,
+              "points": 1
+            },
+            {
+              "talentID": 117145,
+              "points": 1
+            },
+            {
+              "talentID": 117148,
+              "points": 1
+            },
+            {
+              "talentID": 117152,
+              "points": 1
+            },
+            {
+              "talentID": 117708,
+              "points": 1
+            },
+            {
+              "talentID": 117712,
+              "points": 1
+            },
+            {
+              "talentID": 117713,
+              "points": 1
+            },
+            {
+              "talentID": 117715,
+              "points": 1
+            },
+            {
+              "talentID": 117718,
+              "points": 1
+            },
+            {
+              "talentID": 117725,
+              "points": 1
+            },
+            {
+              "talentID": 117730,
+              "points": 1
+            },
+            {
+              "talentID": 117731,
+              "points": 1
+            },
+            {
+              "talentID": 117734,
+              "points": 1
+            },
+            {
+              "talentID": 117737,
+              "points": 1
+            },
+            {
+              "talentID": 117738,
+              "points": 1
+            },
+            {
+              "talentID": 117740,
+              "points": 1
+            },
+            {
+              "talentID": 123372,
+              "points": 1
+            },
+            {
+              "talentID": 125615,
+              "points": 1
+            },
+            {
+              "talentID": 135732,
+              "points": 1
+            },
+            {
+              "talentID": 135734,
+              "points": 1
+            },
+            {
+              "talentID": 136021,
+              "points": 1
+            },
+            {
+              "talentID": 136022,
+              "points": 1
+            },
+            {
+              "talentID": 136023,
+              "points": 1
+            },
+            {
+              "talentID": 136881,
+              "points": 1
+            },
+            {
+              "talentID": 137068,
+              "points": 1
+            },
+            {
+              "talentID": 137069,
+              "points": 2
+            },
+            {
+              "talentID": 137070,
+              "points": 1
+            }
+          ],
+          "gear": [
+            {
+              "name": "Chosen Bloodslayer's Spirit Shroud",
+              "quality": "epic",
+              "id": 271510,
+              "icon": "inv_helm_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8017",
+              "bonusIDs": [
+                "12846",
+                "6652",
+                "13440",
+                "13695",
+                "13692",
+                "13698",
+                "1574"
+              ],
+              "gems": [
+                {
+                  "id": "240906",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Aqirbane Reliquary",
+              "quality": "epic",
+              "id": 268265,
+              "icon": "inv_121_jewelry_neck03_green.jpg",
+              "itemLevel": "334",
+              "bonusIDs": [
+                "6652",
+                "13668",
+                "13334",
+                "13987",
+                "12854"
+              ],
+              "gems": [
+                {
+                  "id": "240890",
+                  "itemLevel": "295"
+                },
+                {
+                  "id": "240890",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Voodoo Guards",
+              "quality": "epic",
+              "id": 271508,
+              "icon": "inv_shoulder_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8001",
+              "bonusIDs": [
+                "6652",
+                "13440",
+                "13694",
+                "13697",
+                "12846"
+              ]
+            },
+            {
+              "name": "Blinky's Collar",
+              "quality": "uncommon",
+              "id": 268274,
+              "icon": "inv_jewelry_necklace_22.jpg",
+              "itemLevel": "1"
+            },
+            {
+              "name": "Chosen Bloodslayer's Banded Poncho",
+              "quality": "epic",
+              "id": 271513,
+              "icon": "inv_chest_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7987",
+              "bonusIDs": [
+                "6652",
+                "13440",
+                "13690",
+                "13698",
+                "12846"
+              ]
+            },
+            {
+              "name": "Primal Dinomancer's Belt",
+              "quality": "rare",
+              "id": 159301,
+              "icon": "inv_belt_leather_zandalardungeon_c_01.jpg",
+              "itemLevel": "318",
+              "bonusIDs": [
+                "13440",
+                "42",
+                "13696",
+                "13662",
+                "12699",
+                "12845"
+              ]
+            },
+            {
+              "name": "Coiled Hex Legguards",
+              "quality": "epic",
+              "id": 268225,
+              "icon": "inv_pant_leather_raidmonkulatek_d_01.jpg",
+              "itemLevel": "334",
+              "permanentEnchant": "8159",
+              "bonusIDs": [
+                "42",
+                "13662",
+                "13334",
+                "12854"
+              ]
+            },
+            {
+              "name": "Bespittled Slitherslippers",
+              "quality": "epic",
+              "id": 268261,
+              "icon": "inv_boot_leather_raidmonkulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7963",
+              "bonusIDs": [
+                "40",
+                "13662",
+                "13334",
+                "12846"
+              ]
+            },
+            {
+              "name": "Silvermoon Agent's Deflectors",
+              "quality": "epic",
+              "id": 244576,
+              "icon": "inv_bracer_leather_questbloodelf_b_01.jpg",
+              "itemLevel": "331",
+              "bonusIDs": [
+                "12214",
+                "13667",
+                "12497",
+                "13751",
+                "14001",
+                "8960",
+                "12384",
+                "8792",
+                "13836",
+                "13696"
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Fanged Grips",
+              "quality": "epic",
+              "id": 271511,
+              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "bonusIDs": [
+                "6652",
+                "13440",
+                "13691",
+                "13697",
+                "12846"
+              ]
+            },
+            {
+              "name": "Apex Brute's Claw Ring",
+              "quality": "epic",
+              "id": 268252,
+              "icon": "inv_121_jewelry_ring03_red.jpg",
+              "itemLevel": "308",
+              "permanentEnchant": "7967",
+              "bonusIDs": [
+                "6652",
+                "13668",
+                "13333",
+                "12838"
+              ],
+              "gems": [
+                {
+                  "id": "240906",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Masterwork Sin'dorei Band",
+              "quality": "epic",
+              "id": 240949,
+              "icon": "inv_12_profession_jewelcrafting_ring4_gold.jpg",
+              "itemLevel": "331",
+              "permanentEnchant": "7967",
+              "bonusIDs": [
+                "12214",
+                "13667",
+                "12497",
+                "13751",
+                "14001",
+                "13453",
+                "8960",
+                "8792",
+                "13836"
+              ],
+              "gems": [
+                {
+                  "id": "240983",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Zul'jin's Guillotine Technique",
+              "quality": "epic",
+              "id": 270173,
+              "icon": "inv_121_trinket_raid_ulatek_trolltablet.jpg",
+              "itemLevel": "328",
+              "bonusIDs": [
+                "6652",
+                "13334",
+                "12852"
+              ]
+            },
+            {
+              "name": "Freightrunner's Flask",
+              "quality": "rare",
+              "id": 250215,
+              "icon": "inv_alchemy_90_flask_red.jpg",
+              "itemLevel": "315",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "12699",
+                "12844"
+              ]
+            },
+            {
+              "name": "Fireproof Drape",
+              "quality": "rare",
+              "id": 193763,
+              "icon": "inv_mail_dragondungeon_c_01_cape.jpg",
+              "itemLevel": "318",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "13662",
+                "12699",
+                "12845"
+              ]
+            },
+            {
+              "name": "Havoc Crusher",
+              "quality": "rare",
+              "id": 193767,
+              "icon": "inv_mace_1h_dragondungeon_c_02.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7981",
+              "temporaryEnchant": "8052",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "12701",
+                "12846"
+              ]
+            },
+            {
+              "name": "Sharpened Lightwood Slasher",
+              "quality": "rare",
+              "id": 275070,
+              "icon": "inv_knife_1h_zuljin_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8689",
+              "temporaryEnchant": "8052",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "12701",
+                "12846"
+              ]
+            },
+            {
+              "name": "Guild Tabard",
+              "quality": "uncommon",
+              "id": 5976,
+              "icon": "inv_shirt_guildtabard_01.jpg",
+              "itemLevel": "1"
+            }
+          ]
+        },
+        {
           "name": "Jpbabe",
           "class": "Rogue",
           "spec": "Outlaw",
@@ -101215,6 +101846,636 @@
           ]
         },
         {
+          "name": "Pwrinsidex",
+          "class": "Rogue",
+          "spec": "Outlaw",
+          "amount": -359999540.5355078,
+          "hardModeLevel": 18,
+          "duration": 1691418,
+          "startTime": 1789503965613,
+          "report": {
+            "code": "9P2tmDGMZYWHprkn",
+            "fightID": 2,
+            "startTime": 1789501871733
+          },
+          "server": {
+            "id": 329,
+            "name": "Silvermoon",
+            "region": "EU"
+          },
+          "bracketData": 18,
+          "faction": 0,
+          "affixes": [
+            9,
+            10,
+            147
+          ],
+          "medal": "bronze",
+          "score": 459.4644921875,
+          "leaderboard": 0,
+          "talents": [
+            {
+              "talentID": 112521,
+              "points": 1
+            },
+            {
+              "talentID": 112523,
+              "points": 1
+            },
+            {
+              "talentID": 112525,
+              "points": 2
+            },
+            {
+              "talentID": 112526,
+              "points": 1
+            },
+            {
+              "talentID": 112530,
+              "points": 1
+            },
+            {
+              "talentID": 112531,
+              "points": 1
+            },
+            {
+              "talentID": 112533,
+              "points": 1
+            },
+            {
+              "talentID": 112534,
+              "points": 1
+            },
+            {
+              "talentID": 112535,
+              "points": 1
+            },
+            {
+              "talentID": 112538,
+              "points": 1
+            },
+            {
+              "talentID": 112539,
+              "points": 1
+            },
+            {
+              "talentID": 112540,
+              "points": 1
+            },
+            {
+              "talentID": 112542,
+              "points": 1
+            },
+            {
+              "talentID": 112545,
+              "points": 1
+            },
+            {
+              "talentID": 112547,
+              "points": 1
+            },
+            {
+              "talentID": 112548,
+              "points": 1
+            },
+            {
+              "talentID": 112549,
+              "points": 1
+            },
+            {
+              "talentID": 112552,
+              "points": 1
+            },
+            {
+              "talentID": 112553,
+              "points": 2
+            },
+            {
+              "talentID": 112554,
+              "points": 1
+            },
+            {
+              "talentID": 112555,
+              "points": 2
+            },
+            {
+              "talentID": 112556,
+              "points": 1
+            },
+            {
+              "talentID": 112557,
+              "points": 1
+            },
+            {
+              "talentID": 112558,
+              "points": 1
+            },
+            {
+              "talentID": 112567,
+              "points": 1
+            },
+            {
+              "talentID": 112568,
+              "points": 1
+            },
+            {
+              "talentID": 112571,
+              "points": 1
+            },
+            {
+              "talentID": 112572,
+              "points": 1
+            },
+            {
+              "talentID": 112574,
+              "points": 1
+            },
+            {
+              "talentID": 112575,
+              "points": 1
+            },
+            {
+              "talentID": 112583,
+              "points": 1
+            },
+            {
+              "talentID": 112585,
+              "points": 1
+            },
+            {
+              "talentID": 112630,
+              "points": 1
+            },
+            {
+              "talentID": 112632,
+              "points": 1
+            },
+            {
+              "talentID": 112633,
+              "points": 1
+            },
+            {
+              "talentID": 112634,
+              "points": 1
+            },
+            {
+              "talentID": 112635,
+              "points": 1
+            },
+            {
+              "talentID": 112636,
+              "points": 1
+            },
+            {
+              "talentID": 112638,
+              "points": 1
+            },
+            {
+              "talentID": 112642,
+              "points": 1
+            },
+            {
+              "talentID": 112643,
+              "points": 2
+            },
+            {
+              "talentID": 112644,
+              "points": 1
+            },
+            {
+              "talentID": 112645,
+              "points": 1
+            },
+            {
+              "talentID": 112646,
+              "points": 1
+            },
+            {
+              "talentID": 112647,
+              "points": 1
+            },
+            {
+              "talentID": 112648,
+              "points": 1
+            },
+            {
+              "talentID": 112650,
+              "points": 1
+            },
+            {
+              "talentID": 112651,
+              "points": 2
+            },
+            {
+              "talentID": 112652,
+              "points": 1
+            },
+            {
+              "talentID": 112654,
+              "points": 1
+            },
+            {
+              "talentID": 112655,
+              "points": 1
+            },
+            {
+              "talentID": 112657,
+              "points": 1
+            },
+            {
+              "talentID": 117145,
+              "points": 1
+            },
+            {
+              "talentID": 117146,
+              "points": 1
+            },
+            {
+              "talentID": 117148,
+              "points": 1
+            },
+            {
+              "talentID": 117152,
+              "points": 1
+            },
+            {
+              "talentID": 117708,
+              "points": 1
+            },
+            {
+              "talentID": 117712,
+              "points": 1
+            },
+            {
+              "talentID": 117713,
+              "points": 1
+            },
+            {
+              "talentID": 117715,
+              "points": 1
+            },
+            {
+              "talentID": 117718,
+              "points": 1
+            },
+            {
+              "talentID": 117725,
+              "points": 1
+            },
+            {
+              "talentID": 117730,
+              "points": 1
+            },
+            {
+              "talentID": 117731,
+              "points": 1
+            },
+            {
+              "talentID": 117734,
+              "points": 1
+            },
+            {
+              "talentID": 117737,
+              "points": 1
+            },
+            {
+              "talentID": 117738,
+              "points": 1
+            },
+            {
+              "talentID": 117740,
+              "points": 1
+            },
+            {
+              "talentID": 123372,
+              "points": 1
+            },
+            {
+              "talentID": 135732,
+              "points": 1
+            },
+            {
+              "talentID": 135734,
+              "points": 1
+            },
+            {
+              "talentID": 136021,
+              "points": 1
+            },
+            {
+              "talentID": 136022,
+              "points": 1
+            },
+            {
+              "talentID": 136023,
+              "points": 1
+            },
+            {
+              "talentID": 136881,
+              "points": 1
+            },
+            {
+              "talentID": 137068,
+              "points": 1
+            },
+            {
+              "talentID": 137069,
+              "points": 2
+            },
+            {
+              "talentID": 137070,
+              "points": 1
+            }
+          ],
+          "gear": [
+            {
+              "name": "Spare Speaker's Hood",
+              "quality": "rare",
+              "id": 273791,
+              "icon": "inv_helm_leather_outdooramaniloa_c_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7961",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "13696",
+                "13662",
+                "12699",
+                "12846"
+              ]
+            },
+            {
+              "name": "Aqirbane Reliquary",
+              "quality": "epic",
+              "id": 268265,
+              "icon": "inv_121_jewelry_neck03_green.jpg",
+              "itemLevel": "308",
+              "bonusIDs": [
+                "6652",
+                "13668",
+                "13333",
+                "13987",
+                "12838"
+              ],
+              "gems": [
+                {
+                  "id": "240906",
+                  "itemLevel": "295"
+                },
+                {
+                  "id": "240906",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Voodoo Guards",
+              "quality": "epic",
+              "id": 271508,
+              "icon": "inv_shoulder_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8031",
+              "bonusIDs": [
+                "6652",
+                "13694",
+                "13697",
+                "12846"
+              ]
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": 0,
+              "icon": "inv_axe_02.jpg",
+              "itemLevel": "0"
+            },
+            {
+              "name": "Chosen Bloodslayer's Banded Poncho",
+              "quality": "epic",
+              "id": 271513,
+              "icon": "inv_chest_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7987",
+              "bonusIDs": [
+                "13334",
+                "6652",
+                "13690",
+                "13698",
+                "12846"
+              ]
+            },
+            {
+              "name": "Silvermoon Agent's Utility Belt",
+              "quality": "epic",
+              "id": 244573,
+              "icon": "inv_belt_leather_questbloodelf_b_01.jpg",
+              "itemLevel": "331",
+              "bonusIDs": [
+                "12214",
+                "13667",
+                "12497",
+                "13751",
+                "14001",
+                "8960",
+                "12384",
+                "8795",
+                "13836",
+                "13696"
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Reinforced Pants",
+              "quality": "epic",
+              "id": 271509,
+              "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8159",
+              "bonusIDs": [
+                "6652",
+                "13440",
+                "13693",
+                "13698",
+                "12846"
+              ]
+            },
+            {
+              "name": "Silvermoon Agent's Sneakers",
+              "quality": "epic",
+              "id": 244569,
+              "icon": "inv_boot_leather_questbloodelf_b_01.jpg",
+              "itemLevel": "331",
+              "permanentEnchant": "7993",
+              "bonusIDs": [
+                "12214",
+                "13667",
+                "12497",
+                "13751",
+                "14001",
+                "8960",
+                "12384",
+                "8790",
+                "13836"
+              ]
+            },
+            {
+              "name": "Fury-fletched Armlets",
+              "quality": "rare",
+              "id": 251135,
+              "icon": "inv_bracer_leather_dungeonharronir_c_01.jpg",
+              "itemLevel": "311",
+              "bonusIDs": [
+                "12843",
+                "13440",
+                "41",
+                "13695",
+                "13662",
+                "12699"
+              ],
+              "gems": [
+                {
+                  "id": "240906",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Fanged Grips",
+              "quality": "epic",
+              "id": 271511,
+              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "308",
+              "bonusIDs": [
+                "13333",
+                "13691",
+                "6652",
+                "13697",
+                "12838"
+              ]
+            },
+            {
+              "name": "Pilfered Precious Band",
+              "quality": "rare",
+              "id": 251148,
+              "icon": "inv_12_jewelry_zulaman_troll_ring_green2.jpg",
+              "itemLevel": "311",
+              "permanentEnchant": "7967",
+              "bonusIDs": [
+                "12843",
+                "13440",
+                "6652",
+                "13668",
+                "12699"
+              ],
+              "gems": [
+                {
+                  "id": "240983",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Ritual Binder's Ring",
+              "quality": "rare",
+              "id": 159459,
+              "icon": "inv_ring_80_03e.jpg",
+              "itemLevel": "311",
+              "permanentEnchant": "7967",
+              "bonusIDs": [
+                "12843",
+                "13440",
+                "6652",
+                "13668",
+                "12699"
+              ],
+              "gems": [
+                {
+                  "id": "240906",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Voracious Heart of Ula'tek",
+              "quality": "epic",
+              "id": 270175,
+              "icon": "inv_121_trinket_raid_ulatek_heart.jpg",
+              "itemLevel": "295",
+              "bonusIDs": [
+                "6652",
+                "13332",
+                "11215",
+                "12830"
+              ]
+            },
+            {
+              "name": "Zul'jin's Guillotine Technique",
+              "quality": "epic",
+              "id": 270173,
+              "icon": "inv_121_trinket_raid_ulatek_trolltablet.jpg",
+              "itemLevel": "334",
+              "bonusIDs": [
+                "6652",
+                "13334",
+                "12854"
+              ]
+            },
+            {
+              "name": "Amani Summoning Shawl",
+              "quality": "epic",
+              "id": 268248,
+              "icon": "inv_cape_leather_raidmonkulatek_d_01.jpg",
+              "itemLevel": "311",
+              "bonusIDs": [
+                "6652",
+                "13662",
+                "13334",
+                "12843"
+              ]
+            },
+            {
+              "name": "Spellbreaker's Blade",
+              "quality": "epic",
+              "id": 237839,
+              "icon": "inv_sword_1h_questbloodelf_b_01.jpg",
+              "itemLevel": "331",
+              "permanentEnchant": "8039",
+              "temporaryEnchant": "8051",
+              "bonusIDs": [
+                "12214",
+                "13667",
+                "12497",
+                "13751",
+                "14001",
+                "12715",
+                "8790",
+                "13836"
+              ]
+            },
+            {
+              "name": "Sharpened Lightwood Slasher",
+              "quality": "rare",
+              "id": 275070,
+              "icon": "inv_knife_1h_zuljin_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8039",
+              "temporaryEnchant": "8051",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "12701",
+                "12846"
+              ]
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": 0,
+              "icon": "inv_axe_02.jpg",
+              "itemLevel": "0"
+            }
+          ]
+        },
+        {
           "name": "Jpbabe",
           "class": "Rogue",
           "spec": "Outlaw",
@@ -108863,1244 +110124,6 @@
               "id": 0,
               "icon": "inv_axe_02.jpg",
               "itemLevel": "0"
-            }
-          ]
-        },
-        {
-          "name": "咒逐迷离",
-          "class": "Rogue",
-          "spec": "Outlaw",
-          "amount": -359999541.50003904,
-          "hardModeLevel": 18,
-          "duration": 1740802,
-          "startTime": 1788687728161,
-          "report": {
-            "code": "XaRNmCjd9LKn87Mp",
-            "fightID": 2,
-            "startTime": 1788685786048
-          },
-          "server": {
-            "id": 747,
-            "name": "熊猫酒仙",
-            "region": "CN"
-          },
-          "bracketData": 18,
-          "faction": 0,
-          "affixes": [
-            9,
-            10,
-            147
-          ],
-          "medal": "bronze",
-          "score": 458.4999609375,
-          "leaderboard": 0,
-          "talents": [
-            {
-              "talentID": 112521,
-              "points": 1
-            },
-            {
-              "talentID": 112523,
-              "points": 1
-            },
-            {
-              "talentID": 112525,
-              "points": 2
-            },
-            {
-              "talentID": 112526,
-              "points": 1
-            },
-            {
-              "talentID": 112530,
-              "points": 1
-            },
-            {
-              "talentID": 112531,
-              "points": 1
-            },
-            {
-              "talentID": 112533,
-              "points": 1
-            },
-            {
-              "talentID": 112534,
-              "points": 1
-            },
-            {
-              "talentID": 112535,
-              "points": 1
-            },
-            {
-              "talentID": 112538,
-              "points": 1
-            },
-            {
-              "talentID": 112539,
-              "points": 1
-            },
-            {
-              "talentID": 112540,
-              "points": 1
-            },
-            {
-              "talentID": 112542,
-              "points": 1
-            },
-            {
-              "talentID": 112545,
-              "points": 1
-            },
-            {
-              "talentID": 112547,
-              "points": 1
-            },
-            {
-              "talentID": 112548,
-              "points": 1
-            },
-            {
-              "talentID": 112549,
-              "points": 1
-            },
-            {
-              "talentID": 112552,
-              "points": 1
-            },
-            {
-              "talentID": 112553,
-              "points": 2
-            },
-            {
-              "talentID": 112554,
-              "points": 1
-            },
-            {
-              "talentID": 112555,
-              "points": 2
-            },
-            {
-              "talentID": 112556,
-              "points": 1
-            },
-            {
-              "talentID": 112557,
-              "points": 1
-            },
-            {
-              "talentID": 112567,
-              "points": 1
-            },
-            {
-              "talentID": 112568,
-              "points": 1
-            },
-            {
-              "talentID": 112571,
-              "points": 1
-            },
-            {
-              "talentID": 112572,
-              "points": 1
-            },
-            {
-              "talentID": 112574,
-              "points": 1
-            },
-            {
-              "talentID": 112575,
-              "points": 1
-            },
-            {
-              "talentID": 112583,
-              "points": 1
-            },
-            {
-              "talentID": 112585,
-              "points": 1
-            },
-            {
-              "talentID": 112632,
-              "points": 1
-            },
-            {
-              "talentID": 112633,
-              "points": 1
-            },
-            {
-              "talentID": 112634,
-              "points": 1
-            },
-            {
-              "talentID": 112635,
-              "points": 1
-            },
-            {
-              "talentID": 112636,
-              "points": 1
-            },
-            {
-              "talentID": 112638,
-              "points": 1
-            },
-            {
-              "talentID": 112642,
-              "points": 1
-            },
-            {
-              "talentID": 112643,
-              "points": 2
-            },
-            {
-              "talentID": 112644,
-              "points": 1
-            },
-            {
-              "talentID": 112645,
-              "points": 1
-            },
-            {
-              "talentID": 112646,
-              "points": 1
-            },
-            {
-              "talentID": 112647,
-              "points": 1
-            },
-            {
-              "talentID": 112648,
-              "points": 1
-            },
-            {
-              "talentID": 112650,
-              "points": 1
-            },
-            {
-              "talentID": 112651,
-              "points": 2
-            },
-            {
-              "talentID": 112652,
-              "points": 1
-            },
-            {
-              "talentID": 112654,
-              "points": 1
-            },
-            {
-              "talentID": 112655,
-              "points": 1
-            },
-            {
-              "talentID": 112657,
-              "points": 1
-            },
-            {
-              "talentID": 117145,
-              "points": 1
-            },
-            {
-              "talentID": 117148,
-              "points": 1
-            },
-            {
-              "talentID": 117152,
-              "points": 1
-            },
-            {
-              "talentID": 117708,
-              "points": 1
-            },
-            {
-              "talentID": 117712,
-              "points": 1
-            },
-            {
-              "talentID": 117713,
-              "points": 1
-            },
-            {
-              "talentID": 117715,
-              "points": 1
-            },
-            {
-              "talentID": 117718,
-              "points": 1
-            },
-            {
-              "talentID": 117725,
-              "points": 1
-            },
-            {
-              "talentID": 117730,
-              "points": 1
-            },
-            {
-              "talentID": 117731,
-              "points": 1
-            },
-            {
-              "talentID": 117734,
-              "points": 1
-            },
-            {
-              "talentID": 117737,
-              "points": 1
-            },
-            {
-              "talentID": 117738,
-              "points": 1
-            },
-            {
-              "talentID": 117740,
-              "points": 1
-            },
-            {
-              "talentID": 123372,
-              "points": 1
-            },
-            {
-              "talentID": 125615,
-              "points": 1
-            },
-            {
-              "talentID": 135731,
-              "points": 1
-            },
-            {
-              "talentID": 135732,
-              "points": 1
-            },
-            {
-              "talentID": 135734,
-              "points": 1
-            },
-            {
-              "talentID": 136021,
-              "points": 1
-            },
-            {
-              "talentID": 136022,
-              "points": 1
-            },
-            {
-              "talentID": 136023,
-              "points": 1
-            },
-            {
-              "talentID": 136881,
-              "points": 1
-            },
-            {
-              "talentID": 136882,
-              "points": 1
-            },
-            {
-              "talentID": 137068,
-              "points": 1
-            },
-            {
-              "talentID": 137069,
-              "points": 2
-            },
-            {
-              "talentID": 137070,
-              "points": 1
-            }
-          ],
-          "gear": [
-            {
-              "name": "Chosen Bloodslayer's Spirit Shroud",
-              "quality": "epic",
-              "id": 271510,
-              "icon": "inv_helm_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8017",
-              "bonusIDs": [
-                "13334",
-                "13692",
-                "6652",
-                "13696",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Aqirbane Reliquary",
-              "quality": "epic",
-              "id": 268265,
-              "icon": "inv_121_jewelry_neck03_green.jpg",
-              "itemLevel": "334",
-              "bonusIDs": [
-                "6652",
-                "13668",
-                "13334",
-                "13987",
-                "13696",
-                "12854"
-              ],
-              "gems": [
-                {
-                  "id": "240906",
-                  "itemLevel": "295"
-                },
-                {
-                  "id": "240906",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Frothing Venom Spaulders",
-              "quality": "epic",
-              "id": 268246,
-              "icon": "inv_shoulder_leather_raiddemonhunterulatek_d_01.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "8001",
-              "bonusIDs": [
-                "6652",
-                "13662",
-                "13334",
-                "12843"
-              ]
-            },
-            {
-              "name": "Unknown Item",
-              "quality": "common",
-              "id": 0,
-              "icon": "inv_axe_02.jpg",
-              "itemLevel": "0"
-            },
-            {
-              "name": "Chosen Bloodslayer's Banded Poncho",
-              "quality": "epic",
-              "id": 271513,
-              "icon": "inv_chest_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7987",
-              "bonusIDs": [
-                "13334",
-                "6652",
-                "13690",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Silvermoon Agent's Utility Belt",
-              "quality": "epic",
-              "id": 244573,
-              "icon": "inv_belt_leather_questbloodelf_b_01.jpg",
-              "itemLevel": "331",
-              "bonusIDs": [
-                "12214",
-                "13667",
-                "12497",
-                "13751",
-                "14001",
-                "8790",
-                "13836",
-                "13696"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Reinforced Pants",
-              "quality": "epic",
-              "id": 271509,
-              "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8159",
-              "bonusIDs": [
-                "41",
-                "13440",
-                "13693",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Bespittled Slitherslippers",
-              "quality": "epic",
-              "id": 268261,
-              "icon": "inv_boot_leather_raidmonkulatek_d_01.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "7963",
-              "bonusIDs": [
-                "6652",
-                "13662",
-                "13334",
-                "12843"
-              ]
-            },
-            {
-              "name": "Silvermoon Agent's Deflectors",
-              "quality": "epic",
-              "id": 244576,
-              "icon": "inv_bracer_leather_questbloodelf_b_01.jpg",
-              "itemLevel": "331",
-              "bonusIDs": [
-                "12214",
-                "13667",
-                "12497",
-                "13751",
-                "14001",
-                "8960",
-                "12384",
-                "8790",
-                "13836",
-                "13696"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Fanged Grips",
-              "quality": "epic",
-              "id": 271511,
-              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "13334",
-                "13691",
-                "6652",
-                "13697",
-                "12843"
-              ]
-            },
-            {
-              "name": "Band of the Amani Warlord",
-              "quality": "rare",
-              "id": 273792,
-              "icon": "inv_121_jewelry_ring02_green.jpg",
-              "itemLevel": "315",
-              "permanentEnchant": "8025",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13668",
-                "12699",
-                "12844"
-              ],
-              "gems": [
-                {
-                  "id": "240892",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Charged Sandstone Band",
-              "quality": "rare",
-              "id": 158366,
-              "icon": "inv_ring_80_03d.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "8025",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13668",
-                "12699"
-              ],
-              "gems": [
-                {
-                  "id": "240983",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Voracious Heart of Ula'tek",
-              "quality": "epic",
-              "id": 270175,
-              "icon": "inv_121_trinket_raid_ulatek_heart.jpg",
-              "itemLevel": "318",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12849"
-              ]
-            },
-            {
-              "name": "Keeper's Seething Core",
-              "quality": "epic",
-              "id": 270165,
-              "icon": "inv_121_trinket_raid_ulatek_golemhearts_green.jpg",
-              "itemLevel": "321",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12846"
-              ]
-            },
-            {
-              "name": "Fireproof Drape",
-              "quality": "rare",
-              "id": 193763,
-              "icon": "inv_mail_dragondungeon_c_01_cape.jpg",
-              "itemLevel": "321",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13662",
-                "12699",
-                "12846"
-              ]
-            },
-            {
-              "name": "Spellbreaker's Blade",
-              "quality": "epic",
-              "id": 237839,
-              "icon": "inv_sword_1h_questbloodelf_b_01.jpg",
-              "itemLevel": "331",
-              "permanentEnchant": "8039",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "12214",
-                "13667",
-                "12497",
-                "13751",
-                "14001",
-                "13771",
-                "8960",
-                "8790",
-                "13836"
-              ]
-            },
-            {
-              "name": "Tomb-Creeper's Claw",
-              "quality": "epic",
-              "id": 270930,
-              "icon": "inv_hand_1h_ulatek_d_01.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "8039",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12843"
-              ]
-            },
-            {
-              "name": "Unknown Item",
-              "quality": "common",
-              "id": 0,
-              "icon": "inv_axe_02.jpg",
-              "itemLevel": "0"
-            }
-          ]
-        },
-        {
-          "name": "上帝爱大雄",
-          "class": "Rogue",
-          "spec": "Outlaw",
-          "amount": -359999541.54683596,
-          "hardModeLevel": 18,
-          "duration": 1743198,
-          "startTime": 1789055736748,
-          "report": {
-            "code": "wFXZrqJLmdK62h74",
-            "fightID": 23,
-            "startTime": 1789035125904
-          },
-          "server": {
-            "id": 750,
-            "name": "燃烧之刃",
-            "region": "CN"
-          },
-          "bracketData": 18,
-          "faction": 0,
-          "affixes": [
-            9,
-            10,
-            147
-          ],
-          "medal": "bronze",
-          "score": 458.4531640625,
-          "leaderboard": 0,
-          "talents": [
-            {
-              "talentID": 112521,
-              "points": 1
-            },
-            {
-              "talentID": 112523,
-              "points": 1
-            },
-            {
-              "talentID": 112525,
-              "points": 2
-            },
-            {
-              "talentID": 112526,
-              "points": 1
-            },
-            {
-              "talentID": 112530,
-              "points": 1
-            },
-            {
-              "talentID": 112531,
-              "points": 1
-            },
-            {
-              "talentID": 112533,
-              "points": 1
-            },
-            {
-              "talentID": 112534,
-              "points": 1
-            },
-            {
-              "talentID": 112535,
-              "points": 1
-            },
-            {
-              "talentID": 112537,
-              "points": 1
-            },
-            {
-              "talentID": 112538,
-              "points": 1
-            },
-            {
-              "talentID": 112539,
-              "points": 1
-            },
-            {
-              "talentID": 112540,
-              "points": 1
-            },
-            {
-              "talentID": 112542,
-              "points": 1
-            },
-            {
-              "talentID": 112545,
-              "points": 1
-            },
-            {
-              "talentID": 112547,
-              "points": 1
-            },
-            {
-              "talentID": 112548,
-              "points": 1
-            },
-            {
-              "talentID": 112549,
-              "points": 1
-            },
-            {
-              "talentID": 112552,
-              "points": 1
-            },
-            {
-              "talentID": 112553,
-              "points": 2
-            },
-            {
-              "talentID": 112554,
-              "points": 1
-            },
-            {
-              "talentID": 112555,
-              "points": 2
-            },
-            {
-              "talentID": 112556,
-              "points": 1
-            },
-            {
-              "talentID": 112558,
-              "points": 1
-            },
-            {
-              "talentID": 112567,
-              "points": 1
-            },
-            {
-              "talentID": 112568,
-              "points": 1
-            },
-            {
-              "talentID": 112571,
-              "points": 1
-            },
-            {
-              "talentID": 112572,
-              "points": 1
-            },
-            {
-              "talentID": 112574,
-              "points": 1
-            },
-            {
-              "talentID": 112575,
-              "points": 1
-            },
-            {
-              "talentID": 112583,
-              "points": 1
-            },
-            {
-              "talentID": 112585,
-              "points": 1
-            },
-            {
-              "talentID": 112632,
-              "points": 1
-            },
-            {
-              "talentID": 112633,
-              "points": 1
-            },
-            {
-              "talentID": 112634,
-              "points": 1
-            },
-            {
-              "talentID": 112635,
-              "points": 1
-            },
-            {
-              "talentID": 112636,
-              "points": 1
-            },
-            {
-              "talentID": 112638,
-              "points": 1
-            },
-            {
-              "talentID": 112642,
-              "points": 1
-            },
-            {
-              "talentID": 112643,
-              "points": 2
-            },
-            {
-              "talentID": 112644,
-              "points": 1
-            },
-            {
-              "talentID": 112645,
-              "points": 1
-            },
-            {
-              "talentID": 112646,
-              "points": 1
-            },
-            {
-              "talentID": 112647,
-              "points": 1
-            },
-            {
-              "talentID": 112648,
-              "points": 1
-            },
-            {
-              "talentID": 112650,
-              "points": 1
-            },
-            {
-              "talentID": 112651,
-              "points": 2
-            },
-            {
-              "talentID": 112652,
-              "points": 1
-            },
-            {
-              "talentID": 112654,
-              "points": 1
-            },
-            {
-              "talentID": 112655,
-              "points": 1
-            },
-            {
-              "talentID": 112657,
-              "points": 1
-            },
-            {
-              "talentID": 117145,
-              "points": 1
-            },
-            {
-              "talentID": 117148,
-              "points": 1
-            },
-            {
-              "talentID": 117152,
-              "points": 1
-            },
-            {
-              "talentID": 117708,
-              "points": 1
-            },
-            {
-              "talentID": 117712,
-              "points": 1
-            },
-            {
-              "talentID": 117713,
-              "points": 1
-            },
-            {
-              "talentID": 117715,
-              "points": 1
-            },
-            {
-              "talentID": 117718,
-              "points": 1
-            },
-            {
-              "talentID": 117725,
-              "points": 1
-            },
-            {
-              "talentID": 117730,
-              "points": 1
-            },
-            {
-              "talentID": 117731,
-              "points": 1
-            },
-            {
-              "talentID": 117734,
-              "points": 1
-            },
-            {
-              "talentID": 117737,
-              "points": 1
-            },
-            {
-              "talentID": 117738,
-              "points": 1
-            },
-            {
-              "talentID": 117740,
-              "points": 1
-            },
-            {
-              "talentID": 123372,
-              "points": 1
-            },
-            {
-              "talentID": 125615,
-              "points": 1
-            },
-            {
-              "talentID": 135732,
-              "points": 1
-            },
-            {
-              "talentID": 135734,
-              "points": 1
-            },
-            {
-              "talentID": 136021,
-              "points": 1
-            },
-            {
-              "talentID": 136022,
-              "points": 1
-            },
-            {
-              "talentID": 136023,
-              "points": 1
-            },
-            {
-              "talentID": 136881,
-              "points": 1
-            },
-            {
-              "talentID": 136882,
-              "points": 1
-            },
-            {
-              "talentID": 137068,
-              "points": 1
-            },
-            {
-              "talentID": 137069,
-              "points": 2
-            },
-            {
-              "talentID": 137070,
-              "points": 1
-            }
-          ],
-          "gear": [
-            {
-              "name": "Chosen Bloodslayer's Spirit Shroud",
-              "quality": "epic",
-              "id": 271510,
-              "icon": "inv_helm_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7961",
-              "bonusIDs": [
-                "6652",
-                "13696",
-                "13440",
-                "13692",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Ribbon of Coiled Malice",
-              "quality": "epic",
-              "id": 249337,
-              "icon": "inv_12_jewelry_devouringhost_necklace_bronze.jpg",
-              "itemLevel": "289",
-              "bonusIDs": [
-                "6652",
-                "13668",
-                "13335",
-                "12806"
-              ],
-              "gems": [
-                {
-                  "id": "240906",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Voodoo Guards",
-              "quality": "epic",
-              "id": 271508,
-              "icon": "inv_shoulder_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8031",
-              "bonusIDs": [
-                "40",
-                "13694",
-                "13697",
-                "12846"
-              ]
-            },
-            {
-              "name": "Antiseptic-Soaked Dressing",
-              "quality": "uncommon",
-              "id": 44694,
-              "icon": "inv_misc_bandage_08.jpg",
-              "itemLevel": "1"
-            },
-            {
-              "name": "Hide of Pestilence",
-              "quality": "rare",
-              "id": 251226,
-              "icon": "inv_chest_leather_dungeonharronir_c_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7987",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13662",
-                "12699",
-                "12846"
-              ]
-            },
-            {
-              "name": "Unpossessed Skullsash",
-              "quality": "epic",
-              "id": 268227,
-              "icon": "inv_belt_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "334",
-              "bonusIDs": [
-                "6652",
-                "13696",
-                "13662",
-                "13335",
-                "12854"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Reinforced Pants",
-              "quality": "epic",
-              "id": 271509,
-              "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8159",
-              "bonusIDs": [
-                "12846",
-                "6652",
-                "13440",
-                "13693",
-                "13698",
-                "1574"
-              ]
-            },
-            {
-              "name": "Bespittled Slitherslippers",
-              "quality": "epic",
-              "id": 268261,
-              "icon": "inv_boot_leather_raidmonkulatek_d_01.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "7993",
-              "bonusIDs": [
-                "6652",
-                "13662",
-                "13334",
-                "12843"
-              ]
-            },
-            {
-              "name": "Silvermoon Agent's Deflectors",
-              "quality": "epic",
-              "id": 244576,
-              "icon": "inv_bracer_leather_questbloodelf_b_01.jpg",
-              "itemLevel": "331",
-              "bonusIDs": [
-                "12214",
-                "13667",
-                "12497",
-                "13751",
-                "14001",
-                "8960",
-                "12384",
-                "8790",
-                "13836",
-                "13696"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Fanged Grips",
-              "quality": "epic",
-              "id": 271511,
-              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "bonusIDs": [
-                "13334",
-                "13691",
-                "6652",
-                "13697",
-                "12846"
-              ]
-            },
-            {
-              "name": "Band of the Amani Warlord",
-              "quality": "rare",
-              "id": 273792,
-              "icon": "inv_121_jewelry_ring02_green.jpg",
-              "itemLevel": "315",
-              "permanentEnchant": "7967",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13668",
-                "12699",
-                "12844"
-              ],
-              "gems": [
-                {
-                  "id": "240983",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Masterwork Sin'dorei Band",
-              "quality": "epic",
-              "id": 240949,
-              "icon": "inv_12_profession_jewelcrafting_ring4_gold.jpg",
-              "itemLevel": "285",
-              "permanentEnchant": "7967",
-              "bonusIDs": [
-                "12214",
-                "13667",
-                "12497",
-                "12066",
-                "12715",
-                "8790",
-                "13622"
-              ],
-              "gems": [
-                {
-                  "id": "240906",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Voracious Heart of Ula'tek",
-              "quality": "epic",
-              "id": 270175,
-              "icon": "inv_121_trinket_raid_ulatek_heart.jpg",
-              "itemLevel": "334",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12854"
-              ]
-            },
-            {
-              "name": "Keeper's Seething Core",
-              "quality": "epic",
-              "id": 270165,
-              "icon": "inv_121_trinket_raid_ulatek_golemhearts_green.jpg",
-              "itemLevel": "308",
-              "bonusIDs": [
-                "6652",
-                "13333",
-                "12838"
-              ]
-            },
-            {
-              "name": "Fireproof Drape",
-              "quality": "rare",
-              "id": 193763,
-              "icon": "inv_mail_dragondungeon_c_01_cape.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13662",
-                "12699"
-              ]
-            },
-            {
-              "name": "Rune-Etched Nightblade",
-              "quality": "epic",
-              "id": 156057,
-              "icon": "inv_sword_135.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "8689",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "8902",
-                "7756",
-                "12701",
-                "12843"
-              ]
-            },
-            {
-              "name": "Farstrider's Mercy",
-              "quality": "epic",
-              "id": 237837,
-              "icon": "inv_knife_1h_questbloodelf_b_02.jpg",
-              "itemLevel": "331",
-              "permanentEnchant": "8689",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "12214",
-                "12497",
-                "13751",
-                "14001",
-                "13771",
-                "8960",
-                "8790",
-                "13836"
-              ]
-            },
-            {
-              "name": "Renowned Guild Tabard",
-              "quality": "epic",
-              "id": 69210,
-              "icon": "inv_epicguildtabard.jpg",
-              "itemLevel": "1"
             }
           ]
         }
@@ -126886,6 +126909,641 @@
                 "13334",
                 "13696",
                 "12851"
+              ]
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": 0,
+              "icon": "inv_axe_02.jpg",
+              "itemLevel": "0"
+            }
+          ]
+        },
+        {
+          "name": "Jonnastrong",
+          "class": "Rogue",
+          "spec": "Subtlety",
+          "amount": -379999526.8364844,
+          "hardModeLevel": 19,
+          "duration": 1758028,
+          "startTime": 1789515192399,
+          "report": {
+            "code": "HMRfg1JhXrFx3GQp",
+            "fightID": 2,
+            "startTime": 1789514246937
+          },
+          "guild": {
+            "id": 818214,
+            "name": "The Eldritch Collective",
+            "faction": 1
+          },
+          "server": {
+            "id": 123,
+            "name": "Illidan",
+            "region": "US"
+          },
+          "bracketData": 19,
+          "faction": 0,
+          "affixes": [
+            9,
+            10,
+            147
+          ],
+          "medal": "bronze",
+          "score": 473.163515625,
+          "leaderboard": 0,
+          "talents": [
+            {
+              "talentID": 112521,
+              "points": 1
+            },
+            {
+              "talentID": 112523,
+              "points": 1
+            },
+            {
+              "talentID": 112525,
+              "points": 2
+            },
+            {
+              "talentID": 112526,
+              "points": 1
+            },
+            {
+              "talentID": 112572,
+              "points": 1
+            },
+            {
+              "talentID": 112574,
+              "points": 1
+            },
+            {
+              "talentID": 112575,
+              "points": 1
+            },
+            {
+              "talentID": 112578,
+              "points": 1
+            },
+            {
+              "talentID": 112580,
+              "points": 1
+            },
+            {
+              "talentID": 112583,
+              "points": 1
+            },
+            {
+              "talentID": 112585,
+              "points": 1
+            },
+            {
+              "talentID": 112588,
+              "points": 1
+            },
+            {
+              "talentID": 112592,
+              "points": 1
+            },
+            {
+              "talentID": 112594,
+              "points": 2
+            },
+            {
+              "talentID": 112597,
+              "points": 1
+            },
+            {
+              "talentID": 112598,
+              "points": 1
+            },
+            {
+              "talentID": 112601,
+              "points": 1
+            },
+            {
+              "talentID": 112604,
+              "points": 1
+            },
+            {
+              "talentID": 112606,
+              "points": 1
+            },
+            {
+              "talentID": 112607,
+              "points": 1
+            },
+            {
+              "talentID": 112608,
+              "points": 2
+            },
+            {
+              "talentID": 112609,
+              "points": 1
+            },
+            {
+              "talentID": 112610,
+              "points": 1
+            },
+            {
+              "talentID": 112611,
+              "points": 1
+            },
+            {
+              "talentID": 112612,
+              "points": 1
+            },
+            {
+              "talentID": 112614,
+              "points": 1
+            },
+            {
+              "talentID": 112615,
+              "points": 1
+            },
+            {
+              "talentID": 112619,
+              "points": 1
+            },
+            {
+              "talentID": 112621,
+              "points": 1
+            },
+            {
+              "talentID": 112623,
+              "points": 1
+            },
+            {
+              "talentID": 112625,
+              "points": 1
+            },
+            {
+              "talentID": 112628,
+              "points": 1
+            },
+            {
+              "talentID": 112629,
+              "points": 1
+            },
+            {
+              "talentID": 112630,
+              "points": 1
+            },
+            {
+              "talentID": 112633,
+              "points": 1
+            },
+            {
+              "talentID": 112634,
+              "points": 1
+            },
+            {
+              "talentID": 112635,
+              "points": 1
+            },
+            {
+              "talentID": 112636,
+              "points": 1
+            },
+            {
+              "talentID": 112639,
+              "points": 1
+            },
+            {
+              "talentID": 112640,
+              "points": 2
+            },
+            {
+              "talentID": 112642,
+              "points": 1
+            },
+            {
+              "talentID": 112643,
+              "points": 2
+            },
+            {
+              "talentID": 112644,
+              "points": 1
+            },
+            {
+              "talentID": 112646,
+              "points": 1
+            },
+            {
+              "talentID": 112650,
+              "points": 1
+            },
+            {
+              "talentID": 112652,
+              "points": 1
+            },
+            {
+              "talentID": 112654,
+              "points": 1
+            },
+            {
+              "talentID": 112655,
+              "points": 1
+            },
+            {
+              "talentID": 112657,
+              "points": 1
+            },
+            {
+              "talentID": 114737,
+              "points": 1
+            },
+            {
+              "talentID": 117145,
+              "points": 1
+            },
+            {
+              "talentID": 117168,
+              "points": 1
+            },
+            {
+              "talentID": 117170,
+              "points": 1
+            },
+            {
+              "talentID": 117172,
+              "points": 1
+            },
+            {
+              "talentID": 117703,
+              "points": 1
+            },
+            {
+              "talentID": 117705,
+              "points": 1
+            },
+            {
+              "talentID": 117706,
+              "points": 1
+            },
+            {
+              "talentID": 117707,
+              "points": 1
+            },
+            {
+              "talentID": 117714,
+              "points": 1
+            },
+            {
+              "talentID": 117720,
+              "points": 1
+            },
+            {
+              "talentID": 117728,
+              "points": 1
+            },
+            {
+              "talentID": 117729,
+              "points": 1
+            },
+            {
+              "talentID": 117732,
+              "points": 1
+            },
+            {
+              "talentID": 117733,
+              "points": 1
+            },
+            {
+              "talentID": 117739,
+              "points": 1
+            },
+            {
+              "talentID": 117740,
+              "points": 1
+            },
+            {
+              "talentID": 123373,
+              "points": 1
+            },
+            {
+              "talentID": 125615,
+              "points": 1
+            },
+            {
+              "talentID": 125619,
+              "points": 1
+            },
+            {
+              "talentID": 136018,
+              "points": 1
+            },
+            {
+              "talentID": 136019,
+              "points": 1
+            },
+            {
+              "talentID": 136020,
+              "points": 1
+            },
+            {
+              "talentID": 136807,
+              "points": 1
+            },
+            {
+              "talentID": 136881,
+              "points": 1
+            },
+            {
+              "talentID": 136882,
+              "points": 1
+            },
+            {
+              "talentID": 137062,
+              "points": 1
+            },
+            {
+              "talentID": 137063,
+              "points": 2
+            },
+            {
+              "talentID": 137064,
+              "points": 1
+            }
+          ],
+          "gear": [
+            {
+              "name": "Gaze of the Coiled Watcher",
+              "quality": "epic",
+              "id": 271875,
+              "icon": "inv_helm_leather_raiddruidulatek_d_01.jpg",
+              "itemLevel": "328",
+              "permanentEnchant": "7961",
+              "bonusIDs": [
+                "6652",
+                "13696",
+                "13662",
+                "13334",
+                "13847",
+                "12852"
+              ]
+            },
+            {
+              "name": "Aqirbane Reliquary",
+              "quality": "epic",
+              "id": 268265,
+              "icon": "inv_121_jewelry_neck03_green.jpg",
+              "itemLevel": "334",
+              "bonusIDs": [
+                "6652",
+                "13668",
+                "13334",
+                "13987",
+                "13696",
+                "12854"
+              ],
+              "gems": [
+                {
+                  "id": "240983",
+                  "itemLevel": "295"
+                },
+                {
+                  "id": "240910",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Voodoo Guards",
+              "quality": "epic",
+              "id": 271508,
+              "icon": "inv_shoulder_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8031",
+              "bonusIDs": [
+                "41",
+                "13440",
+                "13694",
+                "13697",
+                "12846"
+              ]
+            },
+            {
+              "name": "Blinky's Collar",
+              "quality": "uncommon",
+              "id": 268274,
+              "icon": "inv_jewelry_necklace_22.jpg",
+              "itemLevel": "1"
+            },
+            {
+              "name": "Chosen Bloodslayer's Banded Poncho",
+              "quality": "epic",
+              "id": 271513,
+              "icon": "inv_chest_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7987",
+              "bonusIDs": [
+                "6652",
+                "13440",
+                "13690",
+                "13698",
+                "12846"
+              ]
+            },
+            {
+              "name": "Sash of the Forlorn Vessel",
+              "quality": "epic",
+              "id": 268256,
+              "icon": "inv_belt_leather_raiddruidulatek_d_01.jpg",
+              "itemLevel": "321",
+              "bonusIDs": [
+                "6652",
+                "13696",
+                "13662",
+                "13334",
+                "12846"
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Reinforced Pants",
+              "quality": "epic",
+              "id": 271509,
+              "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8159",
+              "bonusIDs": [
+                "12846",
+                "13334",
+                "6652",
+                "13693",
+                "13698",
+                "1574"
+              ]
+            },
+            {
+              "name": "Sand-Shined Snakeskin Sandals",
+              "quality": "rare",
+              "id": 159327,
+              "icon": "inv_boot_leather_zandalardungeon_c_01.jpg",
+              "itemLevel": "311",
+              "permanentEnchant": "7993",
+              "bonusIDs": [
+                "12843",
+                "13440",
+                "6652",
+                "13662",
+                "12699"
+              ]
+            },
+            {
+              "name": "Silvermoon Agent's Deflectors",
+              "quality": "epic",
+              "id": 244576,
+              "icon": "inv_bracer_leather_questbloodelf_b_01.jpg",
+              "itemLevel": "331",
+              "bonusIDs": [
+                "12214",
+                "13667",
+                "13695",
+                "12497",
+                "13751",
+                "14001",
+                "8960",
+                "12384",
+                "8793",
+                "13836",
+                "13696"
+              ],
+              "gems": [
+                {
+                  "id": "240910",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Chosen Bloodslayer's Fanged Grips",
+              "quality": "epic",
+              "id": 271511,
+              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
+              "itemLevel": "321",
+              "bonusIDs": [
+                "6652",
+                "13440",
+                "13691",
+                "13697",
+                "12846"
+              ]
+            },
+            {
+              "name": "Lightwarden's Bind",
+              "quality": "rare",
+              "id": 251194,
+              "icon": "inv12_jewelrytrinkets_rutaani_ring_yellow.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7967",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "13668",
+                "12699",
+                "12846"
+              ],
+              "gems": [
+                {
+                  "id": "240916",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Jade Ophidian Band",
+              "quality": "rare",
+              "id": 162544,
+              "icon": "inv_ring_80_04c.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "7967",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "13668",
+                "12699",
+                "12846"
+              ],
+              "gems": [
+                {
+                  "id": "240892",
+                  "itemLevel": "295"
+                }
+              ]
+            },
+            {
+              "name": "Voracious Heart of Ula'tek",
+              "quality": "epic",
+              "id": 270175,
+              "icon": "inv_121_trinket_raid_ulatek_heart.jpg",
+              "itemLevel": "334",
+              "bonusIDs": [
+                "6652",
+                "13334",
+                "12854"
+              ]
+            },
+            {
+              "name": "Sapling of the Dawnroot",
+              "quality": "rare",
+              "id": 250259,
+              "icon": "inv_misc_herb_nightmarevine.jpg",
+              "itemLevel": "318",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "12699",
+                "12845"
+              ]
+            },
+            {
+              "name": "Cloak of the Restless Tribes",
+              "quality": "rare",
+              "id": 159288,
+              "icon": "inv_cape_mail_zandalardungeon_c_01.jpg",
+              "itemLevel": "311",
+              "bonusIDs": [
+                "12843",
+                "13440",
+                "6652",
+                "13662",
+                "12699"
+              ]
+            },
+            {
+              "name": "Farstrider's Mercy",
+              "quality": "epic",
+              "id": 237837,
+              "icon": "inv_knife_1h_questbloodelf_b_02.jpg",
+              "itemLevel": "331",
+              "permanentEnchant": "8689",
+              "temporaryEnchant": "8052",
+              "bonusIDs": [
+                "12214",
+                "12497",
+                "13751",
+                "14001",
+                "13771",
+                "8960",
+                "8791",
+                "13836"
+              ]
+            },
+            {
+              "name": "Sharpened Lightwood Slasher",
+              "quality": "rare",
+              "id": 275070,
+              "icon": "inv_knife_1h_zuljin_d_01.jpg",
+              "itemLevel": "321",
+              "permanentEnchant": "8689",
+              "temporaryEnchant": "8052",
+              "bonusIDs": [
+                "13440",
+                "6652",
+                "12701",
+                "12846"
               ]
             },
             {
@@ -150752,6 +151410,146 @@
           ]
         },
         {
+          "name": "恩赐丶",
+          "class": "Rogue",
+          "spec": "Subtlety",
+          "amount": -359999540.57808596,
+          "hardModeLevel": 18,
+          "duration": 1693598,
+          "startTime": 1789362802402,
+          "report": {
+            "code": "",
+            "fightID": null,
+            "startTime": null
+          },
+          "server": {
+            "id": 676,
+            "name": "影之哀伤",
+            "region": "CN"
+          },
+          "bracketData": 18,
+          "faction": 0,
+          "affixes": [
+            9,
+            10,
+            147
+          ],
+          "medal": "bronze",
+          "score": 459.4219140625,
+          "leaderboard": 1,
+          "talents": [],
+          "gear": [
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            },
+            {
+              "name": "Unknown Item",
+              "quality": "common",
+              "id": null,
+              "icon": "inv_axe_02.jpg"
+            }
+          ]
+        },
+        {
           "name": "法外狂喵丶",
           "class": "Rogue",
           "spec": "Subtlety",
@@ -161015,1258 +161813,6 @@
               "icon": "inv_axe_02.jpg"
             }
           ]
-        },
-        {
-          "name": "恩赐丶",
-          "class": "Rogue",
-          "spec": "Subtlety",
-          "amount": -359999541.7935352,
-          "hardModeLevel": 18,
-          "duration": 1755829,
-          "startTime": 1789396775172,
-          "report": {
-            "code": "ajnVA8ZqmGQCFb9x",
-            "fightID": 7,
-            "startTime": 1789390659679
-          },
-          "server": {
-            "id": 676,
-            "name": "影之哀伤",
-            "region": "CN"
-          },
-          "bracketData": 18,
-          "faction": 0,
-          "affixes": [
-            9,
-            10,
-            147
-          ],
-          "medal": "bronze",
-          "score": 458.20646484375,
-          "leaderboard": 0,
-          "talents": [
-            {
-              "talentID": 112521,
-              "points": 1
-            },
-            {
-              "talentID": 112523,
-              "points": 1
-            },
-            {
-              "talentID": 112525,
-              "points": 2
-            },
-            {
-              "talentID": 112526,
-              "points": 1
-            },
-            {
-              "talentID": 112572,
-              "points": 1
-            },
-            {
-              "talentID": 112574,
-              "points": 1
-            },
-            {
-              "talentID": 112575,
-              "points": 1
-            },
-            {
-              "talentID": 112578,
-              "points": 1
-            },
-            {
-              "talentID": 112579,
-              "points": 1
-            },
-            {
-              "talentID": 112580,
-              "points": 1
-            },
-            {
-              "talentID": 112583,
-              "points": 1
-            },
-            {
-              "talentID": 112585,
-              "points": 1
-            },
-            {
-              "talentID": 112588,
-              "points": 1
-            },
-            {
-              "talentID": 112591,
-              "points": 1
-            },
-            {
-              "talentID": 112592,
-              "points": 1
-            },
-            {
-              "talentID": 112594,
-              "points": 2
-            },
-            {
-              "talentID": 112597,
-              "points": 1
-            },
-            {
-              "talentID": 112598,
-              "points": 1
-            },
-            {
-              "talentID": 112601,
-              "points": 1
-            },
-            {
-              "talentID": 112604,
-              "points": 1
-            },
-            {
-              "talentID": 112606,
-              "points": 1
-            },
-            {
-              "talentID": 112607,
-              "points": 1
-            },
-            {
-              "talentID": 112608,
-              "points": 2
-            },
-            {
-              "talentID": 112609,
-              "points": 1
-            },
-            {
-              "talentID": 112610,
-              "points": 1
-            },
-            {
-              "talentID": 112611,
-              "points": 1
-            },
-            {
-              "talentID": 112612,
-              "points": 1
-            },
-            {
-              "talentID": 112614,
-              "points": 1
-            },
-            {
-              "talentID": 112615,
-              "points": 1
-            },
-            {
-              "talentID": 112619,
-              "points": 1
-            },
-            {
-              "talentID": 112621,
-              "points": 1
-            },
-            {
-              "talentID": 112623,
-              "points": 1
-            },
-            {
-              "talentID": 112625,
-              "points": 1
-            },
-            {
-              "talentID": 112628,
-              "points": 1
-            },
-            {
-              "talentID": 112629,
-              "points": 1
-            },
-            {
-              "talentID": 112630,
-              "points": 1
-            },
-            {
-              "talentID": 112632,
-              "points": 1
-            },
-            {
-              "talentID": 112633,
-              "points": 1
-            },
-            {
-              "talentID": 112635,
-              "points": 1
-            },
-            {
-              "talentID": 112636,
-              "points": 1
-            },
-            {
-              "talentID": 112638,
-              "points": 1
-            },
-            {
-              "talentID": 112639,
-              "points": 1
-            },
-            {
-              "talentID": 112640,
-              "points": 2
-            },
-            {
-              "talentID": 112642,
-              "points": 1
-            },
-            {
-              "talentID": 112643,
-              "points": 2
-            },
-            {
-              "talentID": 112644,
-              "points": 1
-            },
-            {
-              "talentID": 112646,
-              "points": 1
-            },
-            {
-              "talentID": 112652,
-              "points": 1
-            },
-            {
-              "talentID": 112654,
-              "points": 1
-            },
-            {
-              "talentID": 112655,
-              "points": 1
-            },
-            {
-              "talentID": 112657,
-              "points": 1
-            },
-            {
-              "talentID": 117144,
-              "points": 1
-            },
-            {
-              "talentID": 117145,
-              "points": 1
-            },
-            {
-              "talentID": 117168,
-              "points": 1
-            },
-            {
-              "talentID": 117170,
-              "points": 1
-            },
-            {
-              "talentID": 117705,
-              "points": 1
-            },
-            {
-              "talentID": 117706,
-              "points": 1
-            },
-            {
-              "talentID": 117707,
-              "points": 1
-            },
-            {
-              "talentID": 117714,
-              "points": 1
-            },
-            {
-              "talentID": 117720,
-              "points": 1
-            },
-            {
-              "talentID": 117728,
-              "points": 1
-            },
-            {
-              "talentID": 117729,
-              "points": 1
-            },
-            {
-              "talentID": 117732,
-              "points": 1
-            },
-            {
-              "talentID": 117733,
-              "points": 1
-            },
-            {
-              "talentID": 117739,
-              "points": 1
-            },
-            {
-              "talentID": 117740,
-              "points": 1
-            },
-            {
-              "talentID": 123373,
-              "points": 1
-            },
-            {
-              "talentID": 125619,
-              "points": 1
-            },
-            {
-              "talentID": 126029,
-              "points": 1
-            },
-            {
-              "talentID": 136018,
-              "points": 1
-            },
-            {
-              "talentID": 136019,
-              "points": 1
-            },
-            {
-              "talentID": 136020,
-              "points": 1
-            },
-            {
-              "talentID": 136807,
-              "points": 1
-            },
-            {
-              "talentID": 136881,
-              "points": 1
-            },
-            {
-              "talentID": 136882,
-              "points": 1
-            },
-            {
-              "talentID": 137062,
-              "points": 1
-            },
-            {
-              "talentID": 137063,
-              "points": 2
-            },
-            {
-              "talentID": 137064,
-              "points": 1
-            }
-          ],
-          "gear": [
-            {
-              "name": "Gaze of the Coiled Watcher",
-              "quality": "epic",
-              "id": 271875,
-              "icon": "inv_helm_leather_raiddruidulatek_d_01.jpg",
-              "itemLevel": "328",
-              "permanentEnchant": "7961",
-              "bonusIDs": [
-                "6652",
-                "13696",
-                "13662",
-                "13334",
-                "13847",
-                "13695",
-                "12852"
-              ],
-              "gems": [
-                {
-                  "id": "240892",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Pendant of Malefic Fury",
-              "quality": "rare",
-              "id": 251142,
-              "icon": "inv_12_jewelry_silvermoonelf_necklace_green.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13668",
-                "12699"
-              ],
-              "gems": [
-                {
-                  "id": "240967",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Voodoo Guards",
-              "quality": "epic",
-              "id": 271508,
-              "icon": "inv_shoulder_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8031",
-              "bonusIDs": [
-                "13334",
-                "6652",
-                "13694",
-                "13697",
-                "12846"
-              ]
-            },
-            {
-              "name": "Dark Silk Shirt",
-              "quality": "uncommon",
-              "id": 4333,
-              "icon": "inv_shirt_black_01.jpg",
-              "itemLevel": "1"
-            },
-            {
-              "name": "Chosen Bloodslayer's Banded Poncho",
-              "quality": "epic",
-              "id": 271513,
-              "icon": "inv_chest_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7987",
-              "bonusIDs": [
-                "12846",
-                "6652",
-                "13440",
-                "13690",
-                "13698",
-                "1574"
-              ]
-            },
-            {
-              "name": "Whirling Dervish Sash",
-              "quality": "rare",
-              "id": 159317,
-              "icon": "inv_belt_leather_zandalardungeon_c_01.jpg",
-              "itemLevel": "315",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13696",
-                "13662",
-                "12699",
-                "12844"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Reinforced Pants",
-              "quality": "epic",
-              "id": 271509,
-              "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8159",
-              "bonusIDs": [
-                "6652",
-                "13440",
-                "13693",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Arctic Explorer's Legwraps",
-              "quality": "rare",
-              "id": 251153,
-              "icon": "inv_boot_leather_dungeonharronir_c_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7993",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13662",
-                "12699",
-                "12846"
-              ]
-            },
-            {
-              "name": "Silvermoon Agent's Deflectors",
-              "quality": "epic",
-              "id": 244576,
-              "icon": "inv_bracer_leather_questbloodelf_b_01.jpg",
-              "itemLevel": "331",
-              "bonusIDs": [
-                "12214",
-                "12497",
-                "13751",
-                "14001",
-                "8960",
-                "12384",
-                "8793",
-                "13836",
-                "13696"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Fanged Grips",
-              "quality": "epic",
-              "id": 271511,
-              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "318",
-              "bonusIDs": [
-                "6652",
-                "13440",
-                "13691",
-                "13697",
-                "12845"
-              ]
-            },
-            {
-              "name": "Signet of Snarling Servitude",
-              "quality": "rare",
-              "id": 251136,
-              "icon": "inv_12_jewelry_voidelf_ring_teal.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "7967",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13668",
-                "12699"
-              ],
-              "gems": [
-                {
-                  "id": "240908",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Lightwarden's Bind",
-              "quality": "rare",
-              "id": 251194,
-              "icon": "inv12_jewelrytrinkets_rutaani_ring_yellow.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "7967",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13668",
-                "12699"
-              ],
-              "gems": [
-                {
-                  "id": "240892",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Voracious Heart of Ula'tek",
-              "quality": "epic",
-              "id": 270175,
-              "icon": "inv_121_trinket_raid_ulatek_heart.jpg",
-              "itemLevel": "334",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12854"
-              ]
-            },
-            {
-              "name": "Gebbo's Bottomless Bag",
-              "quality": "epic",
-              "id": 270164,
-              "icon": "inv_10_tailoring_bag1_color2.jpg",
-              "itemLevel": "334",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12854"
-              ]
-            },
-            {
-              "name": "Speakeasy Shroud",
-              "quality": "rare",
-              "id": 251132,
-              "icon": "inv_cape_leather_dungeonharronir_c_01.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13662",
-                "12699"
-              ]
-            },
-            {
-              "name": "Farstrider's Mercy",
-              "quality": "epic",
-              "id": 237837,
-              "icon": "inv_knife_1h_questbloodelf_b_02.jpg",
-              "itemLevel": "331",
-              "permanentEnchant": "8689",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "12214",
-                "12497",
-                "13751",
-                "14001",
-                "13771",
-                "8960",
-                "8790",
-                "13836"
-              ]
-            },
-            {
-              "name": "Ravenous Feaster's Fang",
-              "quality": "epic",
-              "id": 268264,
-              "icon": "inv_knife_1h_ulatek_d_02.jpg",
-              "itemLevel": "318",
-              "permanentEnchant": "8689",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12845"
-              ]
-            },
-            {
-              "name": "Tabard of Summer Skies",
-              "quality": "rare",
-              "id": 35279,
-              "icon": "inv_misc_tabardsummer02.jpg",
-              "itemLevel": "1"
-            }
-          ]
-        },
-        {
-          "name": "Llpss",
-          "class": "Rogue",
-          "spec": "Subtlety",
-          "amount": -359999541.80572265,
-          "hardModeLevel": 18,
-          "duration": 1756453,
-          "startTime": 1788411698226,
-          "report": {
-            "code": "9yAbMWdGZkr4npQL",
-            "fightID": 3,
-            "startTime": 1788396559729
-          },
-          "guild": {
-            "id": 566153,
-            "name": "Amped Up",
-            "faction": 1
-          },
-          "server": {
-            "id": 123,
-            "name": "Illidan",
-            "region": "US"
-          },
-          "bracketData": 18,
-          "faction": 0,
-          "affixes": [
-            9,
-            10,
-            147
-          ],
-          "medal": "bronze",
-          "score": 458.19427734375,
-          "leaderboard": 0,
-          "talents": [
-            {
-              "talentID": 112521,
-              "points": 1
-            },
-            {
-              "talentID": 112523,
-              "points": 1
-            },
-            {
-              "talentID": 112525,
-              "points": 2
-            },
-            {
-              "talentID": 112526,
-              "points": 1
-            },
-            {
-              "talentID": 112572,
-              "points": 1
-            },
-            {
-              "talentID": 112574,
-              "points": 1
-            },
-            {
-              "talentID": 112575,
-              "points": 1
-            },
-            {
-              "talentID": 112578,
-              "points": 1
-            },
-            {
-              "talentID": 112580,
-              "points": 1
-            },
-            {
-              "talentID": 112583,
-              "points": 1
-            },
-            {
-              "talentID": 112585,
-              "points": 1
-            },
-            {
-              "talentID": 112588,
-              "points": 1
-            },
-            {
-              "talentID": 112592,
-              "points": 1
-            },
-            {
-              "talentID": 112594,
-              "points": 2
-            },
-            {
-              "talentID": 112597,
-              "points": 1
-            },
-            {
-              "talentID": 112598,
-              "points": 1
-            },
-            {
-              "talentID": 112601,
-              "points": 1
-            },
-            {
-              "talentID": 112604,
-              "points": 1
-            },
-            {
-              "talentID": 112606,
-              "points": 1
-            },
-            {
-              "talentID": 112607,
-              "points": 1
-            },
-            {
-              "talentID": 112608,
-              "points": 2
-            },
-            {
-              "talentID": 112609,
-              "points": 1
-            },
-            {
-              "talentID": 112610,
-              "points": 1
-            },
-            {
-              "talentID": 112611,
-              "points": 1
-            },
-            {
-              "talentID": 112612,
-              "points": 1
-            },
-            {
-              "talentID": 112614,
-              "points": 1
-            },
-            {
-              "talentID": 112615,
-              "points": 1
-            },
-            {
-              "talentID": 112619,
-              "points": 1
-            },
-            {
-              "talentID": 112621,
-              "points": 1
-            },
-            {
-              "talentID": 112623,
-              "points": 1
-            },
-            {
-              "talentID": 112625,
-              "points": 1
-            },
-            {
-              "talentID": 112628,
-              "points": 1
-            },
-            {
-              "talentID": 112629,
-              "points": 1
-            },
-            {
-              "talentID": 112630,
-              "points": 1
-            },
-            {
-              "talentID": 112632,
-              "points": 1
-            },
-            {
-              "talentID": 112633,
-              "points": 1
-            },
-            {
-              "talentID": 112635,
-              "points": 1
-            },
-            {
-              "talentID": 112636,
-              "points": 1
-            },
-            {
-              "talentID": 112638,
-              "points": 1
-            },
-            {
-              "talentID": 112639,
-              "points": 1
-            },
-            {
-              "talentID": 112640,
-              "points": 2
-            },
-            {
-              "talentID": 112642,
-              "points": 1
-            },
-            {
-              "talentID": 112643,
-              "points": 2
-            },
-            {
-              "talentID": 112644,
-              "points": 1
-            },
-            {
-              "talentID": 112646,
-              "points": 1
-            },
-            {
-              "talentID": 112650,
-              "points": 1
-            },
-            {
-              "talentID": 112652,
-              "points": 1
-            },
-            {
-              "talentID": 112654,
-              "points": 1
-            },
-            {
-              "talentID": 112655,
-              "points": 1
-            },
-            {
-              "talentID": 112657,
-              "points": 1
-            },
-            {
-              "talentID": 117145,
-              "points": 1
-            },
-            {
-              "talentID": 117168,
-              "points": 1
-            },
-            {
-              "talentID": 117170,
-              "points": 1
-            },
-            {
-              "talentID": 117172,
-              "points": 1
-            },
-            {
-              "talentID": 117705,
-              "points": 1
-            },
-            {
-              "talentID": 117706,
-              "points": 1
-            },
-            {
-              "talentID": 117707,
-              "points": 1
-            },
-            {
-              "talentID": 117714,
-              "points": 1
-            },
-            {
-              "talentID": 117720,
-              "points": 1
-            },
-            {
-              "talentID": 117728,
-              "points": 1
-            },
-            {
-              "talentID": 117729,
-              "points": 1
-            },
-            {
-              "talentID": 117732,
-              "points": 1
-            },
-            {
-              "talentID": 117733,
-              "points": 1
-            },
-            {
-              "talentID": 117739,
-              "points": 1
-            },
-            {
-              "talentID": 117740,
-              "points": 1
-            },
-            {
-              "talentID": 123373,
-              "points": 1
-            },
-            {
-              "talentID": 125615,
-              "points": 1
-            },
-            {
-              "talentID": 125619,
-              "points": 1
-            },
-            {
-              "talentID": 126029,
-              "points": 1
-            },
-            {
-              "talentID": 136018,
-              "points": 1
-            },
-            {
-              "talentID": 136019,
-              "points": 1
-            },
-            {
-              "talentID": 136020,
-              "points": 1
-            },
-            {
-              "talentID": 136807,
-              "points": 1
-            },
-            {
-              "talentID": 136881,
-              "points": 1
-            },
-            {
-              "talentID": 136882,
-              "points": 1
-            },
-            {
-              "talentID": 137062,
-              "points": 1
-            },
-            {
-              "talentID": 137063,
-              "points": 2
-            },
-            {
-              "talentID": 137064,
-              "points": 1
-            }
-          ],
-          "gear": [
-            {
-              "name": "Chosen Bloodslayer's Spirit Shroud",
-              "quality": "epic",
-              "id": 271510,
-              "icon": "inv_helm_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "8017",
-              "bonusIDs": [
-                "12843",
-                "13334",
-                "13692",
-                "6652",
-                "13696",
-                "13698"
-              ]
-            },
-            {
-              "name": "Aqirbane Reliquary",
-              "quality": "epic",
-              "id": 268265,
-              "icon": "inv_121_jewelry_neck03_green.jpg",
-              "itemLevel": "308",
-              "bonusIDs": [
-                "42",
-                "13668",
-                "13333",
-                "13987",
-                "12838"
-              ],
-              "gems": [
-                {
-                  "id": "240900",
-                  "itemLevel": "295"
-                },
-                {
-                  "id": "240983",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Scavenger's Spaulders",
-              "quality": "rare",
-              "id": 251146,
-              "icon": "inv_shoulder_leather_dungeonharronir_c_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8001",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13662",
-                "12699",
-                "12846"
-              ]
-            },
-            {
-              "name": "Unknown Item",
-              "quality": "common",
-              "id": 0,
-              "icon": "inv_axe_02.jpg",
-              "itemLevel": "0"
-            },
-            {
-              "name": "Chosen Bloodslayer's Banded Poncho",
-              "quality": "epic",
-              "id": 271513,
-              "icon": "inv_chest_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7987",
-              "bonusIDs": [
-                "6652",
-                "13440",
-                "13690",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Whirling Dervish Sash",
-              "quality": "rare",
-              "id": 159317,
-              "icon": "inv_belt_leather_zandalardungeon_c_01.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13695",
-                "13662",
-                "12699"
-              ],
-              "gems": [
-                {
-                  "id": "240900",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Reinforced Pants",
-              "quality": "epic",
-              "id": 271509,
-              "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "8159",
-              "bonusIDs": [
-                "6652",
-                "13440",
-                "13693",
-                "13698",
-                "12846"
-              ]
-            },
-            {
-              "name": "Arctic Explorer's Legwraps",
-              "quality": "rare",
-              "id": 251153,
-              "icon": "inv_boot_leather_dungeonharronir_c_01.jpg",
-              "itemLevel": "321",
-              "permanentEnchant": "7993",
-              "bonusIDs": [
-                "13440",
-                "42",
-                "13662",
-                "12699",
-                "12846"
-              ]
-            },
-            {
-              "name": "Fury-fletched Armlets",
-              "quality": "rare",
-              "id": 251135,
-              "icon": "inv_bracer_leather_dungeonharronir_c_01.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13696",
-                "13662",
-                "12699"
-              ]
-            },
-            {
-              "name": "Chosen Bloodslayer's Fanged Grips",
-              "quality": "epic",
-              "id": 271511,
-              "icon": "inv_glove_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
-              "bonusIDs": [
-                "6652",
-                "13440",
-                "13691",
-                "13697",
-                "12846"
-              ]
-            },
-            {
-              "name": "Charged Sandstone Band",
-              "quality": "rare",
-              "id": 158366,
-              "icon": "inv_ring_80_03d.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "7967",
-              "bonusIDs": [
-                "13440",
-                "6652",
-                "13668",
-                "12699",
-                "12843"
-              ],
-              "gems": [
-                {
-                  "id": "240900",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Jade Ophidian Band",
-              "quality": "rare",
-              "id": 162544,
-              "icon": "inv_ring_80_04c.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "7967",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13668",
-                "12699"
-              ],
-              "gems": [
-                {
-                  "id": "240900",
-                  "itemLevel": "295"
-                }
-              ]
-            },
-            {
-              "name": "Voracious Heart of Ula'tek",
-              "quality": "epic",
-              "id": 270175,
-              "icon": "inv_121_trinket_raid_ulatek_heart.jpg",
-              "itemLevel": "334",
-              "bonusIDs": [
-                "6652",
-                "13334",
-                "12854",
-                "13696"
-              ]
-            },
-            {
-              "name": "Drum of Renewed Bonds",
-              "quality": "uncommon",
-              "id": 248583,
-              "icon": "inv_archaeology_70_tauren_drum.jpg",
-              "itemLevel": "321",
-              "bonusIDs": [
-                "6652",
-                "13185",
-                "12846"
-              ]
-            },
-            {
-              "name": "Bloodthorn Burnous",
-              "quality": "rare",
-              "id": 251190,
-              "icon": "inv_cape_mail_dungeonharronir_c_01.jpg",
-              "itemLevel": "311",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "13662",
-                "12699"
-              ]
-            },
-            {
-              "name": "Farstrider's Mercy",
-              "quality": "epic",
-              "id": 237837,
-              "icon": "inv_knife_1h_questbloodelf_b_02.jpg",
-              "itemLevel": "331",
-              "permanentEnchant": "8689",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "12214",
-                "12497",
-                "13751",
-                "14001",
-                "13771",
-                "8960",
-                "8793",
-                "13836"
-              ]
-            },
-            {
-              "name": "Sharpened Lightwood Slasher",
-              "quality": "rare",
-              "id": 275070,
-              "icon": "inv_knife_1h_zuljin_d_01.jpg",
-              "itemLevel": "311",
-              "permanentEnchant": "8689",
-              "temporaryEnchant": "8052",
-              "bonusIDs": [
-                "12843",
-                "13440",
-                "6652",
-                "12701"
-              ]
-            },
-            {
-              "name": "Unknown Item",
-              "quality": "common",
-              "id": 0,
-              "icon": "inv_axe_02.jpg",
-              "itemLevel": "0"
-            }
-          ]
         }
       ]
     }
@@ -162274,6 +161820,6 @@
   "rate_limit_after_query": {
     "limitPerHour": 3600,
     "pointsSpentThisHour": 10.79,
-    "pointsResetIn": 3598
+    "pointsResetIn": 3599
   }
 }
