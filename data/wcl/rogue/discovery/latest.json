@@ -1,5 +1,5 @@
 {
-  "collected_at_utc": "2026-09-17T11:39:24Z",
+  "collected_at_utc": "2026-09-17T16:58:53Z",
   "expansion": {
     "id": 7,
     "name": "Midnight"
@@ -95,6 +95,10 @@
         {
           "id": 3379,
           "name": "Nymrissa Wavecaller"
+        },
+        {
+          "id": 3513,
+          "name": "Kith'ix"
         }
       ]
     }
