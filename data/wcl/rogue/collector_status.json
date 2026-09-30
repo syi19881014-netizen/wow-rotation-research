@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "checked_at_utc": "2026-09-29T22:13:26Z",
+  "checked_at_utc": "2026-09-30T05:30:17Z",
   "collector": "rogue_rankings_v0.2",
   "specs": [
     "Assassination",
@@ -25,7 +25,8 @@
       "encounter_id": 3191,
       "encounter_name": "The Venomous Abyss",
       "nonempty_specs": [
-        "Assassination"
+        "Assassination",
+        "Subtlety"
       ],
       "file": "data/wcl/rogue/rankings/510/3191.json"
     }
