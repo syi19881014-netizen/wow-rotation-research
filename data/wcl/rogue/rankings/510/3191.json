@@ -1,5 +1,5 @@
 {
-  "collected_at_utc": "2026-10-07T13:19:45Z",
+  "collected_at_utc": "2026-10-07T23:03:55Z",
   "expansion": {
     "id": 7,
     "name": "Midnight"
@@ -1885,14 +1885,14 @@
           "name": "Shameonus",
           "class": "Rogue",
           "spec": "Assassination",
-          "amount": 280302.07040552,
+          "amount": 286873.06429937,
           "hardModeLevel": 0,
-          "duration": 12033555,
-          "startTime": 1791134316998,
+          "duration": 11116181,
+          "startTime": 1791393292062,
           "report": {
-            "code": "VaCn4wTYRxhyGJcD",
+            "code": "dgzQbfr84qjGVDkJ",
             "fightID": 10000,
-            "startTime": 1791132884530
+            "startTime": 1791392242242
           },
           "guild": {
             "id": 563170,
@@ -1904,7 +1904,7 @@
             "name": "Blackrock",
             "region": "EU"
           },
-          "bracketData": 329,
+          "bracketData": 331,
           "faction": 1,
           "talents": [
             {
@@ -2005,10 +2005,6 @@
             },
             {
               "talentID": 112646,
-              "points": 1
-            },
-            {
-              "talentID": 112648,
               "points": 1
             },
             {
@@ -2160,10 +2156,6 @@
               "points": 1
             },
             {
-              "talentID": 117727,
-              "points": 1
-            },
-            {
               "talentID": 117736,
               "points": 1
             },
@@ -2173,6 +2165,10 @@
             },
             {
               "talentID": 125132,
+              "points": 1
+            },
+            {
+              "talentID": 125140,
               "points": 1
             },
             {
@@ -2210,6 +2206,10 @@
             {
               "talentID": 137067,
               "points": 1
+            },
+            {
+              "talentID": 137464,
+              "points": 1
             }
           ],
           "gear": [
@@ -2218,16 +2218,17 @@
               "quality": "epic",
               "id": 271510,
               "icon": "inv_helm_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "334",
+              "itemLevel": "344",
               "permanentEnchant": "8017",
               "bonusIDs": [
-                "13334",
                 "6652",
+                "13335",
                 "13696",
                 "13847",
+                "13848",
                 "13692",
                 "13698",
-                "12854"
+                "1597"
               ]
             },
             {
@@ -2315,15 +2316,15 @@
               "quality": "epic",
               "id": 271509,
               "icon": "inv_pant_leather_raidrogueulatek_d_01.jpg",
-              "itemLevel": "321",
+              "itemLevel": "344",
               "permanentEnchant": "8159",
               "bonusIDs": [
-                "12846",
-                "13334",
                 "6652",
+                "13335",
+                "13848",
                 "13693",
                 "13698",
-                "1574"
+                "1597"
               ]
             },
             {
@@ -2499,14 +2500,6 @@
               "id": 28788,
               "icon": "inv_shirt_guildtabard_01.jpg",
               "itemLevel": "14"
-            }
-          ],
-          "externalBuffs": [
-            {
-              "name": "Power Infusion",
-              "id": 10060,
-              "icon": "spell_holy_powerinfusion.jpg",
-              "applications": 1
             }
           ]
         },
@@ -6813,6 +6806,6 @@
   "rate_limit_after_query": {
     "limitPerHour": 3600,
     "pointsSpentThisHour": 4.75,
-    "pointsResetIn": 3599
+    "pointsResetIn": 3600
   }
 }
