@@ -1,0 +1,97 @@
+{
+  "collected_at": "2026-10-30",
+  "game": "剑侠情缘网络版叁",
+  "client": "旗舰端",
+  "season": "苍生铸世",
+  "caveat": "上游技能分组和ID映射未核验2026-10-29版本，不得视为当前正式服最终机制",
+  "specializations": [
+    {
+      "name": "傲血战意",
+      "heart_id": 10026,
+      "force_id": 3,
+      "talent_kungfu_id_historical": 6,
+      "skill_group_ids": [
+        "10017",
+        "10023",
+        "10024",
+        "10061"
+      ],
+      "skill_groups": {
+        "10017": [
+          "400",
+          "403",
+          "415",
+          "480"
+        ],
+        "10023": [
+          "412",
+          "404",
+          "413",
+          "422"
+        ],
+        "10024": [
+          "442",
+          "418",
+          "424",
+          "423"
+        ],
+        "10061": [
+          "427",
+          "6520",
+          "428",
+          "433",
+          "2603",
+          "426"
+        ]
+      },
+      "candidate_pvp_styles": [
+        "破重围",
+        "戎行",
+        "流血"
+      ],
+      "source": "https://raw.githubusercontent.com/JX3BOX/jx3box-data/master/data/xf/xf.json"
+    },
+    {
+      "name": "铁牢律",
+      "heart_id": 10062,
+      "force_id": 3,
+      "talent_kungfu_id_historical": 8,
+      "skill_group_ids": [
+        "10017",
+        "10023",
+        "10024",
+        "10061"
+      ],
+      "skill_groups": {
+        "10017": [
+          "400",
+          "403",
+          "415",
+          "480"
+        ],
+        "10023": [
+          "412",
+          "404",
+          "413",
+          "422"
+        ],
+        "10024": [
+          "442",
+          "418",
+          "424",
+          "423"
+        ],
+        "10061": [
+          "427",
+          "6520",
+          "428",
+          "433",
+          "2603",
+          "426"
+        ]
+      },
+      "candidate_pvp_styles": [],
+      "source": "https://raw.githubusercontent.com/JX3BOX/jx3box-data/master/data/xf/xf.json"
+    }
+  ]
+}
