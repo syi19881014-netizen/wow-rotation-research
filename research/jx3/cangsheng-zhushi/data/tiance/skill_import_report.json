@@ -1,0 +1,50 @@
+{
+  "generated_at_utc": "2026-10-30T06:58:12.832106+00:00",
+  "skill_table_snapshot": "2026-10-13",
+  "talent_snapshot": "2026-10-30",
+  "skill_upstream_commit": "8751fb0474aa5f37c47a99c611ba12736f5028ce",
+  "talent_upstream_commit": "c8a6f9b1508e3d743ad14249315c4963273f1a9b",
+  "sources": {
+    "skill": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/skill.txt",
+    "skills": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/skills.tab",
+    "talents": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/output/std/v20261030.json"
+  },
+  "encoding": {
+    "skill": "gb18030",
+    "skills": "gb18030"
+  },
+  "source_sizes_bytes": {
+    "skill": 5015688,
+    "skills": 16870234
+  },
+  "current_talent_entries": 72,
+  "candidate_name_count": 47,
+  "matched_name_count": 46,
+  "candidate_rows": 341,
+  "raw_cooldown_columns": [
+    "CastMode",
+    "MountRequestType",
+    "MountRequestDetail",
+    "MountType",
+    "IsMountAble",
+    "IsPassiveSkill",
+    "IsChannelSkill",
+    "SkillCastFlag",
+    "UseCastScript",
+    "MountRequestDetailLevel",
+    "CastMask",
+    "KungfuMountID",
+    "CanCastOnTower",
+    "MazeCast",
+    "IgnoreImmunityCast",
+    "HitStiffDelayFrame"
+  ],
+  "critical_skill": "撼如雷",
+  "critical_skill_candidate_ids": [
+    "37105",
+    "404",
+    "444",
+    "445"
+  ],
+  "warning": "原始技能数据为2026-10-13，比2026-10-29正式服早；GCD字段未做API或实测验证，严禁当作当前正式服完备技能表。"
+}
