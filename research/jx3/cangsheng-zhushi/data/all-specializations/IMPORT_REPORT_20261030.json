@@ -1,5 +1,5 @@
 {
-  "built_utc": "2026-10-30T07:19:26.465180+00:00",
+  "built_utc": "2026-10-30T07:21:10.124233+00:00",
   "snapshot_versions": {
     "talents": "2026-10-30",
     "skills": "2026-10-13",
@@ -11,6 +11,7 @@
   },
   "sources": {
     "talents": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/c8a6f9b1508e3d743ad14249315c4963273f1a9b/output/std/v20261030.json",
+    "talents_prior": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/c8a6f9b1508e3d743ad14249315c4963273f1a9b/output/std/v20261029.json",
     "skills": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/skill.txt",
     "skill_props": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/skills.tab",
     "buffs": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/buff.txt",
@@ -20,6 +21,12 @@
   "non_tiance_hearts": 30,
   "school_count": 21,
   "unique_talents": 1152,
+  "changes_vs_20261029": {
+    "total": 56,
+    "description_or_name": 31,
+    "icon_only": 25,
+    "hearts_impacted": 23
+  },
   "talent_selection_rows_explanation": "9 tiers per heart; 7/8/9 use same 12-option pool; 36 unique options each",
   "skill_candidate_rows": 3730,
   "explicit_buff_link_rows": 361,
