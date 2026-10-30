@@ -148,7 +148,9 @@ def classify_skill(record,school,talent_ids,mentions):
     if desc:score+=3
     if bad:score-=90
     if not (schoolprefix or active_id or name_ref):return None
-    if score<10:return None
+    # Weak bare name matches commonly pull NPC/instance/damage-subskill homonyms.
+    # Keep only attributed school skills, explicit active-talent IDs or described named spells.
+    if score<25:return None
     if bad:return None
     # Note: "skill ID in talent table" is NOT proof of castability.
     kind=("主技能高优先候选" if exact else
