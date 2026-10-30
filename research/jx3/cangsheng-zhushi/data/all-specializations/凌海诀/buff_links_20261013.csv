@@ -1,0 +1,4 @@
+﻿门派,心法,来源候选技能,来源候选SkillID,来源技能等级,被引用BuffID,引用Buff等级,引用类型,Buff名称(原表),Buff描述(原表),raw_Count,raw_Interval,raw_AppendType,raw_BuffType,raw_DetachType,Buff用途判断,正式服核验,来源快照
+蓬莱,凌海诀,翼绝云天,19827,0,18386,1,desc,青冥,每2秒受到<BUFF atCallPhysicsDamage>点外功伤害,6,32,18386,,2,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13
+蓬莱,凌海诀,翼绝云天,45098,0,18386,1,desc,青冥,每2秒受到<BUFF atCallPhysicsDamage>点外功伤害,6,32,18386,,2,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13
+蓬莱,凌海诀,青冥,25272,1,18386,1,desc,青冥,每2秒受到<BUFF atCallPhysicsDamage>点外功伤害,6,32,18386,,2,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13

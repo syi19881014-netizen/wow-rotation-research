@@ -1,0 +1,2 @@
+﻿门派,心法,来源候选技能,来源候选SkillID,来源技能等级,被引用BuffID,引用Buff等级,引用类型,Buff名称(原表),Buff描述(原表),raw_Count,raw_Interval,raw_AppendType,raw_BuffType,raw_DetachType,Buff用途判断,正式服核验,来源快照
+刀宗,孤锋诀,裂海横天,44534,1,33184,2,desc,倾怒,施展“沧浪三叠”时会尝试消耗2层“洄涛”以直接打出三段效果,1,0,33184,,0,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13

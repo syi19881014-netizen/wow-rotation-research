@@ -1,0 +1,6 @@
+﻿门派,心法,来源候选技能,来源候选SkillID,来源技能等级,被引用BuffID,引用Buff等级,引用类型,Buff名称(原表),Buff描述(原表),raw_Count,raw_Interval,raw_AppendType,raw_BuffType,raw_DetachType,Buff用途判断,正式服核验,来源快照
+长歌,相知,商,14065,0,9357,0,desc,商,每3秒受到<BUFF atCallLunarDamage>点阴性内功伤害,,,,,,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13
+长歌,相知,商,14138,0,9459,0,desc,商,每3秒恢复<BUFF atCallTherapy>点气血值,,,,,,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13
+长歌,相知,宫,14303,0,9454,0,desc,宫,每3秒恢复<BUFF atCallTherapy>点气血值,,,,,,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13
+长歌,相知,角,14066,0,9361,0,desc,角,每3秒受到<BUFF atCallLunarDamage>点阴性内功伤害,,,,,,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13
+长歌,相知,角,14139,0,9463,0,desc,角,每3秒恢复<BUFF atCallTherapy>点气血值,,,,,,仅引用关系；不代表当前技能必定实际施加此Buff,未验证,2026-10-13

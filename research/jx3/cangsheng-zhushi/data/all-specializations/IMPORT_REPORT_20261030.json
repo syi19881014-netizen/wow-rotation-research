@@ -1,0 +1,47 @@
+{
+  "built_utc": "2026-10-30T07:17:44.548374+00:00",
+  "snapshot_versions": {
+    "talents": "2026-10-30",
+    "skills": "2026-10-13",
+    "buffs": "2026-10-13"
+  },
+  "source_commits": {
+    "talents": "c8a6f9b1508e3d743ad14249315c4963273f1a9b",
+    "skills_and_buffs": "8751fb0474aa5f37c47a99c611ba12736f5028ce"
+  },
+  "sources": {
+    "talents": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/c8a6f9b1508e3d743ad14249315c4963273f1a9b/output/std/v20261030.json",
+    "skills": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/skill.txt",
+    "skill_props": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/skills.tab",
+    "buffs": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/buff.txt",
+    "buff_props": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/8751fb0474aa5f37c47a99c611ba12736f5028ce/raw/buff.tab"
+  },
+  "heart_count": 32,
+  "non_tiance_hearts": 30,
+  "school_count": 21,
+  "unique_talents": 1152,
+  "talent_selection_rows_explanation": "9 tiers per heart; 7/8/9 use same 12-option pool; 36 unique options each",
+  "skill_candidate_rows": 4861,
+  "explicit_buff_link_rows": 366,
+  "pvp_keyword_signal_rows": 773,
+  "raw_sizes_bytes": {
+    "skill": 5015688,
+    "skill_props": 16870234,
+    "buff": 2762165,
+    "buff_props": 14807827
+  },
+  "encodings": {
+    "skill": "gb18030",
+    "skill_props": "gb18030",
+    "buff": "gb18030",
+    "buff_props": "gb18030"
+  },
+  "critical_limitations": [
+    "Real-time 2026-10-29+ class full ability lists are NOT verified. Skill records from 2026-10-13.",
+    "Some names match NPC/child/replacement spells. Castability and GCD must be verified separately.",
+    "Buff references are links found in candidate skill descriptions, NOT confirmed applied buffs.",
+    "PVP keyword tags are for searching; no quantitative PvP rotation conclusions.",
+    "Missing ability in current talent text does NOT mean absence in game.",
+    "The '其它' empty generic specialization is intentionally excluded."
+  ]
+}
