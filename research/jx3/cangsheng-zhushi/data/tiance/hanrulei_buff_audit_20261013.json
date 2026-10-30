@@ -1,5 +1,5 @@
 {
-  "date_utc": "2026-10-30T07:08:14.089087+00:00",
+  "date_utc": "2026-10-30T07:09:34.857023+00:00",
   "source": {
     "buff.txt": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/buff.txt",
     "buff.tab": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/buff.tab"
@@ -26,6 +26,19 @@
     "mentions_ji_lei": true
   },
   "candidate_buffs": [
+    {
+      "BuffID": "196",
+      "Level": "0",
+      "Names": [
+        "铁牢撼如雷"
+      ],
+      "remarks": [
+        "(196)(0)天策-憾如雷-铁牢律"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
     {
       "BuffID": "362",
       "Level": "0",
@@ -202,95 +215,316 @@
       "BuffID": "6363",
       "Level": "1",
       "Names": [
-        "激雷"
+        "激雷",
+        "小队激雷"
       ],
       "remarks": [
         "(6363)(1)小队激雷"
       ],
       "rawSources": [
-        "buff.txt"
+        "buff.txt",
+        "buff.tab"
       ]
     },
     {
       "BuffID": "6363",
       "Level": "2",
       "Names": [
-        "激雷"
+        "激雷",
+        "自身普通激雷"
       ],
       "remarks": [
         "(6363)(2)自身普通激雷"
       ],
       "rawSources": [
-        "buff.txt"
+        "buff.txt",
+        "buff.tab"
       ]
     },
     {
       "BuffID": "6363",
       "Level": "3",
       "Names": [
-        "激雷"
+        "激雷",
+        "自身激雷加强"
       ],
       "remarks": [
         "(6363)(3)自身激雷加强"
       ],
       "rawSources": [
-        "buff.txt"
+        "buff.txt",
+        "buff.tab"
       ]
     },
     {
       "BuffID": "6363",
       "Level": "4",
       "Names": [
-        "激雷"
+        "激雷",
+        "自身激雷终极加强"
       ],
       "remarks": [
         "(6363)(4)自身激雷终极加强"
       ],
       "rawSources": [
-        "buff.txt"
+        "buff.txt",
+        "buff.tab"
       ]
     },
     {
       "BuffID": "9839",
       "Level": "1",
       "Names": [
-        "撼如雷"
+        "撼如雷",
+        "撼如雷嘲讽"
       ],
       "remarks": [
         "(9839)(1)撼如雷嘲讽"
       ],
       "rawSources": [
-        "buff.txt"
+        "buff.txt",
+        "buff.tab"
       ]
     },
     {
       "BuffID": "10372",
       "Level": "1",
       "Names": [
-        "撼如雷"
+        "撼如雷",
+        "天策_曹雪阳_撼如雷"
       ],
       "remarks": [
         "(10372)(1)天策_曹雪阳_撼如雷"
       ],
       "rawSources": [
-        "buff.txt"
+        "buff.txt",
+        "buff.tab"
       ]
     },
     {
       "BuffID": "10697",
       "Level": "1",
       "Names": [
-        "激雷"
+        "激雷",
+        "天策_激雷AP加成"
       ],
       "remarks": [
         "(10697)(1)天策_激雷AP加成"
       ],
       "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "28599",
+      "Level": "1",
+      "Names": [
+        "绝境·撼如雷"
+      ],
+      "remarks": [
+        "(28599)(1)绝境·撼如雷"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "51364",
+      "Level": "1",
+      "Names": [
+        "绝境·撼如雷"
+      ],
+      "remarks": [
+        "(51364)(1)绝境_禁止隐身标记"
+      ],
+      "rawSources": [
         "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "51365",
+      "Level": "1",
+      "Names": [
+        "绝境·撼如雷",
+        "绝境_撼如雷会心"
+      ],
+      "remarks": [
+        "(51365)(1)绝境_撼如雷会心"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "1",
+      "Names": [
+        "天策_激雷_效果1"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "2",
+      "Names": [
+        "天策_激雷_效果1"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "3",
+      "Names": [
+        "天策_激雷_效果1"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "4",
+      "Names": [
+        "天策_激雷_效果1"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "5",
+      "Names": [
+        "天策_激雷_效果1"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "6",
+      "Names": [
+        "天策_激雷_效果1"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "1",
+      "Names": [
+        "天策_激雷_效果2"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "2",
+      "Names": [
+        "天策_激雷_效果2"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "3",
+      "Names": [
+        "天策_激雷_效果2"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "4",
+      "Names": [
+        "天策_激雷_效果2"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "5",
+      "Names": [
+        "天策_激雷_效果2"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "6",
+      "Names": [
+        "天策_激雷_效果2"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "3387",
+      "Level": "1",
+      "Names": [
+        "竞技场_删撼如雷"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "10372",
+      "Level": "2",
+      "Names": [
+        "天策_曹雪阳_撼如雷"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "23833",
+      "Level": "1",
+      "Names": [
+        "撼如雷皮肤月亮"
+      ],
+      "remarks": [],
+      "rawSources": [
+        "buff.tab"
       ]
     }
   ],
-  "matched_record_count": 27,
+  "matched_record_count": 55,
   "source_stats": {
     "buff.txt": {
       "count": 27265,
