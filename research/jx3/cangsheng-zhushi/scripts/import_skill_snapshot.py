@@ -178,7 +178,7 @@ def main():
             [x for x in output if x.get("技能名")==name],
             key=lambda r:(-score(r,name),len(clean(r.get("Remark"))),clean(r.get("SkillID")))
         )
-        positive=[r for r in candidates if score(r,name)>0]
+        positive=[r for r in candidates if score(r,name)>=18]
         for order,item in enumerate(positive[:2]):
             s=score(item,name)
             focus.append({
