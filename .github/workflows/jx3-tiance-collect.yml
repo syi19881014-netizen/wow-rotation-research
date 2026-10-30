@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/jx3-tiance-collect.yml"
       - "research/jx3/cangsheng-zhushi/scripts/import_skill_snapshot.py"
+      - "research/jx3/cangsheng-zhushi/scripts/audit_hanrulei_buffs.py"
 permissions:
   contents: write
 jobs:
@@ -18,7 +19,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Download recent source and produce non-verified candidates
-        run: python research/jx3/cangsheng-zhushi/scripts/import_skill_snapshot.py
+        run: |
+          python research/jx3/cangsheng-zhushi/scripts/import_skill_snapshot.py
+          python research/jx3/cangsheng-zhushi/scripts/audit_hanrulei_buffs.py
       - name: Commit imported candidates and audit report
         run: |
           git config user.name "github-actions[bot]"
@@ -27,6 +30,8 @@ jobs:
           git add research/jx3/cangsheng-zhushi/data/tiance/skills_name_audit_20261013.csv
           git add research/jx3/cangsheng-zhushi/data/tiance/skill_import_report.json
           git add research/jx3/cangsheng-zhushi/data/tiance/skills_priority_audit_20261013.csv
+          git add research/jx3/cangsheng-zhushi/data/tiance/hanrulei_buff_candidates_20261013.csv
+          git add research/jx3/cangsheng-zhushi/data/tiance/hanrulei_buff_audit_20261013.json
           if ! git diff --cached --quiet; then
             git commit -m "research(jx3): import GBK skill candidates and source audit"
             git push
