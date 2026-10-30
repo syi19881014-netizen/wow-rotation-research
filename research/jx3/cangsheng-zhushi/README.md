@@ -1,34 +1,35 @@
-# 剑网3·苍生铸世 天策 PVP 机制与技能资料库
+# 剑网3《苍生铸世》天策PVP资料研究
 
-建立日期：2026-10-30 | 旗舰端 | **资料采集/机制建模项目，并非已验证的实战自动施法系统**。
+> **状态：未完成当前正式服技能/奇穴核验。不得把本目录当作全技能、技能ID或GCD已验证数据库。**
+>
+> 核验日期：2026-10-30。仅以2026-10-29正式服（旗舰端）为当季基准。
 
-## 当前已入库的内容
+## 重要纠错（2026-10-30）
+此前根据JX3BOX/jx3box-data生成的36条天策技能关联记录和618条跨心法技能关联记录，**不代表完整技能，也不是2026年的最新技能ID**：
+- 所用 `data/xf/std/skill_name_id_level.json` 最近一次GitHub文件提交是 **2023-11-12**。
+- `raw/std/skill.txt` / `raw/std/tenextrapoint.tab` 最近一次提交是 **2024-09-03**。
+- `kungfu_std.json` 是套路归属表，不涵盖全部奇穴主动、爆发派生、技能置换、Buff。
+- 比如**撼如雷**就在旧套路表中（旧映射候选 SkillID 404），但上一次回答展示的名单遗漏了它。404尚不能据此直接确认为2026正式服有效ID。
+- **已从本目录删除**所有依据旧表生成的技能与奇穴候选清单，避免误读为当前数据。
 
-- `data/tiance/skills.csv`：傲血战意与铁牢律各自18条面板套路技能关联，共36条记录（包含1条上游暂缺名称的ID 427）。记录名称、技能ID、上游等级、心法ID、套路分组；**当前效果和GCD目前均待实测**。
-- `data/tiance/specializations.json`：两套心法的ID和套路ID，区分“心法ID”和“套路ID/奇穴KungFuID”。
-- `data/tiance/talents_candidates.csv`：优先核实的候选奇穴、流派名称及历史映射ID；不是正式服奇穴选择清单。
-- `data/tiance/talents_legacy_12tier.csv`：旧版12重历史奇穴选项，**不得当作苍生铸世九重奇穴**。
-- `data/tiance/buffs_to_verify.csv`：PVP关键Buff、免控、减疗、击倒、破军/战意等状态清单。
-- `research/gcd_verification.md`：GCD、独立CD、施法锁、失败与延迟的实验设计。
-- `research/pvp_state_machine.md`：抓点、防守、追击等状态机草案。
-- `research/verification_queue.md`：当前缺项与下一批工作。
-- `SOURCES.md`：来源和证据等级。
+## 目前可靠的最新资料
+- 官方2026-10-29《苍生铸世》天策武学调整专题存在，但网页当前只能读到标题链接，**正文不可检索，不编造技能详情**。
+- 官方2026-10测试服修正：傲血「力破万钧」伤害异常、铁牢「疾雨」与「乘龙箭」联动异常修复，**只能表示测试服记录，不等于正式服测定**。
+- JX3BOX有在线技能数据库（版本需按页面实际提示核对），但本次仍未成功读取一份有明确2026-10-29正式服版本号的天策全技能导出。
 
-## 已定位心法标识
-- **傲血战意**：心法ID `10026`，奇穴表旧KungFuID `6`，门派ForceID `3`
-- **铁牢律**：心法ID `10062`，奇穴表旧KungFuID `8`，门派ForceID `3`
+## 文件导览
+- `research/2026-10-30-data-audit.md`：错误清理、数据时间戳与实证对照。
+- `data/tiance/skill_reconciliation_pending.csv`：当前重点**待核验**技能名称（不填旧SkillID）。
+- `data/tiance/talents_current_9tier_template.csv`：九重奇穴待采集空模板；**不是选项清单**。
+- `data/tiance/buffs_to_verify.csv`：Buff/免控/控制效果的核验任务清单（ID空白）。
+- `research/gcd_verification.md`：GCD实测方法，**不是结论**。
+- `research/pvp_state_machine.md`：PVP决策架构的初稿。
+- `research/verification_queue.md`：必须补齐的字段与验收条件。
+- `updates/2026-10-15-tiance-test.md`：官方测试服有关天策的两个修复条目。
+- `SOURCES.md`：官方/JX3BOX资料入口与有效性等级。
 
-## 使用限制
-数据字段为 `待核验` 时，不能把它用于自动施法或假定离GCD；同名技能可能存在不同等级、派生触发和被动效果。名剑大会等PVP场景请遵守游戏规则；本库优先用于离线状态机、技能提示、录像分析和合法插件能力评估。
-
-**范围说明：** 本阶段专注天策的两套心法和傲血流派（破重围、戎行、流血）。后续可按同一模式扩展全门派心法。
-
-## 第二批扩充（跨门派技能ID候选总表）
-
-- `data/all-specializations/skills_candidates.csv`：按每个已收录心法列出上游套路技能，含技能名、SkillID及GCD/效果留空待核验。
-- `data/all-specializations/heart_coverage.csv`：枚举心法ID、覆盖情况、缺失情况。
-- `data/tiance/talents_current_9tier_template.csv`：正式服9层奇穴采集模板（当前留空、不得臆填）。
-- `updates/2026-10-15-tiance-test.md`：天策测试服两条技能/奇穴修复记录。
-- `research/data_schema.md`：解释心法、技能、奇穴、Buff、图标的ID空间和未来数据读取字段。
-
-**范围警告：** 全门派总表仅覆盖JX3BOX当前静态映射所含心法，不代表2026-10-29正式服所有门派已完整覆盖；特别是新职业/新流派需要额外补录。
+## 入库硬规则
+1. 可用于**正式服事实**的技能ID须有当季客户端实表或与当季相符的官方/可靠实时数据库数据和对应版本号。
+2. 名称→ID ≠ 本版本有效；技能ID ≠ BuffID；技能面板 ≠ 全技能；奇穴主动 ≠ 面板常驻。
+3. 有GCD、无GCD、技能冷却、控制持续时间均不能凭印象填；逐项给来源或测量记录。
+4. 每条数据须包含版本、日期、心法、派生/替换关系、来源URL和核验状态。

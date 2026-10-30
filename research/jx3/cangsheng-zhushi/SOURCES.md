@@ -1,32 +1,29 @@
-# 资料来源与版本核验
+# 数据来源与时效审计（2026-10-30）
 
-采集日期：2026-10-30（按中国时间）；目标：**旗舰端 / 苍生铸世 / 天策 / 傲血战意与铁牢律**。切勿与缘起服、“悟”招式、测试服或往期赛季混用。
+## 官方：当前赛季的首要依据
+- 2026-10-29天策武学调整专页：https://jx3.xoyo.com/show-2466-7574-1.html （官方目录可确认存在，网页正文当前未成功读取）
+- 官方新闻目录：https://jx3.xoyo.com/list-2466-0.html （列出10/29天策专题）
+- 正式服公告目录：https://jx3.xoyo.com/announce/
+- 测试服10月中旬更新：https://jx3.xoyo.com/launcher/update/latest_exp.html （两条天策修复，限测试服）
 
-## 数据映射（已实际读取）
-- 心法名与心法ID：https://github.com/JX3BOX/jx3box-data/blob/master/data/xf/xf.json
-- 技能套路分组：https://github.com/JX3BOX/jx3box-data/blob/master/data/martial/kungfu_std.json
-- 名称→技能ID/等级：https://github.com/JX3BOX/jx3box-data/blob/master/data/xf/std/skill_name_id_level.json
-- 旧版奇穴表（**历史数据，非当前正式服！**）：https://github.com/JX3BOX/jx3box-data/blob/master/raw/std/tenextrapoint.tab
-- 技能表完整源及原始结构：https://github.com/JX3BOX/jx3box-data/blob/master/raw/std/skill.txt
-- 编译脚本：https://github.com/JX3BOX/jx3box-data/blob/master/build/skill_name_to_id_level.js
+## JX3BOX：服务与GitHub仓库必须区分
+- 在线数据库：https://www.jx3box.com/app/database/ （页面可能需要浏览器渲染；尚未获取有正式服版本戳的天策当前技能明细）
+- GitHub原始静态库：https://github.com/JX3BOX/jx3box-data
+- 名称映射上游文件最后提交：2023-11-12，GitHub commit `8a16f1f535077509b28f7f5b5f037391813b2562`：
+  https://github.com/JX3BOX/jx3box-data/commits/master/data/xf/std/skill_name_id_level.json
+- 原始技能表最后提交：2024-09-03，GitHub commit `8076e078bd75e2cc036522585975a93bebbcfb4a`：
+  https://github.com/JX3BOX/jx3box-data/commits/master/raw/std/skill.txt
+- 旧奇穴表最后提交：2024-09-03：
+  https://github.com/JX3BOX/jx3box-data/commits/master/raw/std/tenextrapoint.tab
 
-### 数据时间陷阱
-上游的 `tenextrapoint.tab` 仍有 **12层、需求等级108～120**，不符合苍生铸世9重奇穴及50级世界。它的历史技能ID不能直接作为当前可点奇穴。上游 `skill_name_id_level.json` 只证明“数据集中该名字映射到对应ID”，并不能证明技能/等级/GCD/效果在2026-10-29版本仍有效。尤其“映射等级=0”是映射表值，不等于技能未学习，也不等于GCD=0。
+**结论：不能用这些仓库旧静态文件证明2026年10月29日的技能ID、技能效果、GCD或奇穴。不要从这些静态文件重新生成正式服资料。**
 
-## 当季公告与参考
-- 官网公告列表：https://jx3.xoyo.com/announce/
-- 官网9月8日天策首轮武学调整目录：https://jx3.xoyo.com/list-2466-0.html
-- 9月8日技能流派调整方向（转载）：https://news.17173.com/content/09082026/171757985.shtml
-- 10月16日及后续测试服技改记录：https://jx3.xoyo.com/launcher/update/latest_exp.html
-- 10月29日天策正式服技改页面（检索到页面地址，正文未核验，禁止据此断言数值）：https://jx3.xoyo.com/show-2466-7574-1.html
-- 2026年5月武学助手宏展示（**旧版本参考**）：https://www.sina.cn/news/detail/5303560575387840.html
-- 技能/Buff字段元数据：https://github.com/JX3BOX/jx3box-data/blob/master/data/app/skill.json 和 https://github.com/JX3BOX/jx3box-data/blob/master/data/app/buff.json
+## 辅助来源限制
+- 其他Wiki、攻略、视频可作为定位线索，必须注明上传日期和对应赛季。
+- 不能把2026年10月17日更新但自身明示“端游已删除”的历史武学说明当作10月29日实际技能表。
 
 ## 证据等级
-- A：2026-10-29之后正式服客户端实际数据+可重复测试记录；可用于正式服结论
-- B：2026-10-29之后官方明确技能文本；等待实机验证
-- C：第三方数据库当前抓取、未核验版本；可用作候选ID，不得视为实机效果
-- H：旧版/测试服数据；**隔离在历史或候选文件**
-- U：未知；保持空字段，不猜测
-
-每项结论应标注来源链接、数据发布日期/读取日期、客户端版本、是否旗舰端、心法和实测方法。
+- A：10月29日及以后正式服客户端实际技能/奇穴/战斗数据（含客户端版本）+可重复检验
+- B：10月29日后官方明确武学描述/修订+可定位到正式服版本
+- T：2026年测试服官方内容（只作版本变更线索）
+- U：未取得当季权威证据，必须留空，不输入正式技能库
