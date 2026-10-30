@@ -22,6 +22,7 @@ SKILL_COMMIT = "8751fb0474aa5f37c47a99c611ba12736f5028ce"
 BASE = "https://raw.githubusercontent.com/JX3BOX/jx3box-talent"
 URLS = {
  "talents": f"{BASE}/{TALENT_COMMIT}/output/std/v20261030.json",
+ "talents_prior": f"{BASE}/{TALENT_COMMIT}/output/std/v20261029.json",
  "skills": f"{BASE}/{SKILL_COMMIT}/raw/skill.txt",
  "skill_props": f"{BASE}/{SKILL_COMMIT}/raw/skills.tab",
  "buffs": f"{BASE}/{SKILL_COMMIT}/raw/buff.txt",
@@ -189,6 +190,8 @@ def main():
     for x in buff_props:
         bid=clean(x.get("ID"))
         if bid:buff_prop_by_id[bid].append(x)
+    # The previous day's data remains an independent immutable reference.
+    prior_talents=json.loads(get_bytes(URLS["talents_prior"]).decode("utf-8"))
     report=[]
     all_talents=[]
     pvp_rows=[]
@@ -310,6 +313,35 @@ def main():
         candidate_row_count+=len(cand)
         buff_row_count+=len(buff_links)
         pvp_rows.extend(signals)
+    # Correctness audit: don't report icon-only edits as combat balance changes.
+    changes=[]
+    for heart in observed:
+        for tier,opts in talents[heart].items():
+            for slot,item in opts.items():
+                if slot.startswith("_"):continue
+                prior=prior_talents.get(heart,{}).get(tier,{}).get(slot,{})
+                differing=sorted({key for key in set(item)|set(prior)
+                                  if json.dumps(item.get(key),ensure_ascii=False,sort_keys=True)
+                                     !=json.dumps(prior.get(key),ensure_ascii=False,sort_keys=True)})
+                if not differing:continue
+                classification=("纯图标/展示变化" if set(differing)=={"icon"} else
+                                "涉及描述内容变化" if "desc" in differing else
+                                "名称变化" if "name" in differing else "其他字段变化")
+                changes.append({
+                    "门派":SCHOOLS[heart],"心法":heart,"重数":tier,"槽位":slot,
+                    "奇穴ID(新)":clean(item.get("id")),
+                    "旧名称":clean(prior.get("name")),"新名称":clean(item.get("name")),
+                    "变更字段":"|".join(differing),"变更类别":classification,
+                    "原效果":clean(prior.get("desc")),"新效果":clean(item.get("desc")),
+                    "旧图标":prior.get("icon",""),"新图标":item.get("icon",""),
+                    "来源":"JX3BOX 20261029 → 20261030；正式服需实测"
+                })
+    changes.sort(key=lambda r:(r["心法"],int(r["重数"]),int(r["槽位"])))
+    changed_headers=["门派","心法","重数","槽位","奇穴ID(新)","旧名称","新名称",
+                     "变更字段","变更类别","原效果","新效果","旧图标","新图标","来源"]
+    save_csv(OUTPUT/"TALENT_DIFF_20261029_TO_20261030.csv",changed_headers,changes)
+    impactful=[row for row in changes if row["变更类别"]!="纯图标/展示变化"]
+    save_csv(OUTPUT/"TALENT_DESCRIPTION_DIFF_ONLY_20261030.csv",changed_headers,impactful)
     save_csv(OUTPUT/"INDEX_20261030.csv",list(report[0]),report)
     save_csv(OUTPUT/"TALENTS_ALL_20261030.csv",list(all_talents[0]),all_talents)
     save_csv(OUTPUT/"PVP_SIGNALS_ALL_20261030.csv",list(pvp_rows[0]),pvp_rows)
@@ -320,7 +352,10 @@ def main():
      "sources":URLS,
      "heart_count":len(observed),"non_tiance_hearts":sum(SCHOOLS[x]!="天策" for x in observed),
      "school_count":len(set(SCHOOLS.values())),
-     "unique_talents":len(all_talents),"talent_selection_rows_explanation":"9 tiers per heart; 7/8/9 use same 12-option pool; 36 unique options each",
+     "unique_talents":len(all_talents),
+     "changes_vs_20261029":{"total":len(changes),"description_or_name":len(impactful),
+       "icon_only":len(changes)-len(impactful),"hearts_impacted":len({x["心法"] for x in changes})},
+     "talent_selection_rows_explanation":"9 tiers per heart; 7/8/9 use same 12-option pool; 36 unique options each",
      "skill_candidate_rows":candidate_row_count,"explicit_buff_link_rows":buff_row_count,
      "pvp_keyword_signal_rows":len(pvp_rows),
      "raw_sizes_bytes":{"skill":bytes_skill,"skill_props":bytes_prop,"buff":bytes_buff,"buff_props":bytes_buff_prop},
