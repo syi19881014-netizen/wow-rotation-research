@@ -56,3 +56,10 @@ GitHub Actions 已成功下载 2026-10-13 原始技能表（`skill.txt` 5,015,68
 - 第六重奇穴 `6806` 是奇穴ID，**不等于激雷BuffID**；另有相关Buff `10697` 尚未核实触发场景。
 - [含效果、等级、时间的映射表](data/tiance/hanrulei_effect_map_20261030.csv)；[PVP逻辑与证据](research/hanrulei-three-layer-model.md)。
 - 本表依据2026-10-13 Buff/技能和2026-10-30当季奇穴快照，**不代表10月29日正式服实机结论，GCD尚未验证**。
+
+## 2026-10-30其他职业核对完成首轮
+- 21门派32心法均建单独目录：`data/all-specializations/<心法>/`
+- 1,152条最新当季奇穴、3,730条近版技能候选、361条Buff引用及773条PVP关键词关联。
+- 10月29日与30日奇穴快照差异已逐项比较：56处变化，31处名称/描述、25处图标。第7～9重共用池未重复计数。
+- 新门派段氏/无相楼已纳入；源表对应技能2026-10-13，完整现行技能与GCD需后续核验。
+- [全心法索引](data/all-specializations/INDEX_20261030.csv)、[奇穴内容变化](data/all-specializations/TALENT_DESCRIPTION_DIFF_ONLY_20261030.csv)、[审计范围](research/all-specializations-audit.md)。
