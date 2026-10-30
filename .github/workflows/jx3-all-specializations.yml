@@ -1,0 +1,31 @@
+name: JX3 All Specializations 2026-10-30 Research Import
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/jx3-all-specializations.yml"
+      - "research/jx3/cangsheng-zhushi/scripts/import_all_specializations.py"
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Convert 2026 snapshots into per-specialization indexed candidates
+        run: python research/jx3/cangsheng-zhushi/scripts/import_all_specializations.py
+      - name: Commit evidence-labeled per-specialization files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/jx3/cangsheng-zhushi/data/all-specializations/
+          if ! git diff --cached --quiet; then
+            git commit -m "research(jx3): import current talents and candidate skills/buffs for 32 heart methods"
+            git push
+          fi
