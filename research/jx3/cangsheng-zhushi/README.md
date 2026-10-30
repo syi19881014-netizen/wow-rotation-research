@@ -1,6 +1,6 @@
 # 剑网3《苍生铸世》天策PVP资料研究
 
-> **状态：未完成当前正式服技能/奇穴核验。不得把本目录当作全技能、技能ID或GCD已验证数据库。**
+> **状态：已定位并收录2026-10-30第三方当季九重奇穴快照；正式服客户端实测、完整技能ID与GCD仍未完成。**
 >
 > 核验日期：2026-10-30。仅以2026-10-29正式服（旗舰端）为当季基准。
 
@@ -20,13 +20,18 @@
 ## 文件导览
 - `research/2026-10-30-data-audit.md`：错误清理、数据时间戳与实证对照。
 - `data/tiance/skill_reconciliation_pending.csv`：当前重点**待核验**技能名称（不填旧SkillID）。
-- `data/tiance/talents_current_9tier_template.csv`：九重奇穴待采集空模板；**不是选项清单**。
+- `data/tiance/talents_20261030.json` 与 `talents_20261030.csv`：**JX3BOX 2026-10-30当季九重奇穴快照**，傲血/铁牢各36个唯一选项，完整效果；第7～9重共用选项池。仍待客户端实测校验。
 - `data/tiance/buffs_to_verify.csv`：Buff/免控/控制效果的核验任务清单（ID空白）。
 - `research/gcd_verification.md`：GCD实测方法，**不是结论**。
 - `research/pvp_state_machine.md`：PVP决策架构的初稿。
 - `research/verification_queue.md`：必须补齐的字段与验收条件。
 - `updates/2026-10-15-tiance-test.md`：官方测试服有关天策的两个修复条目。
 - `SOURCES.md`：官方/JX3BOX资料入口与有效性等级。
+
+## 2026-10-30当季奇穴数据进展
+- JX3BOX `jx3box-talent/output/std/v20261030.json` 更新于2026-10-30（GitHub时间已核验），已入库傲血与铁牢全部选项与效果。
+- `research/2026-10-30-talent-audit.md` 记录版本差异、重要的撼如雷奇穴联动、数据局限。
+- 完整技能表、GCD与BuffID仍然未取得当季全量；不要将奇穴ID误用作释放技能ID。
 
 ## 入库硬规则
 1. 可用于**正式服事实**的技能ID须有当季客户端实表或与当季相符的官方/可靠实时数据库数据和对应版本号。

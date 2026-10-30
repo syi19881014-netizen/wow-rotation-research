@@ -35,3 +35,9 @@
 - 该前端通过 `getKungfuPanel` 获取面板技能，`getTalents` 获取奇穴ID结构，`getSkills` 获取奇穴技能详情。
 - **不是2023年静态GitHub映射表**；但该归档前端代码不能证明2026年实际线上数据最新。实时请求尚未成功，数据版本未校验。
 - 完整请求地址/数据字段/采集与验收流程：`research/jx3box-raw-interface.md`。
+
+## 2026-10-30真实同日奇穴快照（新来源，优先）
+- https://github.com/JX3BOX/jx3box-talent/blob/master/output/std/v20261030.json （2026-10-30最新旗舰端文件，天策两系第1～9重）
+- https://github.com/JX3BOX/jx3box-talent/blob/master/output/std/v20261029.json （前日正式服首日快照，可比较）
+- https://github.com/JX3BOX/jx3-skill-parser （技能Lua解析器，源码有对技能属性/Buff/冷却/子技能引用的处理能力，但需要当季脚本数据才能使用）
+- 审计详情：`research/2026-10-30-talent-audit.md`
