@@ -28,3 +28,10 @@
 - B：10月29日后官方明确武学描述/修订+可定位到正式服版本
 - T：2026年测试服官方内容（只作版本变更线索）
 - U：未取得当季权威证据，必须留空，不输入正式技能库
+
+## 2026-10-30新增：JX3BOX傲血原始技能/奇穴展示页
+- 入口：https://www.jx3box.com/bps/raw?subtype=%E5%82%B2%E8%A1%80%E6%88%98%E6%84%8F
+- 已找到归档前端相关实现：https://github.com/JX3BOX/bps/blob/master/src/views/Raw.vue
+- 该前端通过 `getKungfuPanel` 获取面板技能，`getTalents` 获取奇穴ID结构，`getSkills` 获取奇穴技能详情。
+- **不是2023年静态GitHub映射表**；但该归档前端代码不能证明2026年实际线上数据最新。实时请求尚未成功，数据版本未校验。
+- 完整请求地址/数据字段/采集与验收流程：`research/jx3box-raw-interface.md`。
