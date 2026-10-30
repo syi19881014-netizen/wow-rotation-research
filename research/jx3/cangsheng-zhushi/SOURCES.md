@@ -7,7 +7,8 @@
 - 测试服10月中旬更新：https://jx3.xoyo.com/launcher/update/latest_exp.html （两条天策修复，限测试服）
 
 ## JX3BOX：服务与GitHub仓库必须区分
-- 在线数据库：https://www.jx3box.com/app/database/ （页面可能需要浏览器渲染；尚未获取有正式服版本戳的天策当前技能明细）
+- 在线数据库：https://www.jx3box.com/app/database/ （页面可能需要浏览器渲染，未拿到2026-10-29以后的天策全量数据）
+- 已检索到的一个JX3BOX线上技能页面显示**基础库2026-10-05**：https://origin.jx3box.com/app/database/?query=132&type=skill 。这比10月29日正式上线早24天；**不能据此确认苍生铸世正式服有效性**。该日期只表示所见页面显示版本，不推定整个网站当前最新同步时间。
 - GitHub原始静态库：https://github.com/JX3BOX/jx3box-data
 - 名称映射上游文件最后提交：2023-11-12，GitHub commit `8a16f1f535077509b28f7f5b5f037391813b2562`：
   https://github.com/JX3BOX/jx3box-data/commits/master/data/xf/std/skill_name_id_level.json
