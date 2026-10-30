@@ -1,0 +1,444 @@
+{
+  "date_utc": "2026-10-30T07:08:14.089087+00:00",
+  "source": {
+    "buff.txt": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/buff.txt",
+    "buff.tab": "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/buff.tab"
+  },
+  "source_commit": "8751fb0474aa5f37c47a99c611ba12736f5028ce",
+  "source_date": "2026-10-13",
+  "spell": {
+    "name": "撼如雷",
+    "SkillID_candidate": "404",
+    "Level_candidate": "0",
+    "full_desc_as_of_20261013": "使周围队友<BUFF 362 0 desc>，持续<BUFF 362 0 time>，使自身获得“激雷”效果，“激雷”效果持续期间外功会心提高30%，持续6秒。<TALENT 5678 1 效果持续期间自身无视目标70%外功防御，效果持续时间提高100%，期间“骑御”施展龙牙可额外消耗1层“龙驭”，造成一次额外伤害。><TALENT 14800 1 调息时间降低5秒，施展后强制半径10尺内最多5个目标攻击自身，持续4秒><TALENT 6806 1 施展后小队成员的外功破防值提高20%，外功基础攻击力提高20%，持续6秒><TALENT 2600 2 效果提高50%><TALENT 37338 1 施展后获得12秒“背水一战”效果。背水一战：每2秒对自身造成最大气血值2%的伤害，同时对自身6尺内2名敌对侠士目标额外造成<SUB 37350 1>外功伤害，持续12秒，若命中目标，则下次伤害增加20%，最多提高100%><TALENT 42310 1 ><TALENT 44372 1 >",
+    "explicit_buff_links": [
+      [
+        "362",
+        "0",
+        "desc"
+      ],
+      [
+        "362",
+        "0",
+        "time"
+      ]
+    ],
+    "mentions_ji_lei": true
+  },
+  "candidate_buffs": [
+    {
+      "BuffID": "362",
+      "Level": "0",
+      "Names": [
+        "撼如雷"
+      ],
+      "remarks": [
+        "(362)(0)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "1",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(1)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "2",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(2)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "3",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(3)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "4",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(4)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "5",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(5)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "6",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(6)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "7",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(7)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "362",
+      "Level": "8",
+      "Names": [
+        "撼如雷",
+        "天策-憾如雷-傲血战意"
+      ],
+      "remarks": [
+        "(362)(8)天策-憾如雷-傲血战意"
+      ],
+      "rawSources": [
+        "buff.txt",
+        "buff.tab"
+      ]
+    },
+    {
+      "BuffID": "1624",
+      "Level": "3",
+      "Names": [
+        "撼如雷"
+      ],
+      "remarks": [
+        "(1624)(3)元旦活动_玩家标志_首领撑抱了"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "2766",
+      "Level": "0",
+      "Names": [
+        "撼如雷"
+      ],
+      "remarks": [
+        "(2766)(0)天策_激雷_效果1"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "2767",
+      "Level": "0",
+      "Names": [
+        "撼如雷"
+      ],
+      "remarks": [
+        "(2767)(0)天策_激雷_效果2"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "6363",
+      "Level": "1",
+      "Names": [
+        "激雷"
+      ],
+      "remarks": [
+        "(6363)(1)小队激雷"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "6363",
+      "Level": "2",
+      "Names": [
+        "激雷"
+      ],
+      "remarks": [
+        "(6363)(2)自身普通激雷"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "6363",
+      "Level": "3",
+      "Names": [
+        "激雷"
+      ],
+      "remarks": [
+        "(6363)(3)自身激雷加强"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "6363",
+      "Level": "4",
+      "Names": [
+        "激雷"
+      ],
+      "remarks": [
+        "(6363)(4)自身激雷终极加强"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "9839",
+      "Level": "1",
+      "Names": [
+        "撼如雷"
+      ],
+      "remarks": [
+        "(9839)(1)撼如雷嘲讽"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "10372",
+      "Level": "1",
+      "Names": [
+        "撼如雷"
+      ],
+      "remarks": [
+        "(10372)(1)天策_曹雪阳_撼如雷"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    },
+    {
+      "BuffID": "10697",
+      "Level": "1",
+      "Names": [
+        "激雷"
+      ],
+      "remarks": [
+        "(10697)(1)天策_激雷AP加成"
+      ],
+      "rawSources": [
+        "buff.txt"
+      ]
+    }
+  ],
+  "matched_record_count": 27,
+  "source_stats": {
+    "buff.txt": {
+      "count": 27265,
+      "size_bytes": 2762165,
+      "encoding": "gb18030",
+      "columns": [
+        "BuffID",
+        "Level",
+        "IconID",
+        "Sparking",
+        "ShowTime",
+        "Show",
+        "Remark",
+        "Name",
+        "Desc",
+        "IsAddPeriod",
+        "TypeIconID",
+        "MbSpecialShow",
+        "MbSpecialShowPriority",
+        "MbCantRebirth",
+        "MbIsShow",
+        "bCollapse",
+        "nMbUIListPriority",
+        "nUIBuffType"
+      ]
+    },
+    "buff.tab": {
+      "count": 63257,
+      "size_bytes": 14807827,
+      "encoding": "gb18030",
+      "columns": [
+        "ID",
+        "Name",
+        "Useage",
+        "FunctionType",
+        "RepresentPos",
+        "RepresentID",
+        "AppendType",
+        "DetachType",
+        "BuffType",
+        "Level",
+        "Intensity",
+        "IsStackable",
+        "MaxStackNum",
+        "Count",
+        "Interval",
+        "Hide",
+        "Exclude",
+        "Save",
+        "OnManaShield",
+        "OnFight",
+        "OnHorse",
+        "OnTerrain",
+        "FormationLeader",
+        "ScriptFile",
+        "GlobalExclude",
+        "UniqueTarget",
+        "CanCancel",
+        "BeginAttrib1",
+        "BeginValue1A",
+        "BeginValue1B",
+        "BeginAttrib2",
+        "BeginValue2A",
+        "BeginValue2B",
+        "BeginAttrib3",
+        "BeginValue3A",
+        "BeginValue3B",
+        "BeginAttrib4",
+        "BeginValue4A",
+        "BeginValue4B",
+        "BeginAttrib5",
+        "BeginValue5A",
+        "BeginValue5B",
+        "BeginAttrib6",
+        "BeginValue6A",
+        "BeginValue6B",
+        "BeginAttrib7",
+        "BeginValue7A",
+        "BeginValue7B",
+        "BeginAttrib8",
+        "BeginValue8A",
+        "BeginValue8B",
+        "BeginAttrib9",
+        "BeginValue9A",
+        "BeginValue9B",
+        "BeginAttrib10",
+        "BeginValue10A",
+        "BeginValue10B",
+        "BeginAttrib11",
+        "BeginValue11A",
+        "BeginValue11B",
+        "BeginAttrib12",
+        "BeginValue12A",
+        "BeginValue12B",
+        "BeginAttrib13",
+        "BeginValue13A",
+        "BeginValue13B",
+        "BeginAttrib14",
+        "BeginValue14A",
+        "BeginValue14B",
+        "BeginAttrib15",
+        "BeginValue15A",
+        "BeginValue15B",
+        "ActiveAttrib1",
+        "ActiveValue1A",
+        "ActiveValue1B",
+        "ActiveAttrib2",
+        "ActiveValue2A",
+        "ActiveValue2B",
+        "EndTimeAttrib1",
+        "EndTimeValue1A",
+        "EndTimeValue1B",
+        "EndTimeAttrib2",
+        "EndTimeValue2A",
+        "EndTimeValue2B",
+        "IsCountable",
+        "DecayType",
+        "MoveStateMask",
+        "MapBanMask",
+        "IsOffLineClock",
+        "CanAccumulate",
+        "SrcDistance",
+        "OnKungfuID",
+        "InSprint",
+        "InFollow",
+        "CancelByUseItem",
+        "MapInvalidMask",
+        "IsCombatBuff",
+        "MinInterval",
+        "ClearUnderWater",
+        "MoveStateMask2",
+        "ShapeShiftInvalid",
+        "MaxInterval",
+        "ActiveCoefficient",
+        "CanBeSteal",
+        "NeedSync",
+        "InBirdMove",
+        "CanTransfer",
+        "InParkour",
+        "CostSingleStack",
+        "InSlideSprint",
+        "MorphInvalid",
+        "ValidByLevel",
+        "RLActions",
+        "Coexist",
+        "IsIntensityStackable"
+      ]
+    }
+  },
+  "validation_warning": "ID and duration must be confirmed against 2026-10-29+ client. Buff362 is referenced by spell404 but short-burst effect ID must be verified; raw Count/Interval cannot automatically be read as wallclock seconds."
+}
