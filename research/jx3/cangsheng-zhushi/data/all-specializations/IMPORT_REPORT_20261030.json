@@ -1,5 +1,5 @@
 {
-  "built_utc": "2026-10-30T07:17:44.548374+00:00",
+  "built_utc": "2026-10-30T07:19:26.465180+00:00",
   "snapshot_versions": {
     "talents": "2026-10-30",
     "skills": "2026-10-13",
@@ -21,8 +21,8 @@
   "school_count": 21,
   "unique_talents": 1152,
   "talent_selection_rows_explanation": "9 tiers per heart; 7/8/9 use same 12-option pool; 36 unique options each",
-  "skill_candidate_rows": 4861,
-  "explicit_buff_link_rows": 366,
+  "skill_candidate_rows": 3730,
+  "explicit_buff_link_rows": 361,
   "pvp_keyword_signal_rows": 773,
   "raw_sizes_bytes": {
     "skill": 5015688,
