@@ -142,5 +142,68 @@ def main():
       "warning":"原始技能数据为2026-10-13，比2026-10-29正式服早；GCD字段未做API或实测验证，严禁当作当前正式服完备技能表。"
     }
     (DEST/"skill_import_report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    # Focused main-skill candidate view. Exclude NPC and child skills from being
+    # automatically treated as player-castable. Keep raw exhaustive output separately.
+    focus_names = [
+      "穿云","龙吟","龙牙","沧月","疾如风","撼如雷","守如山","啸如虎",
+      "御","突","疾","灭","战八方","任驰骋","乘龙箭","断魂刺","破坚阵",
+      "骑御","破重围","车悬阵","啸西风","卷千旗","力破万钧","渊",
+      "定军","崩","力撼河山","号令三军","破阵乐","破罡","破军","霹雳"
+    ]
+    active_talent_ids = {clean(e.get("id")) for h,t,e in all_talents if e.get("is_skill")==1}
+    def score(rec, name):
+        note = clean(rec.get("Remark"))
+        sid = clean(rec.get("SkillID"))
+        val = 0
+        if re.search(r"^\(\d+\)\s*天策[-_]" + re.escape(name) + r"$", note):
+            val += 50
+        elif re.search(r"^\(\d+\)\s*天策[-_].*" + re.escape(name),note):
+            val += 17
+        elif re.search(r"^\(\d+\)\s*" + re.escape(name) + r"$",note):
+            val += 9
+        if sid in active_talent_ids:
+            val += 35
+        if clean(rec.get("HelpDesc")):
+            val += 10
+        if clean(rec.get("完整效果")) and "测试技能" not in clean(rec.get("完整效果")):
+            val += 4
+        if any(word in note for word in ("子技能","技能事件","boss","BOSS","小怪","守卫","测试")):
+            val -= 40
+        if "测试技能" in clean(rec.get("完整效果")):
+            val -= 15
+        return val
+    focus=[]
+    for name in focus_names:
+        candidates=sorted(
+            [x for x in output if x.get("技能名")==name],
+            key=lambda r:(-score(r,name),len(clean(r.get("Remark"))),clean(r.get("SkillID")))
+        )
+        positive=[r for r in candidates if score(r,name)>0]
+        for order,item in enumerate(positive[:2]):
+            s=score(item,name)
+            focus.append({
+                "技能名":name,
+                "候选ID":item.get("SkillID",""),
+                "技能等级":item.get("技能等级",""),
+                "是否主技能":"待正式服确认",
+                "线索匹配强度":("强：天策主技能名称/奇穴主动ID" if s>=40 else "中：同名技能描述/ID关联" if s>=20 else "弱：需人工排除同名子技能"),
+                "来源备注":item.get("Remark",""),
+                "技能说明(前350字)":item.get("完整效果","")[:350],
+                "帮助说明":item.get("HelpDesc",""),
+                "是否触发GCD":"未知",
+                "独立CD":"未知",
+                "最新正式服确认":"否(仅10月13日快照)",
+            })
+        if not positive:
+            focus.append({
+                "技能名":name,"候选ID":"","技能等级":"","是否主技能":"未匹配",
+                "线索匹配强度":"无","来源备注":"","技能说明(前350字)":"",
+                "帮助说明":"","是否触发GCD":"未知","独立CD":"未知",
+                "最新正式服确认":"否"
+            })
+    write_csv(DEST/"skills_priority_audit_20261013.csv", list(focus[0]), focus)
+    report["priority_focus_entries"]=len(focus)
+    report["priority_focus_names"]=len(focus_names)
+    (DEST/"skill_import_report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(report,ensure_ascii=False,indent=2))
 if __name__=="__main__":main()
