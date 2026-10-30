@@ -22,3 +22,13 @@
 数据字段为 `待核验` 时，不能把它用于自动施法或假定离GCD；同名技能可能存在不同等级、派生触发和被动效果。名剑大会等PVP场景请遵守游戏规则；本库优先用于离线状态机、技能提示、录像分析和合法插件能力评估。
 
 **范围说明：** 本阶段专注天策的两套心法和傲血流派（破重围、戎行、流血）。后续可按同一模式扩展全门派心法。
+
+## 第二批扩充（跨门派技能ID候选总表）
+
+- `data/all-specializations/skills_candidates.csv`：按每个已收录心法列出上游套路技能，含技能名、SkillID及GCD/效果留空待核验。
+- `data/all-specializations/heart_coverage.csv`：枚举心法ID、覆盖情况、缺失情况。
+- `data/tiance/talents_current_9tier_template.csv`：正式服9层奇穴采集模板（当前留空、不得臆填）。
+- `updates/2026-10-15-tiance-test.md`：天策测试服两条技能/奇穴修复记录。
+- `research/data_schema.md`：解释心法、技能、奇穴、Buff、图标的ID空间和未来数据读取字段。
+
+**范围警告：** 全门派总表仅覆盖JX3BOX当前静态映射所含心法，不代表2026-10-29正式服所有门派已完整覆盖；特别是新职业/新流派需要额外补录。
