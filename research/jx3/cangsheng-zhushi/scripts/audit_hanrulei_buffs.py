@@ -10,7 +10,7 @@ TARGET.mkdir(parents=True, exist_ok=True)
 BASE = "https://raw.githubusercontent.com/JX3BOX/jx3box-talent/master/raw/"
 FILES = ["buff.txt", "buff.tab"]
 TERMS = ("激雷","撼如雷")
-FOCUS_BUFF_IDS = {"362"}
+FOCUS_BUFF_IDS = {"362","6363","2766","2767","10697"}
 
 def download(name):
     req = urllib.request.Request(BASE+name, headers={"User-Agent":"jx3-tiance-audit/1.0"})
@@ -56,16 +56,17 @@ def main():
             desc=clean(item.get("Desc"))
             # Both explicit ID and exact named candidates; remark textual association
             hit=(id_ in FOCUS_BUFF_IDS or
-                 any(x in (buffname,remark) for x in TERMS))
+                 any(x in f"{buffname} {remark}" for x in TERMS))
             if not hit: continue
             result={
                 "source_snapshot":"2026-10-13 (prior to 苍生铸世)",
                 "source_file":name,
                 "BuffID":id_,"Level":level,
                 "BuffName":buffname,"Remark":remark,"Desc":desc,
-                "match_reason":("direct id 362" if id_ in FOCUS_BUFF_IDS else "related name/remark"),
+                "match_reason":("target explicit BuffID" if id_ in FOCUS_BUFF_IDS else "related name/remark"),
                 "type_to_verify":("long_team_buff_candidate" if id_=="362"
-                                  else "short_burst_buff_candidate_or_homonym"),
+                                  else "burst_buff_candidate_multiple_levels" if id_=="6363"
+                                  else "related_buff_variant_or_homonym"),
                 "2026-10-29_verified":"NO",
             }
             # Retain raw timing and effect fields without inventing seconds.
